@@ -1,0 +1,365 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			random_country = {
+				set_global_flag = monuments_mod_active
+				set_up_monuments_at_start_effect = yes
+			}
+		}
+	}
+
+	on_weekly = {
+		random_events = {
+			1000 = 0
+			30 = monuments_events.2
+			75 = monuments_events.5
+			75 = monuments_events.6
+			75 = monuments_events.7
+			75 = monuments_events.8
+			75 = monuments_events.9
+		}
+		effect = {
+			# Political Power Gain from Subjects
+			if = {
+				limit = {
+					num_subjects > 0
+					NOT = { check_variable = { modifier@political_power_gain_from_subjects = 0 } }
+				}
+				set_variable = { political_power_gain_from_subjects_var = num_subjects }
+				multiply_variable = { political_power_gain_from_subjects_var = modifier@political_power_gain_from_subjects }
+				if = {
+					limit = {
+						NOT = { has_dynamic_modifier = { modifier = political_power_gain_from_subjects_dynamic_modifier } }
+					}
+					add_dynamic_modifier = { modifier = political_power_gain_from_subjects_dynamic_modifier }
+				}
+			}
+			else_if = {
+				limit = {
+					has_dynamic_modifier = { modifier = political_power_gain_from_subjects_dynamic_modifier }
+				}
+				clear_variable = political_power_gain_from_subjects_var
+				remove_dynamic_modifier = { modifier = political_power_gain_from_subjects_dynamic_modifier }
+			}
+		}
+	}
+
+	on_weekly_SOV = {
+		effect = {
+			# Communism Drift in Neighbors and Subjects
+			weekly_communism_drift_effect_from_monument = yes
+		}
+	}
+
+	on_monthly = {
+		random_events = {
+			1000 = 0
+			20 = monuments_events.3
+			50 = monuments_events.4
+		}
+		effect = {
+			every_owned_state = {
+				limit = {
+					state_has_any_monument = yes
+				}
+				for_each_loop = {
+					array = state_monuments_array
+					set_temp_variable = { monument_id = v }
+					set_monument_effects = yes
+				}
+			}
+		}
+	}
+
+	on_monthly_GER = {
+		effect = {
+			set_temp_variable = { SS_anger_change = modifier@monthly_ss_mood_change }
+			if = {
+				limit = {
+					NOT = { check_variable = { SS_anger_change = 0 } }
+					check_variable = { SS_anger < 100 }
+					check_variable = { SS_anger > -100 }
+					has_idea = heinrich_himmler
+					has_variable = SS_anger
+				}
+				add_to_variable = { SS_anger = SS_anger_change }
+			}
+		}
+	}
+
+	# ROOT is winner, FROM gets annexed
+	on_annex = {
+		effect = {
+			every_owned_state = {
+				limit = {
+					state_has_any_monument = yes
+				}
+				for_each_loop = {
+					array = state_monuments_array
+					set_temp_variable = { monument_id = v }
+					set_monument_effects = yes
+				}
+				if = {
+					limit = {
+						has_monument_construction = yes
+						NOT = { check_variable = { ROOT.monument_construction_state_1 = THIS.id } }
+						NOT = { check_variable = { ROOT.monument_construction_state_2 = THIS.id } }
+						NOT = { check_variable = { ROOT.monument_construction_state_3 = THIS.id } }
+						NOT = { check_variable = { ROOT.monument_construction_state_4 = THIS.id } }
+						NOT = { check_variable = { ROOT.monument_construction_state_5 = THIS.id } }
+					}
+					set_temp_variable = { monument_builder = FROM.id }
+					cancel_monument_construction = yes
+				}
+			}
+			FROM = {
+				every_owned_state = {
+					limit = {
+						state_has_any_monument = yes
+					}
+					for_each_loop = {
+						array = state_monuments_array
+						set_temp_variable = { monument_id = v }
+						set_monument_effects = yes
+					}
+					if = {
+						limit = {
+							has_monument_construction = yes
+							NOT = { check_variable = { ROOT.monument_construction_state_1 = THIS.id } }
+							NOT = { check_variable = { ROOT.monument_construction_state_2 = THIS.id } }
+							NOT = { check_variable = { ROOT.monument_construction_state_3 = THIS.id } }
+							NOT = { check_variable = { ROOT.monument_construction_state_4 = THIS.id } }
+							NOT = { check_variable = { ROOT.monument_construction_state_5 = THIS.id } }
+						}
+						set_temp_variable = { monument_builder = PREV.id }
+						cancel_monument_construction = yes
+					}
+				}
+			}
+		}
+	}
+
+	# ROOT is new controller, FROM is old controller, FROM.FROM is state ID
+	on_state_control_changed = {
+		effect = {
+			FROM.FROM = {
+				if = {
+					limit = {
+						state_has_any_monument = yes
+					}
+					for_each_loop = {
+						array = state_monuments_array
+						set_temp_variable = { monument_id = v }
+						set_monument_effects = yes
+					}
+				}
+			}
+		}
+	}
+
+	# ROOT is winner, FROM is loser
+	on_peaceconference_ended = {
+		effect = {
+			every_owned_state = {
+				limit = {
+					state_has_any_monument = yes
+				}
+				for_each_loop = {
+					array = state_monuments_array
+					set_temp_variable = { monument_id = v }
+					set_monument_effects = yes
+				}
+				if = {
+					limit = {
+						has_claimed_state_in_peace_conference = ROOT
+						ROOT = {
+							NOT = { original_tag = FROM }
+							NOT = { has_country_flag = monuments_are_getting_downgraded_after_war }
+						}
+					}
+					for_each_loop = {
+						array = state_monuments_array
+						set_temp_variable = { monument_id = v }
+						if = {
+							limit = {
+								monument_can_downgrade = yes
+							}
+							if = {
+								limit = {
+									can_use_monument_bonuses = yes
+								}
+								downgrade_monument = yes
+							}
+							else = {
+								set_temp_variable = { level = 0 }
+								set_monument_level = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_monument_construction = yes
+						NOT = { check_variable = { ROOT.monument_construction_state_1 = THIS.id } }
+						NOT = { check_variable = { ROOT.monument_construction_state_2 = THIS.id } }
+						NOT = { check_variable = { ROOT.monument_construction_state_3 = THIS.id } }
+						NOT = { check_variable = { ROOT.monument_construction_state_4 = THIS.id } }
+						NOT = { check_variable = { ROOT.monument_construction_state_5 = THIS.id } }
+					}
+					set_temp_variable = { monument_builder = FROM.id }
+					cancel_monument_construction = yes
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = monuments_are_getting_downgraded_after_war }
+				}
+				set_country_flag = monuments_are_getting_downgraded_after_war
+			}
+			else_if = {
+				limit = {
+					NOT = { has_country_flag = monuments_got_downgraded_after_war }
+				}
+				set_country_flag = monuments_got_downgraded_after_war
+				country_event = { id = monuments_events.0 hours = 1 }
+			}
+			FROM = {
+				every_owned_state = {
+					limit = {
+						state_has_any_monument = yes
+					}
+					for_each_loop = {
+						array = state_monuments_array
+						set_temp_variable = { monument_id = v }
+						set_monument_effects = yes
+					}
+				}
+			}
+
+			if = {
+				limit = {
+					has_global_flag = jap_has_declared_war_on_usa
+					NOT = { has_global_flag = usa_has_won_def_war_against_jap }
+					original_tag = USA
+					FROM = {
+						original_tag = JAP
+					}
+				}
+				set_global_flag = usa_has_won_def_war_against_jap
+			}
+		}
+	}
+
+	# ROOT is the nuking country, FROM is the nuked state
+	on_nuke_drop = {
+		effect = {
+			FROM = {
+				if = {
+					limit = {
+						state_has_any_monument = yes
+					}
+					for_each_loop = {
+						array = state_monuments_array
+						set_temp_variable = { monument_id = v }
+						if = {
+							limit = {
+								monument_can_downgrade = yes
+							}
+							downgrade_monument = yes
+						}
+						if = {
+							limit = {
+								has_monument_construction = yes
+							}
+							set_temp_variable = { show_popup = 1 }
+							OWNER = {
+								set_temp_variable = { monument_builder = THIS.id }
+							}
+							cancel_monument_construction = yes
+						}
+					}
+				}
+			}
+		}
+	}
+
+	on_ruling_party_change = {
+		effect = {
+			every_owned_state = {
+				limit = {
+					state_has_any_monument = yes
+				}
+				for_each_loop = {
+					array = state_monuments_array
+					set_temp_variable = { monument_id = v }
+					set_monument_effects = yes
+				}
+			}
+		}
+	}
+
+	# ROOT is the nation being liberated, FROM the leader of the liberators
+	on_liberate = {
+		effect = {
+			every_owned_state = {
+				limit = {
+					state_has_any_monument = yes
+				}
+				for_each_loop = {
+					array = state_monuments_array
+					set_temp_variable = { monument_id = v }
+					set_monument_effects = yes
+				}
+			}
+		}
+	}
+
+	# ROOT is the released nation, FROM the releaser
+	on_release_as_free = {
+		effect = {
+			every_owned_state = {
+				limit = {
+					state_has_any_monument = yes
+				}
+				for_each_loop = {
+					array = state_monuments_array
+					set_temp_variable = { monument_id = v }
+					set_monument_effects = yes
+				}
+			}
+		}
+	}
+
+	# ROOT is the released nation, FROM the releaser
+	on_release_as_puppet = {
+		effect = {
+			every_owned_state = {
+				limit = {
+					state_has_any_monument = yes
+				}
+				for_each_loop = {
+					array = state_monuments_array
+					set_temp_variable = { monument_id = v }
+					set_monument_effects = yes
+				}
+			}
+		}
+	}
+
+	# ROOT declared war, FROM is the target
+	on_war = {
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_global_flag = jap_has_declared_war_on_usa }
+					original_tag = JAP
+					any_other_country = {
+						original_tag = USA
+						has_defensive_war_with = PREV
+					}
+				}
+				set_global_flag = jap_has_declared_war_on_usa
+			}
+		}
+	}
+}
