@@ -1,0 +1,20 @@
+idea_group_23_8_bonus_for_popularity_boost = {
+	enable = { always = yes }
+	remove_trigger = {
+		FROM = {
+			NOT = { has_idea = idea_group_23_8 }
+		}
+	}
+	
+	drift_defence_factor = -0.3
+}
+
+FRA_reduce_idea_cost_modifier_modifier = {
+	icon = GFX_FRA_reduce_idea_cost_modifier
+	enable = { always = yes }
+	remove_trigger = {
+		check_variable = { FRA_reduce_idea_cost_modifier = 0 }
+	}
+	
+	idea_cost_modifier = FRA_reduce_idea_cost_modifier
+}

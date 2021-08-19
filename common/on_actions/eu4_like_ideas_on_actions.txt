@@ -1,0 +1,883 @@
+@NUM_OF_UNIQUE_NATIONAL_IDEA_GROUPS = 26
+@TIME_BETWEEN_RELATIVE_UNLOCK_DATES = 8.76 # 0.001 = 1 hour, 8.76 = 1 year
+
+on_actions = {
+	on_startup = {
+		effect = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = eu4_like_ideas_rule_unlock_dates_for_ideas
+						option = RELATIVE
+					}
+				}
+				random_country = {
+					clear_variable = global.unlock_date_for_idea_group_1
+					clear_variable = global.unlock_date_for_idea_group_2
+					clear_variable = global.unlock_date_for_idea_group_3
+					clear_variable = global.unlock_date_for_idea_group_4
+					clear_variable = global.unlock_date_for_idea_group_5
+					clear_variable = global.unlock_date_for_idea_group_6
+					clear_variable = global.unlock_date_for_idea_group_7
+					clear_variable = global.unlock_date_for_idea_group_8
+					clear_variable = global.unlock_date_for_idea_group_9
+					clear_variable = global.unlock_date_for_idea_group_10
+					clear_variable = global.unlock_date_for_idea_group_11
+					clear_variable = global.unlock_date_for_idea_group_12
+					clear_variable = global.unlock_date_for_idea_group_13
+					clear_variable = global.unlock_date_for_idea_group_14
+					clear_variable = global.unlock_date_for_idea_group_15
+					clear_variable = global.unlock_date_for_idea_group_16
+					clear_variable = global.unlock_date_for_idea_group_17
+					clear_variable = global.unlock_date_for_idea_group_18
+					clear_variable = global.unlock_date_for_idea_group_19
+					clear_variable = global.unlock_date_for_idea_group_20
+					clear_variable = global.unlock_date_for_idea_group_21
+					clear_variable = global.unlock_date_for_idea_group_22
+					clear_variable = global.unlock_date_for_idea_group_23
+					clear_variable = global.unlock_date_for_idea_group_24
+					clear_variable = global.unlock_date_for_idea_group_25
+					clear_variable = global.unlock_date_for_idea_group_26
+
+					set_variable = { global.unlock_date_for_idea_group_1 = global.date }
+					add_to_variable = { global.unlock_date_for_idea_group_1 = @TIME_BETWEEN_RELATIVE_UNLOCK_DATES }
+					set_variable = { global.unlock_date_for_idea_group_2 = global.unlock_date_for_idea_group_1 }
+					add_to_variable = { global.unlock_date_for_idea_group_2 = @TIME_BETWEEN_RELATIVE_UNLOCK_DATES }
+					if = {
+						limit = {
+							OR = {
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_4
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_6
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_8
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_10
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_12
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_14
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_16
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_18
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_20
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_22
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_24
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_26
+								}
+							}
+						}
+						set_variable = { global.unlock_date_for_idea_group_3 = global.unlock_date_for_idea_group_2 }
+						add_to_variable = { global.unlock_date_for_idea_group_3 = @TIME_BETWEEN_RELATIVE_UNLOCK_DATES }
+						set_variable = { global.unlock_date_for_idea_group_4 = global.unlock_date_for_idea_group_3 }
+						add_to_variable = { global.unlock_date_for_idea_group_4 = @TIME_BETWEEN_RELATIVE_UNLOCK_DATES }
+					}
+					if = {
+						limit = {
+							OR = {
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_6
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_8
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_10
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_12
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_14
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_16
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_18
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_20
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_22
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_24
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_26
+								}
+							}
+						}
+						set_variable = { global.unlock_date_for_idea_group_5 = global.unlock_date_for_idea_group_4 }
+						add_to_variable = { global.unlock_date_for_idea_group_5 = @TIME_BETWEEN_RELATIVE_UNLOCK_DATES }
+						set_variable = { global.unlock_date_for_idea_group_6 = global.unlock_date_for_idea_group_5 }
+						add_to_variable = { global.unlock_date_for_idea_group_6 = @TIME_BETWEEN_RELATIVE_UNLOCK_DATES }
+					}
+					if = {
+						limit = {
+							OR = {
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_6
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_8
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_10
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_12
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_14
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_16
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_18
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_20
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_22
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_24
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_26
+								}
+							}
+						}
+						set_variable = { global.unlock_date_for_idea_group_7 = global.unlock_date_for_idea_group_6 }
+						add_to_variable = { global.unlock_date_for_idea_group_7 = @TIME_BETWEEN_RELATIVE_UNLOCK_DATES }
+						set_variable = { global.unlock_date_for_idea_group_8 = global.unlock_date_for_idea_group_7 }
+						add_to_variable = { global.unlock_date_for_idea_group_8 = @TIME_BETWEEN_RELATIVE_UNLOCK_DATES }
+					}
+					if = {
+						limit = {
+							OR = {
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_10
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_12
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_14
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_16
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_18
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_20
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_22
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_24
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_26
+								}
+							}
+						}
+						set_variable = { global.unlock_date_for_idea_group_9 = global.unlock_date_for_idea_group_8 }
+						add_to_variable = { global.unlock_date_for_idea_group_9 = @TIME_BETWEEN_RELATIVE_UNLOCK_DATES }
+						set_variable = { global.unlock_date_for_idea_group_10 = global.unlock_date_for_idea_group_9 }
+						add_to_variable = { global.unlock_date_for_idea_group_10 = @TIME_BETWEEN_RELATIVE_UNLOCK_DATES }
+					}
+					if = {
+						limit = {
+							OR = {
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_12
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_14
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_16
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_18
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_20
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_22
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_24
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_26
+								}
+							}
+						}
+						set_variable = { global.unlock_date_for_idea_group_11 = global.unlock_date_for_idea_group_10 }
+						add_to_variable = { global.unlock_date_for_idea_group_11 = @TIME_BETWEEN_RELATIVE_UNLOCK_DATES }
+						set_variable = { global.unlock_date_for_idea_group_12 = global.unlock_date_for_idea_group_11 }
+						add_to_variable = { global.unlock_date_for_idea_group_12 = @TIME_BETWEEN_RELATIVE_UNLOCK_DATES }
+					}
+					if = {
+						limit = {
+							OR = {
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_14
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_16
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_18
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_20
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_22
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_24
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_26
+								}
+							}
+						}
+						set_variable = { global.unlock_date_for_idea_group_13 = global.unlock_date_for_idea_group_12 }
+						add_to_variable = { global.unlock_date_for_idea_group_13 = @TIME_BETWEEN_RELATIVE_UNLOCK_DATES }
+						set_variable = { global.unlock_date_for_idea_group_14 = global.unlock_date_for_idea_group_13 }
+						add_to_variable = { global.unlock_date_for_idea_group_14 = @TIME_BETWEEN_RELATIVE_UNLOCK_DATES }
+					}
+					if = {
+						limit = {
+							OR = {
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_16
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_18
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_20
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_22
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_24
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_26
+								}
+							}
+						}
+						set_variable = { global.unlock_date_for_idea_group_15 = global.unlock_date_for_idea_group_14 }
+						add_to_variable = { global.unlock_date_for_idea_group_15 = @TIME_BETWEEN_RELATIVE_UNLOCK_DATES }
+						set_variable = { global.unlock_date_for_idea_group_16 = global.unlock_date_for_idea_group_15 }
+						add_to_variable = { global.unlock_date_for_idea_group_16 = @TIME_BETWEEN_RELATIVE_UNLOCK_DATES }
+					}
+					if = {
+						limit = {
+							OR = {
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_18
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_20
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_22
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_24
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_26
+								}
+							}
+						}
+						set_variable = { global.unlock_date_for_idea_group_17 = global.unlock_date_for_idea_group_16 }
+						add_to_variable = { global.unlock_date_for_idea_group_17 = @TIME_BETWEEN_RELATIVE_UNLOCK_DATES }
+						set_variable = { global.unlock_date_for_idea_group_18 = global.unlock_date_for_idea_group_17 }
+						add_to_variable = { global.unlock_date_for_idea_group_18 = @TIME_BETWEEN_RELATIVE_UNLOCK_DATES }
+					}
+					if = {
+						limit = {
+							OR = {
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_20
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_22
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_24
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_26
+								}
+							}
+						}
+						set_variable = { global.unlock_date_for_idea_group_19 = global.unlock_date_for_idea_group_18 }
+						add_to_variable = { global.unlock_date_for_idea_group_19 = @TIME_BETWEEN_RELATIVE_UNLOCK_DATES }
+						set_variable = { global.unlock_date_for_idea_group_20 = global.unlock_date_for_idea_group_19 }
+						add_to_variable = { global.unlock_date_for_idea_group_20 = @TIME_BETWEEN_RELATIVE_UNLOCK_DATES }
+					}
+					if = {
+						limit = {
+							OR = {
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_22
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_24
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_26
+								}
+							}
+						}
+						set_variable = { global.unlock_date_for_idea_group_21 = global.unlock_date_for_idea_group_20 }
+						add_to_variable = { global.unlock_date_for_idea_group_21 = @TIME_BETWEEN_RELATIVE_UNLOCK_DATES }
+						set_variable = { global.unlock_date_for_idea_group_22 = global.unlock_date_for_idea_group_21 }
+						add_to_variable = { global.unlock_date_for_idea_group_22 = @TIME_BETWEEN_RELATIVE_UNLOCK_DATES }
+					}
+					if = {
+						limit = {
+							OR = {
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_24
+								}
+								has_game_rule = {
+									rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+									option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_26
+								}
+							}
+						}
+						set_variable = { global.unlock_date_for_idea_group_23 = global.unlock_date_for_idea_group_22 }
+						add_to_variable = { global.unlock_date_for_idea_group_23 = @TIME_BETWEEN_RELATIVE_UNLOCK_DATES }
+						set_variable = { global.unlock_date_for_idea_group_24 = global.unlock_date_for_idea_group_23 }
+						add_to_variable = { global.unlock_date_for_idea_group_24 = @TIME_BETWEEN_RELATIVE_UNLOCK_DATES }
+					}
+					if = {
+						limit = {
+							has_game_rule = {
+								rule = eu4_like_ideas_num_of_selectable_idea_groups_rule
+								option = EU4_LIKE_IDEAS_NUM_OF_SELECTABLE_IDEA_GROUPS_RULE_26
+							}
+						}
+						set_variable = { global.unlock_date_for_idea_group_25 = global.unlock_date_for_idea_group_24 }
+						add_to_variable = { global.unlock_date_for_idea_group_25 = @TIME_BETWEEN_RELATIVE_UNLOCK_DATES }
+						set_variable = { global.unlock_date_for_idea_group_26 = global.unlock_date_for_idea_group_25 }
+						add_to_variable = { global.unlock_date_for_idea_group_26 = @TIME_BETWEEN_RELATIVE_UNLOCK_DATES }
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = eu4_like_ideas_national_idea_groups_rule
+						option = FREE_CHOICE
+					}
+				}
+				random_country = {
+					clear_array = global.national_idea_group_selection_array
+					add_to_array = { global.national_idea_group_selection_array = 1000 }
+					for_loop_effect = {
+						start = 0
+						end = @NUM_OF_UNIQUE_NATIONAL_IDEA_GROUPS
+						value = v
+						set_temp_variable = { j = v }
+						add_to_temp_variable = { j = 1 }
+						add_to_array = { global.national_idea_group_selection_array = j }
+					}
+				}
+				every_country = {
+					limit = {
+						is_ai = no
+					}
+					set_variable = { eu4_like_ideas_custom_national_ideas_window = 1 }
+				}
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = eu4_like_ideas_rule_show_introduction
+						option = YES
+					}
+				}
+				every_country = {
+					limit = {
+						is_ai = no
+					}
+					set_variable = { show_eu4_like_ideas_startup_window = 1 }
+				}
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = eu4_like_ideas_rule_limited_idea_groups_from_same_type
+						option = NO_TIME_AND_TYPE_LIMIT
+					}
+				}
+				random_country = {
+					set_global_flag = eu4_like_ideas_test_flag
+				}
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = eu4_like_ideas_rule_policy_cost
+						option = RULE_0_1_PP_POLICY_COST
+					}
+				}
+				random_country = {
+					set_global_flag = eu4_like_ideas_new_policy_system_set_up
+					set_variable = { global.eu4_like_ideas_policy_cost = 0.1 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_game_rule = {
+						rule = eu4_like_ideas_rule_policy_cost
+						option = RULE_0_15_PP_POLICY_COST
+					}
+				}
+				random_country = {
+					set_global_flag = eu4_like_ideas_new_policy_system_set_up
+					set_variable = { global.eu4_like_ideas_policy_cost = 0.15 }
+				}
+			}
+			else = {
+				random_country = {
+					set_global_flag = eu4_like_ideas_new_policy_system_set_up
+					set_variable = { global.eu4_like_ideas_policy_cost = 0.2 }
+				}
+			}
+			random_country = {
+				set_AI_pp_cost_reduction = yes
+				set_eu4_like_ideas_AI_idea_usage_delay = yes
+			}
+			every_country = {
+				country_event = { id = eu4_like_ideas_events.1 }
+			}
+		}
+	}
+
+	on_unit_leader_created = {
+		effect = {
+			# Ideas:
+			if = {
+				limit = {
+					FROM = {
+						has_idea = idea_group_13_3
+					}
+				}
+				add_unit_leader_trait = idea_group_13_3_trait
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_idea = idea_group_13_8
+					}
+				}
+				add_unit_leader_trait = idea_group_13_8_trait
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_idea = idea_group_13_2
+					}
+				}
+				set_unit_leader_flag = idea_group_13_2_added_stats
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_idea = idea_group_17_6
+					}
+				}
+				set_unit_leader_flag = idea_group_17_6_added_stats
+			}
+
+			# Policies:
+			if = {
+				limit = {
+					FROM = {
+						has_idea = eu4_like_policy_25
+					}
+				}
+				set_unit_leader_flag = eu4_like_policy_25_added_stats
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_idea = eu4_like_policy_60
+					}
+				}
+				set_unit_leader_flag = eu4_like_policy_60_added_stats
+			}
+		}
+	}
+
+	on_daily = {
+		effect = {
+			# Remove National Idea Bonuses, if necessary (e.g. for civil wars)
+			if = {
+				limit = {
+					NOT = { has_idea = national_ideas_1000_8 }
+					has_country_flag = national_ideas_1000_8
+				}
+				add_research_slot = -1
+				clr_country_flag = national_ideas_1000_8
+			}
+			if = {
+				limit = {
+					NOT = { has_idea = national_ideas_4_8 }
+					has_country_flag = national_ideas_4_8
+				}
+				add_research_slot = -1
+				clr_country_flag = national_ideas_4_8
+			}
+			# Remove Idea Bonuses, if necessary (e.g. for civil wars)
+			if = {
+				limit = {
+					has_country_flag = idea_group_2_7
+					NOT = { has_idea = idea_group_2_7 }
+				}
+				modify_building_resources = {
+				   building = synthetic_refinery
+				   resource = rubber
+				   amount = -1
+				}
+				clr_country_flag = idea_group_2_7
+			}
+			if = {
+				limit = {
+					NOT = { check_variable = { completed_ideas_of_group_13 > 2 } }
+					any_army_leader = {
+						has_trait = idea_group_13_3_trait
+					}
+				}
+				every_army_leader = {
+					limit = {
+						has_trait = idea_group_13_3_trait
+					}
+					remove_unit_leader_trait = idea_group_13_3_trait
+				}
+			}
+			if = {
+				limit = {
+					NOT = { check_variable = { completed_ideas_of_group_13 > 6 } }
+					any_army_leader = {
+						has_trait = idea_group_13_8_trait
+					}
+				}
+				every_army_leader = {
+					limit = {
+						has_trait = idea_group_13_8_trait
+					}
+					remove_unit_leader_trait = idea_group_13_8_trait
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_idea = national_ideas_21_8 }
+					has_country_flag = national_ideas_21_8
+				}
+				add_research_slot = -1
+				clr_country_flag = national_ideas_21_8
+			}
+			if = {
+				limit = {
+					NOT = { has_idea = national_ideas_23_4 }
+					has_country_flag = national_ideas_23_4
+				}
+				add_research_slot = -1
+				clr_country_flag = national_ideas_23_4
+			}
+
+			# Show Alerts:
+			refresh_eu4_like_alerts = yes
+		}
+	}
+
+	# ROOT = nation being released, FROM = overlord
+	on_release_as_puppet = {
+		effect = {
+			set_ideas_up_at_start_effect = yes
+			if = {
+				limit = {
+					NOT = { has_idea = spain_subject_ideology_drift_idea }
+					OVERLORD = {
+						has_idea = national_ideas_15_6
+					}
+				}
+				add_ideas = spain_subject_ideology_drift_idea
+			}
+		}
+	}
+
+	# ROOT is free nation, FROM is releaser
+	on_release_as_free = {
+		effect = {
+			set_ideas_up_at_start_effect = yes
+			if = {
+				limit = {
+					has_idea = spain_subject_ideology_drift_idea
+				}
+				remove_ideas = spain_subject_ideology_drift_idea
+			}
+		}
+	}
+
+	# ROOT is subject, FROM is previous overlord
+	on_subject_free = {
+		effect = {
+			if = {
+				limit = {
+					has_idea = spain_subject_ideology_drift_idea
+				}
+				remove_ideas = spain_subject_ideology_drift_idea
+			}
+		}
+	}
+
+	# ROOT is initiator, FROM is war target
+	on_declare_war = {
+		effect = {
+			if = {
+				limit = {
+					civilwar_target = FROM
+					NOT = { check_variable = { national_ideas_id = 0 } }
+					FROM = {
+						check_variable = { national_ideas_id = 0 }
+					}
+				}
+				FROM = {
+					copy_idea_set_from_PREV = yes
+				}
+			}
+			if = {
+				limit = {
+					civilwar_target = FROM
+					check_variable = { national_ideas_id = 0 }
+					FROM = {
+						NOT = { check_variable = { national_ideas_id = 0 } }
+					}
+				}
+				FROM = {
+					ROOT = {
+						copy_idea_set_from_PREV = yes
+					}
+				}
+			}
+		}
+	}
+
+	# ROOT = nation being puppeted, FROM = overlord
+	on_puppet = {
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_idea = spain_subject_ideology_drift_idea }
+					FROM = {
+						has_idea = national_ideas_15_6
+					}
+				}
+				add_ideas = spain_subject_ideology_drift_idea
+			}
+		}
+	}
+
+	# ROOT is subject, FROM is overlord
+	on_subject_autonomy_level_change = {
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_idea = spain_subject_ideology_drift_idea }
+					FROM = {
+						has_idea = national_ideas_15_6
+					}
+				}
+				add_ideas = spain_subject_ideology_drift_idea
+			}
+		}
+	}
+
+	# ROOT is winner, FROM gets annexed - For civil wars on_civil_war_end is also fired
+	on_annex = {
+		effect = {
+			if = {
+				limit = {
+					has_idea = eu4_like_policy_34
+				}
+				FROM = {
+					every_unit_leader = {
+						set_nationality = ROOT
+						add_timed_unit_leader_trait = {
+							trait = annexed_country_army_leader
+							days = 90
+						}
+					}
+				}
+			}
+		}
+	}
+
+	# ROOT is booster, FROM is target
+	on_boost_party_popularity = {
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_dlc = "La Resistance" }
+				}
+				if = {
+					limit = {
+						has_idea = idea_group_23_8
+					}
+					FROM = {
+						if = {
+							limit = {
+								NOT = {
+									has_dynamic_modifier = {
+										modifier = idea_group_23_8_bonus_for_popularity_boost
+										scope = ROOT
+									}
+								}
+							}
+							add_dynamic_modifier = {
+								modifier = idea_group_23_8_bonus_for_popularity_boost
+								scope = ROOT
+								days = 50
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	on_monthly = {
+		effect = {
+			set_temp_variable = { monthly_change_of_ideology_temp = modifier@monthly_most_popular_ideology_drift }
+			divide_temp_variable = { monthly_change_of_ideology_temp = 100 }
+			if = {
+				limit = {
+					NOT = { check_variable = { monthly_change_of_ideology_temp = 0 } }
+					check_variable = { highest_party_popularity < 1 }
+				}
+				add_popularity = {
+					ideology = var:highest_party_ideology
+					popularity = monthly_change_of_ideology_temp
+				}
+			}
+		}
+	}
+}

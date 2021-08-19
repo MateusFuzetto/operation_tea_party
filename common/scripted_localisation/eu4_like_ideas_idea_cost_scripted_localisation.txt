@@ -1,0 +1,280 @@
+defined_text = {
+	name = GetIdeaCostFromGameRules
+	
+	text = {
+		trigger = {
+			has_game_rule = {
+				rule = eu4_like_ideas_rule_idea_cost_modifier
+				option = RULE_50_PP
+			}
+		}
+		localization_key = "50"
+	}
+	text = {
+		trigger = {
+			has_game_rule = {
+				rule = eu4_like_ideas_rule_idea_cost_modifier
+				option = RULE_150_PP
+			}
+		}
+		localization_key = "150"
+	}
+	text = {
+		trigger = {
+			has_game_rule = {
+				rule = eu4_like_ideas_rule_idea_cost_modifier
+				option = RULE_200_PP
+			}
+		}
+		localization_key = "200"
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = "100"
+	}
+}
+
+defined_text = {
+	name = GetNextIdeasProgressTooltipReducedCost
+	
+	text = {
+		trigger = {
+			OR = {
+				has_idea = idea_group_3_2
+				has_idea = national_ideas_4_0
+				has_idea = national_ideas_7_2
+				has_idea = national_ideas_10_8
+				has_country_flag = USA_congress_reduced_idea_cost_modifier
+				has_idea_with_trait = idea_cost_modifier_reduction_trait
+				AND = {
+					has_variable = FRA_reduce_idea_cost_modifier
+					NOT = { check_variable = { FRA_reduce_idea_cost_modifier = 0 } }
+				}
+				has_idea = national_ideas_14_7
+				has_idea = eu4_like_policy_3
+				has_idea = national_ideas_17_0
+				has_idea = idea_group_25_3
+			}
+		}
+		localization_key = string_enacting_idea_cost_modifier_reduced_cost
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = ""
+	}
+}
+
+defined_text = {
+	name = reduced_idea_cost_modifier_idea_group_3_2
+	
+	text = {
+		trigger = {
+			has_idea = idea_group_3_2
+		}
+		localization_key = string_reduced_idea_cost_modifier_idea_group_3_2
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = ""
+	}
+}
+
+defined_text = {
+	name = idea_group_3_2
+	
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = idea_group_3_2
+	}
+}
+
+defined_text = {
+	name = reduced_idea_cost_modifier_national_ideas_4_0
+	
+	text = {
+		trigger = {
+			has_idea = national_ideas_4_0
+		}
+		localization_key = string_reduced_idea_cost_modifier_national_ideas_4_0
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = ""
+	}
+}
+
+defined_text = {
+	name = reduced_idea_cost_modifier_national_ideas_7_2
+	
+	text = {
+		trigger = {
+			has_idea = national_ideas_7_2
+		}
+		localization_key = string_reduced_idea_cost_modifier_national_ideas_7_2
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = ""
+	}
+}
+
+defined_text = {
+	name = reduced_idea_cost_modifier_national_ideas_10_8
+	
+	text = {
+		trigger = {
+			has_idea = national_ideas_10_8
+		}
+		localization_key = string_reduced_idea_cost_modifier_national_ideas_10_8
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = ""
+	}
+}
+
+defined_text = {
+	name = USA_congress_reduced_idea_cost_modifier
+	
+	text = {
+		trigger = {
+			has_country_flag = USA_congress_reduced_idea_cost_modifier
+		}
+		localization_key = string_reduced_idea_cost_modifier_USA_congress_reduced_idea_cost_modifier
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = ""
+	}
+}
+
+defined_text = {
+	name = idea_cost_modifier_reduction_trait
+	
+	text = {
+		trigger = {
+			has_idea_with_trait = idea_cost_modifier_reduction_trait
+		}
+		localization_key = string_reduced_idea_cost_modifier_idea_cost_modifier_reduction_trait
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = ""
+	}
+}
+
+defined_text = {
+	name = FRA_reduce_idea_cost_modifier
+	
+	text = {
+		trigger = {
+			has_variable = FRA_reduce_idea_cost_modifier
+			NOT = { check_variable = { FRA_reduce_idea_cost_modifier = 0 } }
+		}
+		localization_key = string_reduced_idea_cost_modifier_FRA_reduce_idea_cost_modifier
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = ""
+	}
+}
+
+defined_text = {
+	name = national_ideas_14_7
+	
+	text = {
+		trigger = {
+			has_idea = national_ideas_14_7
+		}
+		localization_key = string_reduced_idea_cost_modifier_national_ideas_14_7
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = ""
+	}
+}
+
+defined_text = {
+	name = eu4_like_policy_3
+	
+	text = {
+		trigger = {
+			set_temp_variable = { policy_out_of_context = 3 }
+			has_idea = eu4_like_policy_3
+		}
+		localization_key = string_reduced_idea_cost_modifier_eu4_like_policy_3
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = ""
+	}
+}
+
+defined_text = {
+	name = national_ideas_17_0
+	
+	text = {
+		trigger = {
+			has_idea = national_ideas_17_0
+		}
+		localization_key = string_reduced_idea_cost_modifier_national_ideas_17_0
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = ""
+	}
+}
+
+defined_text = {
+	name = reduced_idea_cost_modifier_idea_group_25_3
+	
+	text = {
+		trigger = {
+			has_idea = idea_group_25_3
+		}
+		localization_key = string_reduced_idea_cost_modifier_idea_group_25_3
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = ""
+	}
+}
+
+defined_text = {
+	name = idea_group_25_3
+	
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = idea_group_25_3
+	}
+}
