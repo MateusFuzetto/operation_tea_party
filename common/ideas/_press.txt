@@ -1,0 +1,204 @@
+ideas = {
+
+	high_council = { 
+		law = yes
+
+		planning_stage = {
+						
+			cost = 75
+			removal_cost = -1
+			
+			available = {
+			}
+
+			modifier = {
+				political_power_gain = 0.02
+			}
+			
+			cancel_if_invalid = no
+			default = yes
+		}
+		
+		efficiency_burocracy = {
+						
+			cost = 75
+			removal_cost = -1
+			
+			available = {
+			}
+
+			modifier = {
+				fuel_gain_factor_from_states = 0.5
+				max_fuel_factor = 0.2
+			}
+			
+			cancel_if_invalid = no
+		}
+		
+		creation_of_guerrilas = {
+						
+			cost = 75
+			removal_cost = -1
+			
+			available = {
+			}
+
+			modifier = {
+				equipment_capture = 0.05
+				resistance_target_on_our_occupied_states = 0.15
+			}
+			
+			ai_will_do = {
+   				factor = 1
+				
+				modifier = {
+					factor = 2
+					surrender_progress > 0.50
+					has_war = yes
+				}
+
+   				modifier = {
+					factor = 10
+					has_capitulated = yes
+					has_war = yes
+				}
+				
+				modifier = {
+					factor = 10
+					tag = FRA
+					has_global_flag = fall_of_france
+					has_capitulated = yes
+				}
+   			}
+			
+			cancel_if_invalid = no
+		}
+		
+		production_country = {
+						
+			cost = 150
+			removal_cost = -1
+			
+			available = {
+			}
+
+			modifier = {
+				industrial_capacity_dockyard = 0.20
+				industrial_capacity_factory = 0.20
+			}
+			
+			ai_will_do = {
+   				factor = 1
+				
+				modifier = {
+					factor = 2
+					num_of_factories >75
+				}
+   			}
+			
+			cancel_if_invalid = no
+		}
+		
+		mobilization_country = {
+						
+			cost = 75
+			removal_cost = -1
+			
+			available = {
+			}
+
+			modifier = {
+				 mobilization_speed = 0.20
+			}
+			
+			ai_will_do = {
+   				factor = 1
+
+   				modifier = {
+					factor = 2
+					surrender_progress > 0.60
+				}
+   			}
+			
+			
+			cancel_if_invalid = no
+		}
+		
+		military_expansion = {
+						
+			cost = 75
+			removal_cost = -1
+			
+			available = {
+			}
+
+			modifier = {
+				consumer_goods_factor = -0.10
+				production_speed_industrial_complex_factor = -0.25
+			}
+			
+			ai_will_do = {
+   				factor = 1
+
+   				modifier = {
+					factor = 3
+					has_added_tension_amount > 0.20
+				}
+				
+				modifier = {
+					factor = 5
+					tag = GER
+				}
+   			}
+			
+			cancel_if_invalid = no
+		}
+		
+		nationalism_country = {
+						
+			cost = 150
+			removal_cost = -1
+			
+			available = {
+			}
+
+			modifier = {
+				stability_factor = 0.05
+				weekly_manpower = 250
+				army_morale_factor = 0.05
+			}
+			
+			ai_will_do = {
+   				factor = 1
+
+   				modifier = {
+					factor = 3
+					has_added_tension_amount > 0.20
+				}
+   			}
+			
+			cancel_if_invalid = no
+		}
+		
+		covert_ops = {
+						
+			cost = 100
+			removal_cost = -1
+			
+			available = {
+			}
+
+			modifier = {
+				agency_upgrade_time = -0.10
+				operation_cost = -0.10
+				own_operative_capture_chance_factor = -0.05
+			}
+			
+			ai_will_do = {
+   				factor = 1
+   			}
+			
+			cancel_if_invalid = no
+		}
+	}
+}
