@@ -1,0 +1,23 @@
+add_namespace = bftb_turkey
+
+#The Fading Father - Ataturk Passes Away [Retired]
+country_event = {
+	id = bftb_turkey.135
+	title = bftb_turkey.135.t
+	desc = bftb_turkey.135.desc
+	picture = GFX_report_event_tur_ataturk_death
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			remove_ideas = TUR_mustafa_kemal_ataturk_figurehead
+			set_global_flag = ataturk_died
+		}
+	}
+
+	option = {
+		name = bftb_turkey.135.a
+		effect_tooltip = { remove_ideas = TUR_mustafa_kemal_ataturk_figurehead }
+	}
+}
