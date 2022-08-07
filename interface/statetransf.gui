@@ -2,11 +2,11 @@ guiTypes = {
 
 	containerWindowType = {
 		name = "st_open_container"
-		position = { x = 1100 y = 3 }
+		position = { x = 965 y = 4 }
 
 		buttonType = {
 			name = "open_ST"
-			quadTextureSprite = "GFX_generic_text_bg_203"
+			quadTextureSprite = "GFX_decision_infiltrate_state"
 			position = { x = 0 y = 0 }
 			shortcut = "ctrl+shift+t"
 			pdx_tooltip = "[ST_TOOLTIP]"
@@ -16,7 +16,7 @@ guiTypes = {
 		
 		instantTextboxType = {
 			name = "title"
-			position = {x=22 y=5}
+			position = {x=10 y=6}
 			font = "hoi_18mbs"
 			text = "[transfer_states_tooltip]"
 			maxWidth = 200

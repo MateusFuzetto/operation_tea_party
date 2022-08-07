@@ -212,7 +212,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "ib_open_resouse_window"
-			position = { x= 990 y = 4 }
+			position = { x= 993 y = 4 }
 			quadTextureSprite = "GFX_ib_res_icon"
 			Orientation = "UPPER_LEFT"
 			clicksound = click_default
