@@ -266,7 +266,7 @@ guiTypes = {
 		name = "dl_open_buttons"
 		orientation = UPPER_RIGHT
 		position = {
-			x = -465
+			x = -450
 			y = 2
 		}
 		
