@@ -1,0 +1,264 @@
+###########################
+# Arms Market Events
+###########################
+
+#using code borrowed (stolen and ripped) from bftb turkey. thanks paradox! :)
+
+add_namespace = armsmarket
+
+#FROM Desires Light Tanks!
+country_event = {
+	id = armsmarket.1
+	title = armsmarket.1.t
+	desc = armsmarket.1.desc
+	picture = GFX_report_event_tur_cakmak_general_staff
+	
+	is_triggered_only = yes
+	
+	option = { # send some of our best
+		name = armsmarket.1.a
+		ai_chance = {
+			factor = 70
+		}
+		trigger = {
+			OR = {
+				has_tech = improved_light_tank
+				has_tech = improved_light_tank_chassis
+			}
+		}
+		IF = {
+			limit = {
+			has_dlc = "No Step Back"
+			}
+			FROM = {
+            	add_equipment_to_stockpile = { 
+                	type = light_tank_equipment_2
+                	amount = 50
+                	producer = ROOT
+            	}
+            }
+		}
+		else = {
+			FROM = {
+            	add_equipment_to_stockpile = { 
+                	type = light_tank_chassis_2
+                	amount = 50
+                	producer = ROOT
+            	}
+            }
+		}
+		    add_opinion_modifier = {
+                target = FROM
+                modifier = BUL_sold_guns
+            }
+            add_opinion_modifier = {
+                target = FROM
+                modifier = BUL_arms_trade
+            }
+		add_timed_idea = { idea = diverted_light_tank_production  days = 125 }
+		#add_offsite_building = { type = industrial_complex level = 3 }
+		FROM = { country_event = armsmarket.2 }
+	}	
+	option = { # send some regular light tanks
+		name = armsmarket.1.b
+		ai_chance = {
+			factor = 70
+		}
+		trigger = {
+			OR = {
+				has_tech = basic_light_tank
+				has_tech = basic_light_tank_chassis
+			}
+		}
+		IF = {
+			limit = {
+				NOT = { has_dlc = "No Step Back" }
+			}
+			FROM = {
+            	add_equipment_to_stockpile = { 
+                	type = light_tank_equipment_1
+                	amount = 75
+                	producer = ROOT
+            	}
+            }
+		}
+		else = {
+			FROM = {
+            	add_equipment_to_stockpile = { 
+                	type = light_tank_chassis_1
+                	amount = 75
+                	producer = ROOT
+            	}
+            }
+		}
+		    add_opinion_modifier = {
+                target = FROM
+                modifier = BUL_sold_guns
+            }
+            add_opinion_modifier = {
+                target = FROM
+                modifier = BUL_arms_trade
+            }
+		add_timed_idea = { idea = diverted_light_tank_production  days = 100 }
+		#add_offsite_building = { type = industrial_complex level = 2 }
+		FROM = { country_event = armsmarket.3 }
+	}
+
+	option = { # give them some of our old models
+		name = armsmarket.1.c
+		ai_chance = {
+			factor = 70
+		}	
+		trigger = {
+			OR = {
+				has_tech = gwtank
+				has_tech = gwtank_chassis
+			}
+		}
+		IF = {
+			limit = {
+				NOT = { has_dlc = "No Step Back" }
+			}
+			FROM = {
+            	add_equipment_to_stockpile = { 
+                	type = gw_tank_equipment
+                	amount = 75
+                	producer = ROOT
+            	}
+           }
+		}
+		else = {
+			FROM = {
+            	add_equipment_to_stockpile = { 
+                	type = light_tank_chassis_0
+                	amount = 75
+                	producer = ROOT
+            	}
+            }
+		}	
+		    add_opinion_modifier = {
+                target = FROM
+                modifier = BUL_sold_guns
+            }
+            add_opinion_modifier = {
+                target = FROM
+                modifier = BUL_arms_trade
+            }
+		add_timed_idea = { idea = diverted_light_tank_production  days = 75 }
+		#add_offsite_building = { type = industrial_complex level = 1 }
+		FROM = { country_event = armsmarket.4 }
+	}
+
+	option = { # give them nothing!
+		name = armsmarket.1.d
+		ai_chance = {
+			factor = 0 #was 30, but had to make 0 to simplify payment. 
+		}
+		FROM = { country_event = armsmarket.5 }
+	}	
+}
+
+#ROOT sent us their finest. Very Yummy!!!
+country_event = {
+	id = armsmarket.2
+	title = armsmarket.2.t
+	desc = armsmarket.2.desc
+	picture = GFX_report_event_tank_factory
+
+	is_triggered_only = yes
+	
+	option = {
+		add_timed_idea = { idea = purchase_payments  days = 125 }
+		name = armsmarket.2.a #generous!
+		if = {
+			limit = {
+				NOT = {
+					has_dlc = "No Step Back"
+				}
+			}
+			effect_tooltip = {
+				add_equipment_to_stockpile = { type = light_tank_equipment_2 amount = 50 producer = FROM } 
+			}
+		}
+		else = {
+			effect_tooltip = {
+				add_equipment_to_stockpile = { type = light_tank_chassis_2 amount = 50 producer = FROM } 
+			}
+		}
+	}
+}
+
+#ROOT sent us basic tanks. yummy!
+country_event = {
+	id = armsmarket.3
+	title = armsmarket.3.t
+	desc = armsmarket.3.desc
+	picture = GFX_report_event_tank_factory
+
+	is_triggered_only = yes
+	
+	option = {
+		add_timed_idea = { idea = purchase_payments  days = 100 }
+		name = armsmarket.3.a #generous!
+		if = {
+			limit = {
+				NOT = {
+					has_dlc = "No Step Back"
+				}
+			}
+			effect_tooltip = {
+				add_equipment_to_stockpile = { type = light_tank_equipment_1 amount = 75 producer = FROM } 
+			}
+		}
+		else = {
+			effect_tooltip = {
+				add_equipment_to_stockpile = { type = light_tank_chassis_1 amount = 75 producer = FROM } 
+			}
+		}
+	}
+}
+
+#ROOT sent us interwar tanks. Yumm!
+country_event = {
+	id = armsmarket.4
+	title = armsmarket.4.t
+	desc = armsmarket.4.desc
+	picture = GFX_report_event_tank_factory
+
+	is_triggered_only = yes
+	
+	option = {
+		name = armsmarket.4.a #generous!
+		add_timed_idea = { idea = purchase_payments  days = 75 }
+		if = {
+			limit = {
+				NOT = {
+					has_dlc = "No Step Back"
+				}
+			}
+			effect_tooltip = {
+				add_equipment_to_stockpile = { type = gw_tank_equipment amount = 75 producer = FROM } 
+			}
+		}
+		else = {
+			effect_tooltip = {
+				add_equipment_to_stockpile = { type = light_tank_chassis_0 amount = 75 producer = FROM } 
+			}
+		}
+	}
+}
+
+#FROM Desires Light Tanks - No Tanks
+country_event = {
+	id = armsmarket.5
+	title = armsmarket.5.t
+	desc = armsmarket.5.desc
+	picture = GFX_report_event_tur_military_affair
+
+	is_triggered_only = yes
+	
+	option = {
+		name = armsmarket.5.a #stingy bastards!
+	}
+}
+
