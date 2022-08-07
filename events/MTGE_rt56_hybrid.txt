@@ -1,0 +1,88 @@
+﻿#############################################
+# 		hand out hybrid hull techs 			#
+#############################################
+
+
+add_namespace = mtge_hybrid
+
+country_event = {
+	id = mtge_hybrid.1
+	hidden = yes
+	immediate = {
+		#Battle Carriers
+		if = {
+			limit = {
+				has_tech = basic_ship_hull_heavy 
+				has_tech = early_ship_hull_carrier
+				has_tech = early_ship_hull_battle_carrier
+				not = { has_tech = basic_ship_hull_battle_carrier }
+			}
+			set_technology = { basic_ship_hull_battle_carrier = 1 }
+		}
+		if = {
+			limit = {
+				has_tech = improved_ship_hull_heavy 
+				has_tech = basic_ship_hull_carrier	
+				has_tech = early_ship_hull_battle_carrier
+				not = { has_tech = improved_ship_hull_battle_carrier }
+			}
+			set_technology = { improved_ship_hull_battle_carrier = 1 }
+		}
+		if = {
+			limit = {
+				has_tech = advanced_ship_hull_heavy
+				has_tech = improved_ship_hull_carrier	
+				has_tech = early_ship_hull_battle_carrier
+				not = { has_tech = advanced_ship_hull_battle_carrier }
+			}	
+			set_technology = { advanced_ship_hull_battle_carrier = 1 }
+		}
+		if = {
+			limit = {
+				has_tech = modern_ship_hull_heavy
+				has_tech = advanced_ship_hull_carrier	
+				has_tech = early_ship_hull_battle_carrier
+				not = { has_tech = modern_ship_hull_battle_carrier }
+			}	
+			set_technology = { modern_ship_hull_battle_carrier = 1 }
+		}
+		
+		#Cruiser Carriers
+		if = {
+			limit = {
+				has_tech = basic_ship_hull_cruiser 
+				has_tech = early_ship_hull_carrier
+				has_tech = early_ship_hull_cruiser_carrier
+				not = { has_tech = basic_ship_hull_cruiser_carrier }
+			}
+			set_technology = { basic_ship_hull_cruiser_carrier = 1 }
+		}
+		if = {
+			limit = {
+				has_tech = improved_ship_hull_cruiser 
+				has_tech = basic_ship_hull_carrier	
+				has_tech = early_ship_hull_cruiser_carrier
+				not = { has_tech = improved_ship_hull_cruiser_carrier }
+			}
+			set_technology = { improved_ship_hull_cruiser_carrier = 1 }
+		}
+		if = {
+			limit = {
+				has_tech = advanced_ship_hull_cruiser
+				has_tech = improved_ship_hull_carrier
+				has_tech = early_ship_hull_cruiser_carrier				
+				not = { has_tech = advanced_ship_hull_cruiser_carrier }
+			}	
+			set_technology = { advanced_ship_hull_cruiser_carrier = 1 }
+		}
+		if = {
+			limit = {
+				has_tech = modern_ship_hull_cruiser
+				has_tech = advanced_ship_hull_carrier	
+				has_tech = early_ship_hull_cruiser_carrier
+				not = { has_tech = modern_ship_hull_cruiser_carrier }
+			}	
+			set_technology = { modern_ship_hull_cruiser_carrier = 1 }
+		}
+	}	
+}	

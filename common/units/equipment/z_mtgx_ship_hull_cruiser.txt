@@ -1,6 +1,6 @@
 equipments = {
 
-	ship_hull_cruiser_5 = {
+	ship_hull_cruiser_CC = {
 		year = 1945
 		visual_level = 1
 		archetype = ship_hull_cruiser
@@ -21,7 +21,9 @@ equipments = {
 				allowed_module_categories = { 
 					ship_light_battery 
 					ship_medium_battery			
-					ship_heavy_battery 				### new ###				
+					ship_heavy_battery 				### new ###
+					light_ship_cruise_missiles
+					medium_ship_cruise_missiles
 				}
 			}
 			fixed_ship_anti_air_slot = inherit
@@ -49,6 +51,8 @@ equipments = {
 					ship_medium_battery
 					ship_secondaries
 					ship_airplane_launcher
+					light_ship_cruise_missiles
+					medium_ship_cruise_missiles
 				}
 			}
 			mid_2_custom_slot = mid_1_custom_slot
@@ -69,6 +73,8 @@ equipments = {
 					ship_depth_charge
 					ship_light_battery
 					ship_medium_battery
+					light_ship_cruise_missiles
+					medium_ship_cruise_missiles
 				}
 			}
 			rear_2_custom_slot = {
@@ -81,6 +87,8 @@ equipments = {
 					ship_light_battery
 					ship_medium_battery
 					ship_heavy_battery				### new ###
+					light_ship_cruise_missiles
+					medium_ship_cruise_missiles
 				}
 			}
 		}
@@ -94,7 +102,7 @@ equipments = {
 		}
 	}
 
-	light_cruiser_5 = {
+	light_cruiser_CC = {
 		year = 1945
 		visual_level = 1
 		archetype = ship_hull_cruiser
@@ -143,7 +151,7 @@ equipments = {
 		}
 		manpower = 750
 	}
-	heavy_cruiser_5 = {
+	heavy_cruiser_CC = {
 		year = 1945
 		visual_level = 1
 		archetype = ship_hull_cruiser

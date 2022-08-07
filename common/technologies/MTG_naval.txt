@@ -49,12 +49,21 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 1
+			factor = 5
 			
 			modifier = {
 				factor = 4
 				tag = ENG
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
 		}
 		
 		categories = {
@@ -76,7 +85,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 1.5 ### was 2.0 IAW 1.9.3
+		research_cost = 1.5
 		
 		start_year = 1936
 
@@ -86,7 +95,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 1
+			factor = 4
 			
 			modifier = {
 				factor = 4
@@ -99,6 +108,15 @@ technologies = {
 				has_war = yes
 				factor = 2
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
 		}
 		
 		categories = {
@@ -121,7 +139,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 1.5 ### was 2.0 IAW 1.9.3
+		research_cost = 1.5
 
 		start_year = 1940
 		
@@ -131,7 +149,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 1
+			factor = 4
 			
 			modifier = {
 				factor = 4
@@ -141,6 +159,12 @@ technologies = {
 					tag = USA
 				}
 			}
+			modifier = {
+				factor = 4
+				has_tech_bonus = {
+    				category = dd_tech
+				}
+			}			
 		}
 		
 		categories = {
@@ -157,12 +181,11 @@ technologies = {
 		enable_equipment_modules = { 
 			light_ship_engine_4
 		}
- ######## Mod Start ########
-		sub_technologies = {
-			latewar_ship_hull_light
-		}
- ######### Mod End #########		
-		research_cost = 2.0
+		path = {
+			leads_to_tech = modern_ship_hull_light 
+			research_cost_coeff = 1
+		}		
+		research_cost = 2
 
 		start_year = 1944
 		
@@ -172,16 +195,82 @@ technologies = {
 		}
 		
 		ai_will_do = {
+			factor = 4
+			
+			modifier = {
+				factor = 4
+				OR = {
+					original_tag = ENG
+					original_tag = JAP
+					original_tag = USA
+				}
+			}
+			modifier = {
+				factor = 4
+				has_tech_bonus = {
+    				category = dd_tech
+				}
+			}			
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
+		}
+		
+		categories = {
+			naval_equipment
+			dd_tech
+		}
+	}
+	modern_ship_hull_light = {
+
+		enable_equipments = { 
+			ship_hull_light_5
+		}
+		enable_equipment_modules = { 
+			#light_ship_engine_4
+		}
+		
+		research_cost = 2
+
+		start_year = 1948
+		
+		folder = {
+			name = mtgnavalfolder
+			position = { x = 0 y = 25 }
+		}
+		
+		ai_will_do = {
 			factor = 1
 			
 			modifier = {
 				factor = 4
 				OR = {
-					tag = ENG
-					tag = JAP
-					tag = USA
+					original_tag = ENG
+					original_tag = JAP
+					original_tag = USA
 				}
 			}
+			modifier = {
+				factor = 4
+				has_tech_bonus = {
+    				category = dd_tech
+				}
+			}			
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+				}
+			}
+				factor = 0.2
+			}			
 		}
 		
 		categories = {
@@ -243,7 +332,7 @@ technologies = {
 		xp_research_type = navy
 		xp_boost_cost = 50
 		xp_research_bonus = 1.50
-		research_cost = 1.5 ### was 2.5 IAW 1.9.3
+		research_cost = 1.5
 
 		start_year = 1922
 		
@@ -260,16 +349,24 @@ technologies = {
 				has_war_with = GER
 			}
 			modifier = {
-				factor = 2
+				factor = 3
 				anti_submarine_strategy_required_trigger = yes
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
 		}
 		
 		categories = {
 			naval_equipment
 			dd_tech
 			asw_tech
-			ship_modules_tech
 		}
 	}
 	improved_depth_charges = {
@@ -288,7 +385,7 @@ technologies = {
 		xp_research_type = navy
 		xp_boost_cost = 50
 		xp_research_bonus = 1.50
-		research_cost = 1.5 ### was 2.5 IAW 1.9.3
+		research_cost = 1.5
 
 		start_year = 1936
 		
@@ -303,18 +400,29 @@ technologies = {
 			modifier = {
 				factor = 2
 				has_war_with = GER
+				has_navy_size = {
+					size > 0
+				}
 			}
 			modifier = {
 				factor = 2
 				anti_submarine_strategy_required_trigger = yes
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
 		}
 		
 		categories = {
 			naval_equipment
 			dd_tech
 			asw_tech
-			ship_modules_tech
 		}
 	}
 	advanced_depth_charges = {
@@ -332,7 +440,7 @@ technologies = {
 		xp_research_type = navy
 		xp_boost_cost = 50
 		xp_research_bonus = 1.50
-		research_cost = 1.5 ### was 2.5 IAW 1.9.3
+		research_cost = 1.5
 
 		start_year = 1940
 		
@@ -347,18 +455,29 @@ technologies = {
 			modifier = {
 				factor = 4
 				has_war_with = GER
+				has_navy_size = {
+					size > 0
+				}
 			}
 			modifier = {
 				factor = 2
 				anti_submarine_strategy_required_trigger = yes
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
 		}
 		
 		categories = {
 			naval_equipment
 			dd_tech
 			asw_tech
-			ship_modules_tech
 		}
 	}
 	modern_depth_charges = {
@@ -373,7 +492,7 @@ technologies = {
 		xp_research_type = navy
 		xp_boost_cost = 50
 		xp_research_bonus = 1.50
-		research_cost = 1.5 ### was 2.5 IAW 1.9.3
+		research_cost = 1.5
 
 		start_year = 1944
 		
@@ -382,12 +501,85 @@ technologies = {
 			position = { x = 1 y = 19 }
 		}
 		
+		path = {
+			leads_to_tech = anti_submarine_missile
+			research_cost_coeff = 1
+		}
+		
 		ai_will_do = {
 			factor = 2
 			
 			modifier = {
 				factor = 4
 				has_war_with = GER
+				has_navy_size = {
+					size > 0
+				}
+			}
+			modifier = {
+				factor = 2
+				anti_submarine_strategy_required_trigger = yes
+			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
+		}
+		
+		categories = {
+			naval_equipment
+			dd_tech
+			asw_tech
+		}
+	}
+	
+	anti_submarine_missile = {
+
+		dependencies = {
+			advanced_rocket_engines = 1
+		}
+		
+		enable_equipment_modules = { 
+			ship_depth_charge_5
+		}
+		on_research_complete = {
+			custom_effect_tooltip = depth_charges_advice_tt
+		}
+
+		xp_research_type = navy
+		xp_research_cost = 50
+		xp_research_bonus = 1.50
+		research_cost = 2.5
+
+		start_year = 1952
+		
+		folder = {
+			name = mtgnavalfolder
+			position = { x = 1 y = 30 }
+		}
+		
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}
+			modifier = {
+				factor = 4
+				has_war_with = GER
+				has_navy_size = {
+					size > 0
+				}
 			}
 			modifier = {
 				factor = 2
@@ -399,9 +591,10 @@ technologies = {
 			naval_equipment
 			dd_tech
 			asw_tech
-			ship_modules_tech
+			rocketry
 		}
 	}
+	
 	sonar = {
 		enable_equipment_modules = { 
 			ship_sonar_1
@@ -428,18 +621,29 @@ technologies = {
 			modifier = {
 				factor = 4
 				has_war_with = GER
+				has_navy_size = {
+					size > 0
+				}
 			}
 			modifier = {
-				factor = 2
+				factor = 4
 				anti_submarine_strategy_required_trigger = yes
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
 		}
 		
 		categories = {
 			naval_equipment
 			dd_tech
 			asw_tech
-			ship_modules_tech
 		}
 	}
 
@@ -472,9 +676,12 @@ technologies = {
 			modifier = {
 				factor = 4
 				has_war_with = GER
+				has_navy_size = {
+					size > 0
+				}
 			}
 			modifier = {
-				factor = 2
+				factor = 4
 				anti_submarine_strategy_required_trigger = yes
 			}
 		}
@@ -483,7 +690,6 @@ technologies = {
 			naval_equipment
 			dd_tech
 			asw_tech
-			ship_modules_tech
 		}
 	}
 
@@ -514,7 +720,13 @@ technologies = {
 			factor = 1
 			
 			modifier = {
-			
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
 			}
 		}
 		
@@ -522,7 +734,6 @@ technologies = {
 			naval_equipment
 			dd_tech
 			asw_tech
-			ship_modules_tech
 		}
 	}
 	modern_sonar = {
@@ -545,7 +756,13 @@ technologies = {
 			factor = 1
 			
 			modifier = {
-			
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
 			}
 		}
 		
@@ -553,7 +770,6 @@ technologies = {
 			naval_equipment
 			dd_tech
 			asw_tech
-			ship_modules_tech
 		}
 	}
  ######### Mod End #########
@@ -619,6 +835,15 @@ technologies = {
 					tag = USA
 				}
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
 		}
 		
 		categories = {
@@ -628,7 +853,7 @@ technologies = {
 		}
 	}
 
- ######## Mod Start - CF ########	
+ ######## Mod Start - CF / BCV ########	
 
 	early_ship_hull_cruiser_carrier = {
 		enable_equipments = {
@@ -641,35 +866,34 @@ technologies = {
 		research_cost = 1.75
 		start_year = 1922
 		ai_will_do = {
-			factor = 0.1
+			factor = 0.5
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}
+			modifier = {
+				OR = {
+					tag = ENG
+					tag = USA
+					tag = JAP
+					tag = HOL
+					tag = FRA
+				}
+				factor = 4
+			}
 		}
 		dependencies = {
 			early_ship_hull_carrier = 1
 		}		
 		on_research_complete = {
 			hidden_effect = {
-				if = {
-					limit = {
-						has_tech = basic_ship_hull_cruiser 
-						has_tech = early_ship_hull_carrier
-					}
-					set_technology = { basic_ship_hull_cruiser_carrier = 1 }
-				}
-				if = {
-					limit = {
-						has_tech = improved_ship_hull_cruiser 
-						has_tech = basic_ship_hull_carrier						
-					}
-					set_technology = { improved_ship_hull_cruiser_carrier = 1 }
-				}
-				if = {
-					limit = {
-						has_tech = advanced_ship_hull_cruiser
-						has_tech = improved_ship_hull_carrier						 
-					}	
-					set_technology = { advanced_ship_hull_cruiser_carrier = 1 }
-				}            	            		
-            }			
+				country_event = mtge_hybrid.1	
+			}			
         }
     }
 	basic_ship_hull_cruiser_carrier = {
@@ -699,8 +923,86 @@ technologies = {
 
 		}				
 	}
+	modern_ship_hull_cruiser_carrier = {
+		enable_equipments = {
+			ship_hull_cruiser_carrier_5
+		}
+		enable_equipment_modules = { 	
 
- ######### Mod End - CF #########
+		}				
+	}
+
+	early_ship_hull_battle_carrier = {
+		enable_equipments = {
+			ship_hull_battle_carrier_1
+		}
+		enable_equipment_modules = { 
+			heavy_flight_deck_1			
+		}		
+		research_cost = 1.75
+		start_year = 1922
+		ai_will_do = {
+			factor = 0.5
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}
+			modifier = {
+				OR = {
+					tag = ENG
+					tag = USA
+					tag = JAP
+					tag = HOL
+					tag = GER
+					tag = FRA
+				}
+				factor = 4
+			}
+		}
+		dependencies = {
+			early_ship_hull_carrier = 1
+		}		
+		on_research_complete = {
+			hidden_effect = {
+				country_event = mtge_hybrid.1	
+			}
+        }
+	}
+	basic_ship_hull_battle_carrier = {
+		enable_equipments = {
+			ship_hull_battle_carrier_2
+		}
+		enable_equipment_modules = { 
+			heavy_flight_deck_1_hanger_1
+			heavy_flight_deck_1_recon_1
+		}
+	}
+	improved_ship_hull_battle_carrier = {
+		enable_equipments = {
+			ship_hull_battle_carrier_3
+		}
+		enable_equipment_modules = { 
+			heavy_flight_deck_2
+			heavy_flight_deck_2_hanger_1
+			heavy_flight_deck_2_recon_1
+		}
+	}
+	advanced_ship_hull_battle_carrier = {
+		enable_equipments = {
+			ship_hull_battle_carrier_4
+		}
+	}
+	modern_ship_hull_battle_carrier = {
+		enable_equipments = {
+			ship_hull_battle_carrier_5
+		}
+	}
+ ######### Mod End - CF / BCV #########
 
 	basic_ship_hull_cruiser = {
 
@@ -746,6 +1048,21 @@ technologies = {
 					tag = USA
 				}
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
+			modifier = {
+				factor = 4
+				has_tech_bonus = {
+    				category = cl_tech
+				}
+			}						
 		}
 		
 		categories = {
@@ -758,13 +1075,7 @@ technologies = {
 
 		on_research_complete = {
 			hidden_effect = {
-				if = {
-					limit = {
-						has_tech = early_ship_hull_carrier					
-						has_tech = early_ship_hull_cruiser_carrier
-					}
-					set_technology = { basic_ship_hull_cruiser_carrier = 1 }
-				}
+				country_event = mtge_hybrid.1	
 			}
 		}
  ######### Mod End - CF #########		
@@ -798,7 +1109,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 1
+			factor = 4
 			
 			modifier = {
 				OR = {
@@ -808,6 +1119,21 @@ technologies = {
 				}
 				factor = 4
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
+			modifier = {
+				factor = 4
+				has_tech_bonus = {
+    				category = cl_tech
+				}
+			}						
 		}
 		
 		categories = {
@@ -820,13 +1146,7 @@ technologies = {
 
 		on_research_complete = {
 			hidden_effect = {
-				if = {
-					limit = {
-						has_tech = basic_ship_hull_carrier					
-						has_tech = basic_ship_hull_cruiser_carrier
-					}
-					set_technology = { improved_ship_hull_cruiser_carrier = 1 }
-				}
+				country_event = mtge_hybrid.1	
 			}
 		}
  ######### Mod End - CF #########		
@@ -840,15 +1160,19 @@ technologies = {
 		enable_equipment_modules = { 
 			cruiser_ship_engine_4
 		}
- ######## Mod Start ########
-		path = {
-			leads_to_tech = antiair6navy
-			research_cost_coeff = 1
-		}
+ ######## Mod Start ######## 
+		#path = {
+		#	leads_to_tech = antiair6navy	#deprecated moved to antiair_c
+		#	research_cost_coeff = 1
+		#}
 
+		path = {
+			leads_to_tech = modern_ship_hull_cruiser
+			research_cost_coeff = 1
+		}	
 		sub_technologies = {
 			latewar_ship_hull_cruiser
-		}
+		}	
  ######### Mod End #########
 
 		research_cost = 1.5
@@ -861,7 +1185,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 1
+			factor = 4
 			
 			modifier = {
 				factor = 2
@@ -870,6 +1194,21 @@ technologies = {
 					tag = USA
 				}
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}	
+			modifier = {
+				factor = 4
+				has_tech_bonus = {
+    				category = cl_tech
+				}
+			}		
 		}
 		
 		categories = {
@@ -882,13 +1221,7 @@ technologies = {
 
 		on_research_complete = {
 			hidden_effect = {
-				if = {
-					limit = {
-						has_tech = improved_ship_hull_carrier					
-						has_tech = improved_ship_hull_cruiser_carrier
-					}
-					set_technology = { advanced_ship_hull_cruiser_carrier = 1 }
-				}
+				country_event = mtge_hybrid.1	
 			}
 		}
  ######### Mod End - CF #########			
@@ -898,7 +1231,7 @@ technologies = {
 	latewar_ship_hull_cruiser = {
 
 		enable_equipments = {
-			ship_hull_cruiser_5
+			ship_hull_cruiser_CC
 		}
 		enable_equipment_modules = { 		
 			cruiser_ship_engine_5		
@@ -909,20 +1242,87 @@ technologies = {
 		start_year = 1945
 		
 		ai_will_do = {
-			factor = 1
+			factor = 2
 			
 			modifier = {
-
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}
+			modifier = {
+				factor = 4
+				has_tech_bonus = {
+    				category = ca_tech
+				}
 			}
 		}
 		
 		categories = {
 			naval_equipment
+			cl_tech
 			ca_tech
 		}
 	}
  ######### Mod End #########
+	modern_ship_hull_cruiser = {
 
+		enable_equipments = {
+			ship_hull_cruiser_5
+		}
+		enable_equipment_modules = { 
+			cruiser_ship_engine_5
+		}
+		research_cost = 1.5
+
+		start_year = 1948
+		
+		folder = {
+			name = mtgnavalfolder
+			position = {  x = -1 y = 25 }
+		}
+		
+		ai_will_do = {
+			factor = 4
+			
+			modifier = {
+				factor = 2
+				OR = {
+					tag = ENG
+					tag = USA
+				}
+			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}
+			modifier = {
+				factor = 4
+				has_tech_bonus = {
+    				category = cl_tech
+				}
+			}			
+		}
+		
+		categories = {
+			naval_equipment
+			cl_tech
+			ca_tech
+		}
+		on_research_complete = {
+			hidden_effect = {
+				country_event = mtge_hybrid.1	
+			}
+		}
+	}
 	improved_airplane_launcher = {
 		
 		enable_equipment_modules = { 
@@ -960,13 +1360,21 @@ technologies = {
 					tag = USA
 				}
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}
 		}
 		
 		categories = {
 			naval_equipment
 			cl_tech
 			ca_tech
-			ship_modules_tech
 		}
 	}
 
@@ -994,10 +1402,16 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 1
+			factor = 4
 			
 			modifier = {
-
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
 			}
 		}
 		
@@ -1005,7 +1419,6 @@ technologies = {
 			naval_equipment
 			cl_tech
 			ca_tech
-			ship_modules_tech
 		}
 	}
 
@@ -1023,15 +1436,17 @@ technologies = {
 			custom_effect_tooltip = cruiser_armor_advice_tt
 		}
 	
+		
 		path = {
 			leads_to_tech = improved_cruiser_armor_scheme
 			research_cost_coeff = 1
 		}
 		
+		
 		xp_research_type = navy
 		xp_boost_cost = 50
 		xp_research_bonus = 1.50
-		research_cost = 1.25 ### IAW 1.9.3 was 2.5
+		research_cost = 1.25
 
 		start_year = 1936
 		
@@ -1051,13 +1466,22 @@ technologies = {
 					tag = USA
 				}
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
 		}
 		
 		categories = {
 			naval_equipment
 			cl_tech
 			ca_tech
-			ship_modules_tech
+			naval_armor_tech
 		}
 	}
 
@@ -1083,7 +1507,7 @@ technologies = {
 		xp_research_type = navy
 		xp_boost_cost = 50
 		xp_research_bonus = 1.50
-		research_cost = 1.25 ### IAW 1.9.3 was 2.5
+		research_cost = 1.25
 
 		start_year = 1940
 		
@@ -1103,13 +1527,22 @@ technologies = {
 					tag = USA
 				}
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
 		}
 		
 		categories = {
 			naval_equipment
 			cl_tech
 			ca_tech
-			ship_modules_tech
+			naval_armor_tech
 		}
 	}
 	advanced_cruiser_armor_scheme = {
@@ -1126,7 +1559,7 @@ technologies = {
 		xp_research_type = navy
 		xp_boost_cost = 50
 		xp_research_bonus = 1.50
-		research_cost = 1.25 ### IAW 1.9.3 was 2.5
+		research_cost = 1.25
 
 		start_year = 1944
 		
@@ -1146,19 +1579,28 @@ technologies = {
 					tag = USA
 				}
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
 		}
 		
 		categories = {
 			naval_equipment
 			cl_tech
 			ca_tech
-			ship_modules_tech
+			naval_armor_tech
 		}
 	}
 
  ######## Mod Start ########
 
-	antiair6navy = {
+	antiair6navy = {	#deprecated modules moved to antiair_c
 
 		enable_equipments = {
 		}
@@ -1182,9 +1624,15 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 1
+			factor = 4
 			modifier = {
-
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
 			}
 		}
 		
@@ -1192,7 +1640,6 @@ technologies = {
 			naval_equipment
 			cl_tech
 			ca_tech
-			ship_modules_tech
 		}
 	}
 
@@ -1238,6 +1685,7 @@ technologies = {
 		}
 		sub_technologies = {
 			pre_dreadnoughts
+			early_ship_hull_battle_carrier
 		}	
 ######### Mod End #########
 
@@ -1269,6 +1717,21 @@ technologies = {
 				is_major = no
 				factor = 0
 			}
+			modifier = {
+				factor = 4
+				has_tech_bonus = {
+    				category = bb_tech
+				}
+			}			
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
 		}
 		
 		categories = {
@@ -1324,6 +1787,21 @@ technologies = {
 				is_major = no
 				factor = 0
 			}
+			modifier = {
+				factor = 4
+				has_tech_bonus = {
+    				category = bb_tech
+				}
+			}			
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
 		}
 		
 		categories = {
@@ -1403,12 +1881,32 @@ technologies = {
 				is_major = no
 				factor = 0
 			}
+			modifier = {
+				factor = 4
+				has_tech_bonus = {
+    				category = bb_tech
+				}
+			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}
 		}
 		
 		categories = {
 			naval_equipment
 			bb_tech
 			bc_tech
+		}
+		on_research_complete = {
+			hidden_effect = {
+				country_event = mtge_hybrid.1	
+			}
 		}
 	}
 
@@ -1433,11 +1931,26 @@ technologies = {
 		}
 				
 		ai_will_do = {
-			factor = 1
+			factor = 2
 			
 			modifier = {
 				factor = 25
 				tag = JAP
+			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}
+			modifier = {
+				factor = 4
+				has_tech_bonus = {
+    				category = bb_tech
+				}
 			}
 		}
 		
@@ -1459,12 +1972,15 @@ technologies = {
 			heavy_ship_engine_4
 		}
  ######## Mod Start ########
-		path = {
-			leads_to_tech = modern_centimetric_radar		
-			research_cost_coeff = 1
-		}		
+		#path = {
+		#	leads_to_tech = modern_centimetric_radar		
+		#	research_cost_coeff = 1
+		#}		
  ######### Mod End #########
-
+		path = {
+			leads_to_tech = modern_ship_hull_heavy
+			research_cost_coeff = 1
+		}
 		research_cost = 1.5
 
 		start_year = 1944
@@ -1486,12 +2002,88 @@ technologies = {
 				is_major = no
 				factor = 0
 			}
+			modifier = {
+				factor = 4
+				has_tech_bonus = {
+    				category = bb_tech
+				}
+			}			
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}
 		}
 		
 		categories = {
 			naval_equipment
 			bb_tech
 			bc_tech
+		}
+		on_research_complete = {
+			hidden_effect = {
+				country_event = mtge_hybrid.1	
+			}
+		}
+	}
+	modern_ship_hull_heavy = {
+
+		enable_equipments = {
+			ship_hull_heavy_5
+		}
+		enable_equipment_modules = { 
+			
+		}
+		research_cost = 1.5
+
+		start_year = 1948
+		
+		folder = {
+			name = mtgnavalfolder
+			position = {  x = -1 y = 25 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 5
+				tag = USA
+			}
+			modifier = {
+				factor = 4
+				has_tech_bonus = {
+    				category = bb_tech
+				}
+			}			
+			modifier = {
+				is_major = no
+				factor = 0
+			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
+		}
+		
+		categories = {
+			naval_equipment
+			bb_tech
+			bc_tech
+		}
+		on_research_complete = {
+			hidden_effect = {
+				country_event = mtge_hybrid.1	
+			}
 		}
 	}
 ######## Mod Start ########
@@ -1537,11 +2129,19 @@ technologies = {
 			modifier = {
 
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}
 		}
 		
 		categories = {
 			naval_equipment
-			ship_modules_tech
 		}
 	}
 
@@ -1567,10 +2167,11 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
+		
 		xp_research_type = navy
 		xp_boost_cost = 50
 		xp_research_bonus = 1.50
-		research_cost = 1.25 ### IAW 1.9.3 was 2.5
+		research_cost = 2.5
 
 		start_year = 1936
 		
@@ -1590,13 +2191,22 @@ technologies = {
 					tag = USA
 				}
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
 		}
 		
 		categories = {
 			naval_equipment
 			bb_tech
 			bc_tech
-			ship_modules_tech
+			naval_armor_tech
 		}
 	}
 
@@ -1614,10 +2224,11 @@ technologies = {
 			custom_effect_tooltip = heavy_armor_advice_tt
 		}
 
+		
 		xp_research_type = navy
 		xp_boost_cost = 50
-		xp_research_bonus = 1.50
-		research_cost = 1.25 ### IAW 1.9.3 was 2.5
+		xp_research_bonus = 1.25
+		research_cost = 1.25
 
 		start_year = 1940
 		
@@ -1640,19 +2251,28 @@ technologies = {
 				has_tech = improved_ship_hull_heavy 
 				factor = 2
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
 		}
 		
 		categories = {
 			naval_equipment
 			bb_tech
 			bc_tech
-			ship_modules_tech
+			naval_armor_tech
 		}
 	}
 
  ######## Mod Start ########
 
-	modern_centimetric_radar = {
+	modern_centimetric_radar = {	#Deprecated radar moved to future_radar		fire_control moved to latewar_fire_control_system
 
 		enable_building = {
 
@@ -1679,14 +2299,19 @@ technologies = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
 			}
 		}
 		
 		categories = {
 			electronics
 			radar_tech
-			ship_modules_tech
 		}
 	}
 
@@ -1699,7 +2324,7 @@ technologies = {
 #  # #  # #  # #  #  #  #   #  #   # 
  ##  #  # #  # #  # ### ### #  # ##  
 
-early_ship_hull_carrier = {
+	early_ship_hull_carrier = {
 
 		enable_equipments = {
 			ship_hull_carrier_conversion_ca		
@@ -1740,6 +2365,21 @@ early_ship_hull_carrier = {
 					tag = USA
 				}
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
+			modifier = {
+				factor = 4
+				has_tech_bonus = {
+    				category = cv_tech
+				}
+			}						
 		}
 		
 		categories = {
@@ -1750,13 +2390,7 @@ early_ship_hull_carrier = {
 
 		on_research_complete = {
 			hidden_effect = {
-				if = {
-					limit = {
-						has_tech = basic_ship_hull_cruiser				
-						has_tech = early_ship_hull_cruiser_carrier
-					}
-					set_technology = { basic_ship_hull_cruiser_carrier = 1 }
-				}
+				country_event = mtge_hybrid.1	
 			}
 		}
  ######### Mod End - CF #########		
@@ -1783,11 +2417,7 @@ early_ship_hull_carrier = {
 			name = mtgnavalfolder
 			position = {  x = -1 y = 7 }
 		}
- ######## Mod Start - CVE ########	
- #		sub_technologies = {
- #			basic_ship_hull_escort_carrier			
- #		}
- ######### Mod End - CVE #########			
+		
 		ai_will_do = {
 			factor = 1
 			
@@ -1799,6 +2429,21 @@ early_ship_hull_carrier = {
 					tag = USA
 				}
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
+			modifier = {
+				factor = 4
+				has_tech_bonus = {
+    				category = cv_tech
+				}
+			}					
 		}
 		
 		categories = {
@@ -1810,13 +2455,7 @@ early_ship_hull_carrier = {
 
 		on_research_complete = {
 			hidden_effect = {
-				if = {
-					limit = {
-						has_tech = improved_ship_hull_cruiser				
-						has_tech = basic_ship_hull_cruiser_carrier
-					}
-					set_technology = { improved_ship_hull_cruiser_carrier = 1 }
-				}
+				country_event = mtge_hybrid.1	
 			}
 		}
  ######### Mod End - CF #########			
@@ -1855,6 +2494,21 @@ early_ship_hull_carrier = {
 					tag = USA
 				}
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
+			modifier = {
+				factor = 4
+				has_tech_bonus = {
+    				category = cv_tech
+				}
+			}						
 		}
 		
 		categories = {
@@ -1865,13 +2519,7 @@ early_ship_hull_carrier = {
 
 		on_research_complete = {
 			hidden_effect = {
-				if = {
-					limit = {
-						has_tech = advanced_ship_hull_cruiser				
-						has_tech = improved_ship_hull_cruiser_carrier
-					}
-					set_technology = { advanced_ship_hull_cruiser_carrier = 1 }
-				}
+				country_event = mtge_hybrid.1	
 			}
 		}
  ######### Mod End - CF #########			
@@ -1885,6 +2533,10 @@ early_ship_hull_carrier = {
 		enable_equipment_modules = { 
 			carrier_ship_engine_4
 		}
+		path = {
+			leads_to_tech = modern_ship_hull_carrier
+			research_cost_coeff = 1
+		}		
 		research_cost = 1.5
 
 		start_year = 1944
@@ -1905,6 +2557,77 @@ early_ship_hull_carrier = {
 					tag = USA
 				}
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
+			modifier = {
+				factor = 4
+				has_tech_bonus = {
+    				category = cv_tech
+				}
+			}					
+		}
+		
+		categories = {
+			naval_equipment
+			cv_tech
+		}
+		on_research_complete = {
+			hidden_effect = {
+				country_event = mtge_hybrid.1	
+			}
+		}
+	}
+	modern_ship_hull_carrier = {
+
+		enable_equipments = {
+			ship_hull_carrier_4
+		}
+		enable_equipment_modules = { 
+			
+		}
+		
+		research_cost = 1.5
+
+		start_year = 1948
+		
+		folder = {
+			name = mtgnavalfolder
+			position = {  x = -1 y = 25 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 8
+				OR = {
+					tag = ENG
+					tag = JAP
+					tag = USA
+				}
+			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
+			modifier = {
+				factor = 4
+				has_tech_bonus = {
+    				category = cv_tech
+				}
+			}					
 		}
 		
 		categories = {
@@ -1912,37 +2635,6 @@ early_ship_hull_carrier = {
 			cv_tech
 		}
 	}
-
- ######## Mod Start - CVE ########
-
-	basic_ship_hull_escort_carrier = {
-
-		enable_equipments = {
-			ship_hull_escort_carrier_1
-		}
-		enable_equipment_modules = { 		
-		
-		}
-		
-		research_cost = 0.1
-
-		start_year = 1940
-		
-		ai_will_do = {
-			factor = 1
-			
-			modifier = {
-
-			}
-		}
-		
-		categories = {
-			naval_equipment
-			ca_tech
-		}
-	}
- ######### Mod End - CVE #########
- 
 
 ###  ##  ###  ###  ### ###   ##      #   #  ##  ###   ##  ### ###  ###                  ## #  # ###  #   #  ##  ###  ### #  # ###  ## 
  #  #  # #  # #  # #   #  # #  #     #   # #  # #  # #  # #   #  # #       {~._.~}     #   #  # #  # ## ## #  # #  #  #  ## # #   #   
@@ -1952,7 +2644,7 @@ early_ship_hull_carrier = {
 
 	basic_torpedo = {
 		
-		research_cost = 2.0 ### was 1.0 IAW 1.9.3
+		research_cost = 2.0
 
 		start_year = 1922
 
@@ -1998,10 +2690,33 @@ early_ship_hull_carrier = {
 				has_war = yes
 				factor = 3
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
+			modifier = {
+				factor = 4
+				has_tech_bonus = {
+    				category = torpedo_equipment
+				}
+			}
+			modifier = {
+				factor = 4
+				has_navy_size = {
+					size > 15
+					type = submarine
+				}
+			}									
 		}
 		
 		categories = {
 			naval_equipment
+			torpedo_equipment
 		}
 	}
 
@@ -2062,11 +2777,27 @@ early_ship_hull_carrier = {
 				tag = JAP #Japan wants torpedoes EXTRA HARD
 				factor = 2
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
+			modifier = {
+				factor = 4
+				has_navy_size = {
+					size > 15
+					type = submarine
+				}
+			}					
 		}
 		
 		categories = {
 			naval_equipment
-			ship_modules_tech
+			torpedo_equipment
 		}
 	}
 
@@ -2110,11 +2841,27 @@ early_ship_hull_carrier = {
 				has_war = yes
 				factor = 3
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
+			modifier = {
+				factor = 4
+				has_navy_size = {
+					size > 10
+					type = submarine
+				}
+			}					
 		}
 		
 		categories = {
 			naval_equipment
-			ship_modules_tech
+			torpedo_equipment
 		}
 	}
 
@@ -2152,11 +2899,27 @@ early_ship_hull_carrier = {
 				}
 				factor = 5
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}
+			modifier = {
+				factor = 4
+				has_navy_size = {
+					size > 10
+					type = submarine
+				}
+			}			
 		}
 		
 		categories = {
 			naval_equipment
-			ship_modules_tech
+			torpedo_equipment
 		}
 	}
 
@@ -2182,13 +2945,26 @@ early_ship_hull_carrier = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}
+			modifier = {
+				factor = 4
+				has_navy_size = {
+					size > 10
+					type = submarine
+				}
 			}
 		}
 		
 		categories = {
 			naval_equipment
-			ship_modules_tech
+			torpedo_equipment
 		}
 	}
  ######### Mod End #########
@@ -2226,16 +3002,25 @@ early_ship_hull_carrier = {
 				tag = JAP
 				factor = 5
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}
 		}
 		
 		categories = {
 			naval_equipment
-			ship_modules_tech
+			torpedo_equipment
 		}
 	}
 	advanced_ship_torpedo_launcher = {
 		
-		research_cost = 1.5 ### was 1.0 IAW 1.9.3
+		research_cost = 1.5
 
 		start_year = 1940
 
@@ -2266,16 +3051,25 @@ early_ship_hull_carrier = {
 				tag = JAP
 				factor = 5
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}
 		}
 		
 		categories = {
 			naval_equipment
-			ship_modules_tech
+			torpedo_equipment
 		}
 	}
 	modern_ship_torpedo_launcher = {
 		
-		research_cost = 1.5 ### was 1.0 IAW 1.9.3
+		research_cost = 1.5
 
 		start_year = 1944
 
@@ -2308,11 +3102,20 @@ early_ship_hull_carrier = {
 				tag = JAP
 				factor = 5
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}
 		}
 		
 		categories = {
 			naval_equipment
-			ship_modules_tech
+			torpedo_equipment
 		}
 	}
 
@@ -2350,7 +3153,7 @@ early_ship_hull_carrier = {
 		
 		categories = {
 			naval_equipment
-			ship_modules_tech
+			torpedo_equipment
 		}
 	}
 
@@ -2397,7 +3200,7 @@ early_ship_hull_carrier = {
 		}
 		
 		ai_will_do = {
-			factor = 1
+			factor = 6
 			
 			modifier = {
 				factor = 7
@@ -2406,6 +3209,21 @@ early_ship_hull_carrier = {
 					tag = USA
 				}
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
+			modifier = {
+				factor = 4
+				has_tech_bonus = {
+    				category = ss_tech
+				}
+			}						
 		}
 		
 		categories = {
@@ -2442,7 +3260,7 @@ early_ship_hull_carrier = {
 			basic_ship_hull_cruiser_submarine
 		}		
  ######### Mod End #########		
-		research_cost = 1.5 ### was 1.25 IAW 1.9.3
+		research_cost = 1.5
 
 		start_year = 1936
 		
@@ -2452,7 +3270,7 @@ early_ship_hull_carrier = {
 		}
 		
 		ai_will_do = {
-			factor = 1
+			factor = 6
 			
 			modifier = {
 				factor = 7
@@ -2461,6 +3279,21 @@ early_ship_hull_carrier = {
 					tag = USA
 				}
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
+			modifier = {
+				factor = 4
+				has_tech_bonus = {
+    				category = ss_tech
+				}
+			}					
 		}
 		
 		categories = {
@@ -2506,7 +3339,7 @@ early_ship_hull_carrier = {
 		}
 		
 		ai_will_do = {
-			factor = 1
+			factor = 6
 			
 			modifier = {
 				factor = 7
@@ -2515,6 +3348,21 @@ early_ship_hull_carrier = {
 					tag = USA
 				}
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
+			modifier = {
+				factor = 4
+				has_tech_bonus = {
+    				category = ss_tech
+				}
+			}					
 		}
 		
 		categories = {
@@ -2532,8 +3380,11 @@ early_ship_hull_carrier = {
 			ship_torpedo_sub_4
 			sub_ship_engine_4
 		}
-
-		research_cost = 2.0 ### was 1.25 IAW 1.9.3
+		path = {
+			leads_to_tech = modern_ship_hull_submarine
+			research_cost_coeff = 1
+		}		
+		research_cost = 2.0
 
 		start_year = 1944
 		
@@ -2542,14 +3393,9 @@ early_ship_hull_carrier = {
 			position = {  x = -2 y = 19 }
 		}
 
- ######## Mod Start ########
-		sub_technologies = {
-			latewar_ship_hull_submarine
-		}
- ######### Mod End #########
 
 		ai_will_do = {
-			factor = 1
+			factor = 6
 			
 			modifier = {
 				factor = 7
@@ -2558,6 +3404,21 @@ early_ship_hull_carrier = {
 					tag = USA
 				}
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}
+			modifier = {
+				factor = 4
+				has_tech_bonus = {
+    				category = ss_tech
+				}
+			}					
 		}
 		
 		categories = {
@@ -2567,7 +3428,7 @@ early_ship_hull_carrier = {
 	}
  ######## Mod Start ########
 
-	early_ship_hull_midget_submarine = {
+	early_ship_hull_midget_submarine = {	
 
 		enable_equipments = {
 			ship_hull_submarine_midget_1
@@ -2581,10 +3442,21 @@ early_ship_hull_carrier = {
 		start_year = 1922
 		
 		ai_will_do = {
-			factor = 1
-			
+			factor = 2
 			modifier = {
-
+				factor = 4
+				has_tech_bonus = {
+    				category = ss_tech
+				}
+			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
 			}
 		}
 		
@@ -2608,10 +3480,33 @@ early_ship_hull_carrier = {
 		start_year = 1936
 		
 		ai_will_do = {
-			factor = 0
+			factor = 1
 			
 			modifier = {
-
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}
+			modifier = {
+				factor = 4
+				has_tech_bonus = {
+    				category = ss_tech
+				}
+			}
+			modifier = {
+				OR = {
+					tag = ENG
+					tag = USA
+					tag = JAP
+					tag = GER
+					tag = FRA
+					tag = VIC
+				}
+				factor = 4
 			}
 		}
 		
@@ -2638,10 +3533,32 @@ early_ship_hull_carrier = {
 		}
 				
 		ai_will_do = {
-			factor = 1
-			
+			factor = 2
 			modifier = {
-
+				factor = 4
+				has_tech_bonus = {
+    				category = ss_tech
+				}
+			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}
+			modifier = {
+				OR = {
+					tag = ENG
+					tag = USA
+					tag = JAP
+					tag = GER
+					tag = FRA
+					tag = VIC
+				}
+				factor = 4
 			}
 		}
 		
@@ -2669,9 +3586,21 @@ early_ship_hull_carrier = {
 		}
 				
 		ai_will_do = {
-			factor = 1
-			
+			factor = 2
 			modifier = {
+				factor = 4
+				has_tech_bonus = {
+    				category = ss_tech
+				}
+			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
 			}
 		}
 		
@@ -2682,7 +3611,7 @@ early_ship_hull_carrier = {
 		}
 	}
 
-	latewar_ship_hull_submarine = {
+	latewar_ship_hull_submarine = {		#Deprecated replaced with modern submarine from RT56
 
 		enable_equipments = {
 			ship_hull_submarine_5
@@ -2698,10 +3627,21 @@ early_ship_hull_carrier = {
 		start_year = 1945
 		
 		ai_will_do = {
-			factor = 0
-			
+			factor = 1
 			modifier = {
-
+				factor = 4
+				has_tech_bonus = {
+    				category = ss_tech
+				}
+			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
 			}
 		}
 		
@@ -2711,7 +3651,57 @@ early_ship_hull_carrier = {
 		}
 	}	
  ######### Mod End #########
+	modern_ship_hull_submarine = {
 
+		enable_equipments = {
+			ship_hull_submarine_5
+		}
+		enable_equipment_modules = { 
+			ship_torpedo_sub_5			
+			sub_ship_engine_5		
+			air_independent_propulsion_system
+		}
+		
+		research_cost = 2.0
+
+		start_year = 1948
+		
+		folder = {
+			name = mtgnavalfolder
+			position = {  x = -2 y = 25 }
+		}
+		
+		ai_will_do = {
+			factor = 6
+			modifier = {
+				factor = 4
+				has_tech_bonus = {
+    				category = ss_tech
+				}
+			}
+			modifier = {
+				factor = 7
+				OR = {
+					tag = GER
+					tag = USA
+				}
+			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
+		}
+		
+		categories = {
+			naval_equipment
+			ss_tech
+		}
+	}
 	basic_submarine_snorkel = {
 
 		enable_equipment_modules = { 
@@ -2750,12 +3740,20 @@ early_ship_hull_carrier = {
 				}
 				factor = 0.5
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
 		}
 		
 		categories = {
 			naval_equipment
 			ss_tech
-			ship_modules_tech
 		}
 	}
 
@@ -2801,12 +3799,20 @@ early_ship_hull_carrier = {
 					tag = HOL
 				}
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}
 		}
 		
 		categories = {
 			naval_equipment
 			ss_tech
-			ship_modules_tech
 		}
 	}
  ######## Mod Start ########
@@ -2840,13 +3846,18 @@ early_ship_hull_carrier = {
 			factor = 1
 			
 			modifier = {
-				
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
 			}
 		}		
 		categories = {
 			naval_equipment
 			ss_tech
-			ship_modules_tech
 		}
 	}
 
@@ -2872,13 +3883,21 @@ early_ship_hull_carrier = {
 		}
 
 		ai_will_do = {
-			factor = 0
+			factor = 0.5
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}	
 		}
 		
 		categories = {
 			naval_equipment
 			ss_tech
-			ship_modules_tech
 		}
 	}
 	basic_submarine_armor_scheme = {
@@ -2902,14 +3921,19 @@ early_ship_hull_carrier = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
 			}
 		}
 		
 		categories = {
 			naval_equipment
 			ss_tech
-			ship_modules_tech
 		}
 	}
 	improved_submarine_armor_scheme = {
@@ -2930,14 +3954,19 @@ early_ship_hull_carrier = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
 			}
 		}
 		
 		categories = {
 			naval_equipment
 			ss_tech
-			ship_modules_tech
 		}
 	}	
 	basic_silent_submarine= {
@@ -2963,12 +3992,20 @@ early_ship_hull_carrier = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}
 		}
 		
 		categories = {
 			naval_equipment
 			ss_tech
-			ship_modules_tech
 		}
 	}
 	improved_silent_submarine= {
@@ -2989,13 +4026,21 @@ early_ship_hull_carrier = {
 		}
 
 		ai_will_do = {
-			factor = 0
+			factor = 0.5
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}
 		}
 		
 		categories = {
 			naval_equipment
 			ss_tech
-			ship_modules_tech
 		}
 	}
  ######### Mod End #########
@@ -3057,11 +4102,26 @@ early_ship_hull_carrier = {
 				}
 				factor = 500
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}
+			modifier = {
+				factor = 4
+				has_tech_bonus = {
+    				category = naval_gunnery_tech
+				}
+			}					
 		}
 		
 		categories = {
 			naval_equipment
-			ship_modules_tech
+			naval_gunnery_tech
 		}
 	}
 
@@ -3103,11 +4163,26 @@ early_ship_hull_carrier = {
 				has_tech = basic_ship_hull_light
 				factor = 20
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}
+			modifier = {
+				factor = 4
+				has_tech_bonus = {
+    				category = naval_gunnery_tech
+				}
+			}					
 		}
 		
 		categories = {
 			naval_equipment
-			ship_modules_tech
+			naval_gunnery_tech
 		}
 	}
 	improved_light_battery = {
@@ -3143,11 +4218,26 @@ early_ship_hull_carrier = {
 				has_tech = improved_ship_hull_light
 				factor = 20
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
+			modifier = {
+				factor = 4
+				has_tech_bonus = {
+    				category = naval_gunnery_tech
+				}
+			}						
 		}
 		
 		categories = {
 			naval_equipment
-			ship_modules_tech
+			naval_gunnery_tech
 		}
 	}
 	advanced_light_battery = {
@@ -3159,6 +4249,11 @@ early_ship_hull_carrier = {
 		enable_equipment_modules = { 
 			ship_light_battery_4
 			submarine_light_battery_3
+		}
+		
+		path = {
+			leads_to_tech = modern_light_battery
+			research_cost_coeff = 1
 		}
 		
 		on_research_complete = {
@@ -3177,11 +4272,198 @@ early_ship_hull_carrier = {
 				has_tech = advanced_ship_hull_light
 				factor = 20
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
+			modifier = {
+				factor = 0
+				has_navy_size = {
+					size < 2
+					archetype = ship_hull_light
+				}
+			}						
 		}
 		
 		categories = {
 			naval_equipment
-			ship_modules_tech
+			naval_gunnery_tech
+		}
+	}
+	
+	modern_light_battery = {
+		
+		research_cost = 1
+
+		start_year = 1948
+
+		enable_equipment_modules = { 
+			ship_light_battery_5
+			dp_light_battery_2
+			submarine_light_battery_4
+			submarine_dp_light_battery_2
+		}
+		
+		on_research_complete = {
+			custom_effect_tooltip = light_battery_advice_tt
+		}
+		
+		path = {
+			leads_to_tech = surface_air_missile
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = light_anti_ship_missile
+			research_cost_coeff = 1
+		}
+
+
+		folder = {
+			name = mtgnavalfolder
+			position = { x = -2 y = 24 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
+			modifier = {
+				factor = 0
+				has_navy_size = {
+					size < 2
+					archetype = ship_hull_light
+				}
+			}
+			modifier = {
+				has_tech = modern_ship_hull_light
+				factor = 20
+			}
+		}
+		
+		categories = {
+			naval_equipment
+			naval_gunnery_tech
+		}
+	}
+	
+	surface_air_missile = {
+		
+		research_cost = 1
+
+		start_year = 1952
+		
+		dependencies = {
+			advanced_rocket_engines = 1
+		}
+
+		enable_equipment_modules = { 
+			surface_air_missile_1
+		}
+
+		folder = {
+			name = mtgnavalfolder
+			position = { x = -2 y = 30 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
+			modifier = {
+				factor = 0
+				has_navy_size = {
+					size < 2
+					archetype = ship_hull_light
+				}
+			}
+			modifier = {
+				has_tech = modern_ship_hull_light
+				factor = 20
+			}
+		}
+		
+		categories = {
+			naval_equipment
+			anti_air_tech
+			rocketry
+		}
+	}
+	
+	light_anti_ship_missile = {
+		
+		research_cost = 1
+
+		start_year = 1952
+		
+		dependencies = {
+			advanced_rocket_engines = 1
+		}
+
+		enable_equipment_modules = { 
+			anti_ship_missile_1
+		}
+		
+		on_research_complete = {
+			custom_effect_tooltip = light_battery_advice_tt
+		}
+
+		path = {
+			leads_to_tech = medium_anti_ship_missile
+			research_cost_coeff = 0.5
+		}
+		
+		folder = {
+			name = mtgnavalfolder
+			position = { x = -1 y = 28 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
+			modifier = {
+				factor = 0
+				has_navy_size = {
+					size < 2
+					archetype = ship_hull_light
+				}
+			}
+			modifier = {
+				has_tech = modern_ship_hull_light
+				factor = 20
+			}
+		}
+		
+		categories = {
+			naval_equipment
+			rocketry
 		}
 	}
 
@@ -3190,7 +4472,7 @@ early_ship_hull_carrier = {
 		xp_research_type = navy
 		xp_boost_cost = 50
 		xp_research_bonus = 1.50
-		research_cost = 1.5 ### IAW 1.9.3 was 2.5 
+		research_cost = 2.5 
 
 		start_year = 1936
 
@@ -3229,7 +4511,11 @@ early_ship_hull_carrier = {
 			lg_attack = 0.05
 			lg_armor_piercing = 0.05
 		}
- ######## Mod Start ########		
+ ######## Mod Start ########
+		battle_carrier = {
+			lg_attack = 0.05
+			lg_armor_piercing = 0.05
+		}
 		submarine_cruiser = {
 			lg_attack = 0.05
 			lg_armor_piercing = 0.05
@@ -3251,11 +4537,27 @@ early_ship_hull_carrier = {
 				has_war = yes
 				factor = 10
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
+			modifier = {
+				factor = 0
+				has_navy_size = {
+					size < 2
+					archetype = ship_hull_light
+				}
+			}						
 		}
 		
 		categories = {
 			naval_equipment
-			ship_modules_tech
+			naval_shell_tech
 		}
 	}
 	improved_light_shell = {
@@ -3299,6 +4601,10 @@ early_ship_hull_carrier = {
 			lg_armor_piercing = 0.05
 		}
  ######## Mod Start ########
+		battle_carrier = {
+			lg_attack = 0.05
+			lg_armor_piercing = 0.05
+		}
 		submarine_cruiser = {
 			lg_attack = 0.05
 			lg_armor_piercing = 0.05
@@ -3320,11 +4626,27 @@ early_ship_hull_carrier = {
 				has_war = yes
 				factor = 10
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
+			modifier = {
+				factor = 0
+				has_navy_size = {
+					size < 2
+					archetype = ship_hull_light
+				}
+			}						
 		}
 		
 		categories = {
 			naval_equipment
-			ship_modules_tech
+			naval_shell_tech
 		}
 	}
 
@@ -3351,8 +4673,9 @@ early_ship_hull_carrier = {
 		enable_equipment_modules = { 
 			ship_medium_battery_2
 			ship_light_medium_battery_2
-			submarine_medium_battery_1
-			submarine_medium_battery_cap_1			
+			#submarine_medium_battery_1
+			submarine_medium_battery_cap_1		
+			submarine_light_medium_battery_1
 		}
 		
 		folder = {
@@ -3366,11 +4689,20 @@ early_ship_hull_carrier = {
 				has_tech = improved_ship_hull_cruiser
 				factor = 5
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
 		}
 		
 		categories = {
 			naval_equipment
-			ship_modules_tech
+			naval_gunnery_tech
 		}
 	}
 	improved_medium_battery = {
@@ -3389,8 +4721,9 @@ early_ship_hull_carrier = {
 		enable_equipment_modules = { 
 			ship_medium_battery_3
 			ship_light_medium_battery_3
-			submarine_medium_battery_2	
-			submarine_medium_battery_cap_2						
+			#submarine_medium_battery_2	
+			submarine_medium_battery_cap_2		
+			submarine_light_medium_battery_2
 		}
 		
 
@@ -3406,11 +4739,20 @@ early_ship_hull_carrier = {
 				has_tech = advanced_ship_hull_cruiser
 				factor = 5
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
 		}
 		
 		categories = {
 			naval_equipment
-			ship_modules_tech
+			naval_gunnery_tech
 		}
 	}
 	advanced_medium_battery = {
@@ -3422,11 +4764,21 @@ early_ship_hull_carrier = {
 		enable_equipment_modules = { 
 			ship_medium_battery_4
 			ship_light_medium_battery_4
-			submarine_medium_battery_3	
-			submarine_medium_battery_cap_3						
+			#submarine_medium_battery_3	
+			submarine_medium_battery_cap_3	
+			submarine_light_medium_battery_3
 		}
 		on_research_complete = {
 			custom_effect_tooltip = medium_battery_advice_tt
+		}
+		
+		path = {
+			leads_to_tech = modern_medium_battery
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = modern_light_medium_battery
+			research_cost_coeff = 1
 		}
 
 
@@ -3437,18 +4789,163 @@ early_ship_hull_carrier = {
 		
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
 		}
 		
 		categories = {
 			naval_equipment
+			naval_gunnery_tech
 		}
 	}
+	modern_light_medium_battery = {
+		
+		research_cost = 1
+
+		start_year = 1948
+
+		enable_equipment_modules = { 
+			ship_light_medium_battery_5
+			dp_light_medium_battery_1
+			submarine_light_medium_battery_4
+		}
+		on_research_complete = {
+			custom_effect_tooltip = medium_battery_advice_tt
+		}
+
+		path = {
+			leads_to_tech = medium_anti_ship_missile
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = mtgnavalfolder
+			position = { x = 0 y = 24 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}
+		}
+		
+		categories = {
+			naval_equipment
+			naval_gunnery_tech
+		}
+	}
+	modern_medium_battery = {
+		
+		research_cost = 1
+
+		start_year = 1948
+		
+		enable_equipment_modules = { 
+			ship_medium_battery_5
+			#submarine_medium_battery_4
+			submarine_medium_battery_cap_4
+		}
+		on_research_complete = {
+			custom_effect_tooltip = medium_battery_advice_tt
+		}
+
+		path = {
+			leads_to_tech = medium_anti_ship_missile
+			research_cost_coeff = 1
+		}
+		
+		folder = {
+			name = mtgnavalfolder
+			position = { x = 2 y = 24 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}
+		}
+		
+		categories = {
+			naval_equipment
+			naval_gunnery_tech
+		}
+	}
+	
+	medium_anti_ship_missile = {
+		
+		research_cost = 1
+
+		start_year = 1952
+		
+		dependencies = {
+			advanced_rocket_engines = 1
+		}
+
+		enable_equipment_modules = { 
+			anti_ship_missile_2
+		}
+		
+		on_research_complete = {
+			custom_effect_tooltip = medium_battery_advice_tt
+		}
+		
+		path = {
+			leads_to_tech = light_anti_ship_missile
+			research_cost_coeff = 0.5
+		}
+
+
+		folder = {
+			name = mtgnavalfolder
+			position = { x = 1 y = 28 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}
+		}
+		
+		categories = {
+			naval_equipment
+			rocketry
+		}
+	}
+	
 	basic_medium_shell = {
 		
 		xp_research_type = navy
 		xp_boost_cost = 50
 		xp_research_bonus = 1.50
-		research_cost = 1.5 ### IAW 1.9.3 was 2.5 
+		research_cost = 1.5
 
 		start_year = 1936
 
@@ -3494,11 +4991,20 @@ early_ship_hull_carrier = {
 				has_war = yes
 				factor = 7
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
 		}
 		
 		categories = {
 			naval_equipment
-			ship_modules_tech
+			naval_shell_tech
 		}
 	}
 	improved_medium_shell = {
@@ -3506,9 +5012,9 @@ early_ship_hull_carrier = {
 		xp_research_type = navy
 		xp_boost_cost = 50
 		xp_research_bonus = 1.50
-		research_cost = 1.5 ### IAW 1.9.3 was 2.5 
+		research_cost = 1.5
 
-		start_year = 1940
+		start_year = 1942
 		
 		
 		light_cruiser = {
@@ -3548,11 +5054,19 @@ early_ship_hull_carrier = {
 				has_war = yes
 				factor = 7
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
 		}
 		
 		categories = {
 			naval_equipment
-			ship_modules_tech
 		}
 	}
 
@@ -3600,11 +5114,20 @@ early_ship_hull_carrier = {
 				}
 				factor = 2
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
 		}
 		
 		categories = {
 			naval_equipment
-			ship_modules_tech
+			naval_gunnery_tech
 		}
 	}
 	improved_heavy_battery = {
@@ -3645,11 +5168,20 @@ early_ship_hull_carrier = {
 				}
 				factor = 2
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
 		}
 		
 		categories = {
 			naval_equipment
-			ship_modules_tech
+			naval_gunnery_tech
 		}
 	}
 	advanced_heavy_battery = {
@@ -3686,11 +5218,20 @@ early_ship_hull_carrier = {
 				}
 				factor = 2
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
 		}
 		
 		categories = {
 			naval_equipment
-			ship_modules_tech
+			naval_gunnery_tech
 		}
 	}
 	basic_heavy_shell = {
@@ -3698,7 +5239,7 @@ early_ship_hull_carrier = {
 		xp_research_type = navy
 		xp_boost_cost = 50
 		xp_research_bonus = 1.50
-		research_cost = 1.5 ### IAW 1.9.3 was 2.5 
+		research_cost = 1.5
 
 		start_year = 1938
 
@@ -3716,6 +5257,10 @@ early_ship_hull_carrier = {
 			hg_armor_piercing = 0.05
 		}
  ######## Mod Start ########
+		battle_carrier = {
+			hg_attack = 0.05
+			hg_armor_piercing = 0.05
+		}
  		submarine_heavy = {
 			lg_attack = 0.03
 			lg_armor_piercing = 0.01
@@ -3738,12 +5283,36 @@ early_ship_hull_carrier = {
 				has_war = yes
 				factor = 5
 			}
-
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
+			modifier = {
+				has_navy_size = {
+					size > 5
+					type = capital_ship
+					archetype = ship_hull_heavy
+				}
+				factor = 3
+			}						
+			modifier = {
+				has_navy_size = {
+					size < 1
+					type = capital_ship
+					archetype = ship_hull_heavy
+				}
+				factor = 0
+			}
 		}
 		
 		categories = {
 			naval_equipment
-			ship_modules_tech
+			naval_shell_tech
 		}
 	}
 	improved_heavy_shell = {
@@ -3751,7 +5320,7 @@ early_ship_hull_carrier = {
 		xp_research_type = navy
 		xp_boost_cost = 50
 		xp_research_bonus = 1.50
-		research_cost = 1.5 ### IAW 1.9.3 was 2.5 
+		research_cost = 1.5
 
 		start_year = 1942
 		
@@ -3764,7 +5333,11 @@ early_ship_hull_carrier = {
 			hg_attack = 0.05
 			hg_armor_piercing = 0.05
 		}
- ######## Mod Start ########	
+ ######## Mod Start ########
+		battle_carrier = {
+			hg_attack = 0.05
+			hg_armor_piercing = 0.05
+		}
  		submarine_heavy = {
 			lg_attack = 0.03
 			lg_armor_piercing = 0.01
@@ -3787,11 +5360,36 @@ early_ship_hull_carrier = {
 				has_war = yes
 				factor = 5
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
+			modifier = {
+				has_navy_size = {
+					size > 5
+					type = capital_ship
+					archetype = ship_hull_heavy
+				}
+				factor = 3
+			}						
+			modifier = {
+				has_navy_size = {
+					size < 1
+					type = capital_ship
+					archetype = ship_hull_heavy
+				}
+				factor = 0
+			}					
 		}
 		
 		categories = {
 			naval_equipment
-			ship_modules_tech
+			naval_shell_tech
 		}
 	}
 
@@ -3829,11 +5427,20 @@ early_ship_hull_carrier = {
 				}
 				factor = 5
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
 		}
 		
 		categories = {
 			naval_equipment
-			ship_modules_tech
+			naval_gunnery_tech
 		}
 	}
 	improved_secondary_battery = {
@@ -3880,7 +5487,7 @@ early_ship_hull_carrier = {
 		
 		categories = {
 			naval_equipment
-			ship_modules_tech
+			naval_gunnery_tech
 		}
 	}
 	dp_secondary_battery = {
@@ -3922,10 +5529,20 @@ early_ship_hull_carrier = {
 				}
 				factor = 20
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}
 		}
 		
 		categories = {
 			naval_equipment
+			naval_gunnery_tech
 		}
 	}
 
@@ -3954,13 +5571,19 @@ early_ship_hull_carrier = {
 			factor = 1
 
 			modifier = {
-
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
 			}
 		}
 		
 		categories = {
 			naval_equipment
-			ship_modules_tech
+			naval_gunnery_tech
 		}
 	}
 	basic_secondary_shell = {
@@ -4016,6 +5639,10 @@ early_ship_hull_carrier = {
 			lg_attack = 0.03
 			lg_armor_piercing = 0.01
 		}
+		battle_carrier = {
+			lg_attack = 0.03
+			lg_armor_piercing = 0.01
+		}
 		carrier = {
 			lg_attack = 0.03
 			lg_armor_piercing = 0.01
@@ -4027,10 +5654,20 @@ early_ship_hull_carrier = {
 		}
 		
 		ai_will_do = {
-			factor = 0
+			factor = 0.5
 			modifier = {
-
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
 			}
+		}
+		categories = {
+			naval_equipment
+			naval_shell_tech
 		}
 	}
 
@@ -4087,6 +5724,10 @@ early_ship_hull_carrier = {
 			lg_attack = 0.03
 			lg_armor_piercing = 0.01
 		}
+		battle_carrier = {
+			lg_attack = 0.03
+			lg_armor_piercing = 0.01
+		}
 		carrier = {
 			lg_attack = 0.03
 			lg_armor_piercing = 0.01
@@ -4098,10 +5739,20 @@ early_ship_hull_carrier = {
 		}
 		
 		ai_will_do = {
-			factor = 0
+			factor = 0.5
 			modifier = {
-
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
 			}
+		}
+		categories = {
+			naval_equipment
+			naval_shell_tech
 		}
 	}	
 
@@ -4115,7 +5766,6 @@ early_ship_hull_carrier = {
 		}
 		categories = {
 			naval_equipment
-			ship_modules_tech
 		}	
 	}	
 	submarine_antiair2 = {
@@ -4126,7 +5776,6 @@ early_ship_hull_carrier = {
 		}
 		categories = {
 			naval_equipment
-			ship_modules_tech
 		}	
 	}	
 	submarine_antiair3 = {
@@ -4137,7 +5786,6 @@ early_ship_hull_carrier = {
 		}
 		categories = {
 			naval_equipment
-			ship_modules_tech
 		}	
 	}	
 	submarine_antiair4 = {
@@ -4148,7 +5796,6 @@ early_ship_hull_carrier = {
 		}
 		categories = {
 			naval_equipment
-			ship_modules_tech
 		}	
 	}				
 	submarine_antiair5 = {
@@ -4158,7 +5805,6 @@ early_ship_hull_carrier = {
 		}
 		categories = {
 			naval_equipment
-			ship_modules_tech
 		}	
 	}	
 
@@ -4202,11 +5848,32 @@ early_ship_hull_carrier = {
 				has_war = yes
 				factor = 2
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}
+			modifier = {
+				has_navy_size = {
+					size < 1
+				}
+				factor = 0
+			}						
+			modifier = {
+				has_navy_size = {
+					size > 10
+				}
+				factor = 4
+			}			
 		}
 		
 		categories = {
 			naval_equipment
-			ship_modules_tech
+			damage_control_tech
 		}
 	}
 
@@ -4242,11 +5909,32 @@ early_ship_hull_carrier = {
 				has_war = yes
 				factor = 2
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
+			modifier = {
+				has_navy_size = {
+					size < 1
+				}
+				factor = 0
+			}						
+			modifier = {
+				has_navy_size = {
+					size > 10
+				}
+				factor = 4
+			}						
 		}
 		
 		categories = {
 			naval_equipment
-			ship_modules_tech
+			damage_control_tech
 		}
 	}
 
@@ -4284,11 +5972,32 @@ early_ship_hull_carrier = {
 				has_war = yes
 				factor = 2
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
+			modifier = {
+				has_navy_size = {
+					size < 1
+				}
+				factor = 0
+			}						
+			modifier = {
+				has_navy_size = {
+					size > 10
+				}
+				factor = 4
+			}					
 		}
 		
 		categories = {
 			naval_equipment
-			ship_modules_tech
+			damage_control_tech
 		}
 	}
 
@@ -4316,6 +6025,10 @@ early_ship_hull_carrier = {
 			hg_attack = 0.05
 		}
  ######## Mod Start ########
+		battle_carrier = {
+			lg_attack = 0.05
+			hg_attack = 0.05
+		}
 		submarine_heavy = {
 			lg_attack = 0.05
 			hg_attack = 0.05
@@ -4340,11 +6053,31 @@ early_ship_hull_carrier = {
 				tag = JAP
 				factor = 5
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
+			modifier = {
+				has_navy_size = {
+					size < 1
+				}
+				factor = 0
+			}						
+			modifier = {
+				has_navy_size = {
+					size > 10
+				}
+				factor = 4
+			}						
 		}
 		
 		categories = {
 			naval_equipment
-			ship_modules_tech
 		}
 	}
 
@@ -4366,6 +6099,10 @@ early_ship_hull_carrier = {
 			hg_attack = 0.1
 		}
  ######## Mod Start ########
+		battle_carrier = {
+			lg_attack = 0.1
+			hg_attack = 0.1
+		}
 		cruiser_carrier = {
 			lg_attack = 0.05
 			hg_attack = 0.05
@@ -4397,11 +6134,31 @@ early_ship_hull_carrier = {
 				tag = JAP
 				factor = 5
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
+			modifier = {
+				has_navy_size = {
+					size < 1
+				}
+				factor = 0
+			}						
+			modifier = {
+				has_navy_size = {
+					size > 10
+				}
+				factor = 4
+			}						
 		}
 		
 		categories = {
 			naval_equipment
-			ship_modules_tech
 		}
 	}
 
@@ -4417,6 +6174,10 @@ early_ship_hull_carrier = {
 			hg_attack = 0.15
 		}
  ######## Mod Start ########
+		battle_carrier = {
+			lg_attack = 0.15
+			hg_attack = 0.15
+		}
 		cruiser_carrier = {
 			lg_attack = 0.05
 			hg_attack = 0.05
@@ -4467,11 +6228,32 @@ early_ship_hull_carrier = {
 				tag = JAP
 				factor = 5
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
+			modifier = {
+				has_navy_size = {
+					size < 1
+				}
+				factor = 0
+			}						
+			modifier = {
+				has_navy_size = {
+					size > 10
+		}
+				has_war = yes
+				factor = 4
+			}				
 		}
 		
 		categories = {
 			naval_equipment
-			ship_modules_tech
 		}
 	}
 
@@ -4530,6 +6312,15 @@ early_ship_hull_carrier = {
 				is_major = no
 				factor = 2
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
 		}
 		
 		categories = {
@@ -4570,13 +6361,21 @@ early_ship_hull_carrier = {
 				}
 				factor = 6
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
 		}
 		
 		categories = {
 			naval_mines
 			naval_minelaying
 			naval_equipment
-			ship_modules_tech
 		}
 	}
 
@@ -4606,13 +6405,21 @@ early_ship_hull_carrier = {
 				}
 				factor = 6
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
 		}
 		
 		categories = {
 			naval_mines
 			naval_minelaying
 			naval_equipment
-			ship_modules_tech
 		}
 	}
 
@@ -4659,6 +6466,15 @@ early_ship_hull_carrier = {
 				is_major = no
 				factor = 2
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
 		}
 		
 		categories = {
@@ -4692,6 +6508,15 @@ early_ship_hull_carrier = {
 				}
 				factor = 5
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
 		}
 		
 		categories = {
@@ -4732,6 +6557,15 @@ early_ship_hull_carrier = {
 				}
 				factor = 5
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
 		}
 		
 		categories = {
@@ -4753,6 +6587,15 @@ early_ship_hull_carrier = {
 		category_tac_bomber = { 
 			mines_planting = 0.08 
 		}
+
+		category_flying_boat = { 
+			mines_sweeping = 0.08 
+		}
+
+		category_medium_maritime = { 
+			mines_sweeping = 0.08 
+		}
+
 		category_strat_bomber = { 
 			mines_planting = 0.13 
 		}
@@ -4772,6 +6615,15 @@ early_ship_hull_carrier = {
 				}
 				factor = 7
 			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}			
 		}
 		
 		categories = {
@@ -4824,6 +6676,18 @@ early_ship_hull_carrier = {
 		}
 		
 		category_tac_bomber = { 
+			mines_sweeping = 0.15 
+		}
+		
+		category_flying_boat = { 
+			mines_sweeping = 0.15 
+		}
+
+		category_medium_maritime = { 
+			mines_sweeping = 0.15 
+		}
+
+		category_strat_bomber = { 
 			mines_sweeping = 0.15 
 		}
 
@@ -4909,8 +6773,6 @@ early_ship_hull_carrier = {
 		enable_equipments = {
 			floating_harbor_equipment_1
 		}
-		force_use_small_tech_layout = yes
-		show_equipment_icon = yes
 		
 		research_cost = 2
 		start_year = 1940
@@ -5039,6 +6901,19 @@ early_ship_hull_carrier = {
 			factor = 1
 			
 			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}
+			modifier = {
+				factor = 4
+				has_tech_bonus = {
+    				category = ca_tech
+				}
 			}
 		}
 		
@@ -5070,6 +6945,19 @@ early_ship_hull_carrier = {
 			factor = 1
 			
 			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}
+			modifier = {
+				factor = 4
+				has_tech_bonus = {
+    				category = cl_tech
+				}
 			}
 		}
 		
@@ -5089,7 +6977,7 @@ early_ship_hull_carrier = {
 		}
 
 		research_cost = 1
-		start_year = 1936
+		start_year = 1900
 
 		xp_research_type = navy
 		xp_boost_cost = 25
@@ -5097,14 +6985,21 @@ early_ship_hull_carrier = {
 
 		#set at gamestart
 		allow = {
-			always = no
+			always = yes
 		}
 ######## Mod Start ########
 		
 		ai_will_do = {
-			factor = 1
+			factor = 0
 			
 			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
 			}
 		}
 		
@@ -5137,9 +7032,22 @@ early_ship_hull_carrier = {
 ######## Mod Start ########
 		
 		ai_will_do = {
-			factor = 1
+			factor = 0.5
 			
 			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}
+			modifier = {
+				factor = 4
+				has_tech_bonus = {
+    				category = ca_tech
+				}
 			}
 		}
 		

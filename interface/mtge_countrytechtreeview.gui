@@ -9,7 +9,7 @@ guiTypes = {
 	containerWindowType = {
 		name = "techtree_mtgnavalfolder_item"
 		position = { x=-131 y=1 }
-		size = { width = 204 height = 72 }
+		size = { width = 800 height = 72 }
 		clipping = no
 
 		background = {

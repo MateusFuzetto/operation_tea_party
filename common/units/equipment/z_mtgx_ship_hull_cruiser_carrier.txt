@@ -13,7 +13,7 @@ equipments = {
 		module_slots = {
 			fixed_ship_battery_slot = {
 				required = yes
-				allowed_module_categories = { ship_light_battery ship_medium_battery}
+				allowed_module_categories = { ship_light_battery ship_medium_battery light_ship_cruise_missiles medium_ship_cruise_missiles }
 			}
 			fixed_ship_anti_air_slot = {
 				required = no
@@ -49,6 +49,8 @@ equipments = {
 					ship_secondaries
 					ship_airplane_launcher
 					ship_mine_layer
+					light_ship_cruise_missiles
+					medium_ship_cruise_missiles
 				}
 			}
 			mid_2_custom_slot = mid_1_custom_slot
@@ -61,7 +63,9 @@ equipments = {
 					ship_airplane_launcher
 					ship_cfi_rear_deck_space					
 					ship_mine_layer
-					ship_depth_charge				
+					ship_depth_charge
+					light_ship_cruise_missiles
+					medium_ship_cruise_missiles					
 				}
 			}
 		}
@@ -127,7 +131,7 @@ equipments = {
 		archetype = ship_hull_cruiser_carrier
 		priority = 1900
 
-		can_convert_from = { ship_hull_cruiser_1 ship_hull_cruiser_coastal_defense_ship ship_hull_cruiser_2 ship_hull_cruiser_panzerschiff ship_hull_cruiser_3 ship_hull_torpedo_cruiser ship_hull_cruiser_4 }
+		can_convert_from = { ship_hull_cruiser_1 ship_hull_cruiser_coastal_defense_ship ship_hull_cruiser_2 ship_hull_cruiser_panzerschiff ship_hull_cruiser_3 ship_hull_torpedo_cruiser ship_hull_cruiser_4 ship_hull_cruiser_5 }
 		
 		module_slots = inherit
 	}
@@ -139,7 +143,7 @@ equipments = {
 		priority = 1800
 		parent = ship_hull_cruiser_carrier_1
 
-		can_convert_from = { ship_hull_cruiser_2 ship_hull_cruiser_panzerschiff ship_hull_cruiser_3 ship_hull_torpedo_cruiser ship_hull_cruiser_4 }
+		can_convert_from = { ship_hull_cruiser_2 ship_hull_cruiser_panzerschiff ship_hull_cruiser_3 ship_hull_torpedo_cruiser ship_hull_cruiser_4 ship_hull_cruiser_5 }
 
 		manpower = 800
 		naval_speed = 25
@@ -170,6 +174,8 @@ equipments = {
 					ship_light_battery
 					ship_medium_battery
 					ship_anti_air
+					light_ship_cruise_missiles
+					medium_ship_cruise_missiles
 				}
 			}		
 			mid_1_custom_slot = {
@@ -178,7 +184,9 @@ equipments = {
 					ship_light_battery
 					ship_medium_battery						
 					ship_anti_air
-					ship_secondaries				
+					ship_secondaries
+					light_ship_cruise_missiles
+					medium_ship_cruise_missiles
 				}
 			}
 			mid_2_custom_slot = {
@@ -217,7 +225,7 @@ equipments = {
 		priority = 1900
 		parent = ship_hull_cruiser_carrier_2
 
-		can_convert_from = { ship_hull_cruiser_3 ship_hull_torpedo_cruiser ship_hull_cruiser_4 }
+		can_convert_from = { ship_hull_cruiser_3 ship_hull_torpedo_cruiser ship_hull_cruiser_4 ship_hull_cruiser_5 }
 
 		manpower = 1200
 		naval_speed = 28
@@ -250,6 +258,8 @@ equipments = {
 					ship_light_battery
 					ship_medium_battery
 					ship_anti_air
+					light_ship_cruise_missiles
+					medium_ship_cruise_missiles
 				}
 			}		
 			mid_1_custom_slot = {
@@ -265,7 +275,9 @@ equipments = {
 					ship_cfii_mid_deck_space
 					ship_light_battery
 					ship_medium_battery
-					ship_anti_air					
+					ship_anti_air
+					light_ship_cruise_missiles
+					medium_ship_cruise_missiles
 				}
 			}	
 			mid_3_custom_slot = {
@@ -282,7 +294,9 @@ equipments = {
 					ship_medium_battery
 					ship_anti_air
 					ship_mine_layer
-					ship_depth_charge	
+					ship_depth_charge
+					light_ship_cruise_missiles
+					medium_ship_cruise_missiles
 				}
 			}
 			rear_2_custom_slot = {
@@ -291,7 +305,7 @@ equipments = {
 					ship_secondaries
 					ship_anti_air
 					ship_mine_layer
-					ship_depth_charge	
+					ship_depth_charge
 				}
 			}
 		}
@@ -309,7 +323,7 @@ equipments = {
 		priority = 1950
 		parent = ship_hull_cruiser_carrier_3
 
-		can_convert_from = { ship_hull_cruiser_4 }
+		can_convert_from = { ship_hull_cruiser_4 ship_hull_cruiser_5 }
 
 		manpower = 1200
 		naval_speed = 30
@@ -344,6 +358,61 @@ equipments = {
 					ship_secondaries					
 					ship_anti_air					
 					ship_fuel_tank
+					light_ship_cruise_missiles
+				}
+			}																	
+			rear_1_custom_slot = inherit
+			rear_2_custom_slot = inherit
+		}
+		default_modules = {	
+			fixed_ship_engine_slot = cruiser_ship_engine_3		
+			mid_4_custom_slot = empty	
+		}	
+	}
+	
+	ship_hull_cruiser_carrier_5 = {
+		year = 1948
+		visual_level = 1
+		archetype = ship_hull_cruiser_carrier
+		priority = 1950
+		parent = ship_hull_cruiser_carrier_4
+
+		can_convert_from = { ship_hull_cruiser_5 }
+
+		manpower = 1330
+		naval_speed = 33
+		reliability = 0.92
+		build_cost_ic = 2500
+		naval_range = 5000
+		max_strength = 180
+
+		armor_value = 8
+
+		carrier_size = 0
+
+		resources = {
+			steel = 3
+		}
+		module_slots = {			
+			fixed_ship_anti_air_slot = inherit
+			fixed_ship_fire_control_system_slot = inherit
+			fixed_ship_radar_slot = inherit
+			fixed_ship_engine_slot = inherit
+			fixed_ship_secondaries_slot = inherit
+			fixed_ship_armor_slot = inherit
+			front_1_custom_slot = inherit	
+			mid_1_custom_slot = inherit
+			mid_2_custom_slot = inherit
+			mid_3_custom_slot = inherit
+			mid_4_custom_slot = {
+				required = no
+				allowed_module_categories = {
+					ship_seaplane_tender							
+					ship_light_battery
+					ship_secondaries					
+					ship_anti_air					
+					ship_fuel_tank
+					light_ship_cruise_missiles
 				}
 			}																	
 			rear_1_custom_slot = inherit

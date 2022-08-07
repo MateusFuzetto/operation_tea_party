@@ -1,0 +1,281 @@
+technologies = {
+
+	antiair_c = {
+
+		enable_equipments = {
+			anti_air_equipment_x
+		}
+		enable_equipment_modules = { 
+			ship_anti_air_5
+			submarine_anti_air_5
+			submarine_cv_anti_air_5
+		}
+		
+		static_anti_air_damage_factor = 0.1	
+
+		path = {
+			leads_to_tech = antiair_d
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.1
+
+		start_year = 1948
+		
+		folder = {
+			name = artillery_folder
+			position = { x = -3 y = 18 }
+		}
+		
+		ai_will_do = {
+			factor = 1.1
+		}
+		
+		categories = {
+			artillery
+			anti_air_tech
+		}
+	}
+	
+	nuke_naval = {
+	
+		start_year = 1948
+		research_cost = 7
+		
+		research_speed_factor = 0.02
+		nuclear_production_factor = 0.15
+		
+		folder = {
+			name = electronics_folder
+			position = { x = 9 y = 23 }
+		}
+		
+        allow = {
+            nuclear_reactor > 3
+        }
+
+		on_research_complete = {
+			custom_effect_tooltip = TECH_REQUIRES_NUCLEAR_REACTOR_TOOLTIP
+		}
+
+		path = {
+			leads_to_tech = nukes_2 
+			research_cost_coeff = 1
+		}
+
+		enable_equipment_modules = {
+			carrier_ship_engine_nuclear_1
+			heavy_ship_engine_nuclear_1
+			super_heavy_ship_engine_nuclear_1
+			sub_ship_engine_nuclear_1
+		}		
+		
+		ai_will_do = {
+			factor = 5
+		}
+		
+		categories = {
+			nuclear
+		}
+	}
+	
+	nukes_3 = {
+	
+		start_year = 1955
+		research_cost = 7
+		
+		research_speed_factor = 0.075
+		nuclear_production_factor = 0.15
+
+
+		folder = {
+			name = electronics_folder
+			position = { x = 9 y = 30 }
+		}
+		
+		path = {
+			leads_to_tech = nuke_rocket_engines 
+			research_cost_coeff = 1
+		}
+		
+		enable_equipment_modules = {
+			light_ship_engine_nuclear_1
+			cruiser_ship_engine_nuclear_1
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			nuclear
+		}
+	}
+	
+	
+	future_radar = {
+		
+		air_interception_detect_factor = 0.1
+
+		path = {
+			leads_to_tech = future_radar_2
+			research_cost_coeff = 1
+		}
+		
+		enable_equipment_modules = { 
+			ship_radar_5
+		}
+
+		static_anti_air_hit_chance_factor = 0.15
+		research_cost = 2.5
+		start_year = 1945
+		
+		folder = {
+			name = electronics_folder
+			position = { x = -2 y = 20 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			electronics
+			radar_tech
+		}
+	}
+	
+	
+
+	future_computing_machine = {
+
+		# small boost to research speed
+		research_speed_factor = 0.1
+		
+		path = {
+			leads_to_tech = future_encryption 
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = future_decryption 
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = future_computing_machine_2
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = latewar_fire_control_system
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2.5
+		start_year = 1944
+		
+		folder = {
+			name = electronics_folder
+			position = { x = 4 y = 18 }
+		}
+		
+		ai_will_do = {
+			factor = 3
+		}
+		
+		categories = {
+			electronics
+			encryption_tech
+			decryption_tech
+			computing_tech
+		}
+	}
+	
+	advanced_fire_control_system = {
+
+		enable_equipment_modules = { 
+			ship_fire_control_system_3
+		}
+		allow_branch = {
+			has_dlc = "Man the Guns"
+		}
+		
+		research_cost = 1
+		
+		folder = {
+			name = electronics_folder
+			position = { x = 2 y = 12 }
+		}
+		
+		ai_will_do = {
+			factor = 0.75
+			modifier = {
+				OR = {
+					tag = ENG
+					tag = USA
+					tag = JAP
+				}
+				factor = 3
+			}
+			modifier = {
+				OR = {
+					can_research = latewar_fire_control_system
+					has_tech = latewar_fire_control_system
+				}
+				factor = 0
+			}
+			
+		}
+		
+		categories = {
+			electronics
+			computing_tech
+			naval_equipment
+		}
+	}
+	
+	latewar_fire_control_system = {
+
+		enable_equipment_modules = { 
+			ship_fire_control_system_5
+		}
+		allow_branch = {
+			has_dlc = "Man the Guns"
+		}
+		
+		
+		research_cost = 1
+		
+		folder = {
+			name = electronics_folder
+			position = { x = 2 y = 20 }
+		}
+		
+		ai_will_do = {
+			factor = 0.75
+			modifier = {
+				OR = {
+					tag = ENG
+					tag = USA
+					tag = JAP
+				}
+				factor = 3
+			}
+			modifier = {
+				not = {
+					any_controlled_state = {
+							 
+						is_coastal = yes
+					}
+				}
+				factor = 0.2
+			}
+		}
+		
+		categories = {
+			electronics
+			computing_tech
+			naval_equipment
+		}
+	}
+}

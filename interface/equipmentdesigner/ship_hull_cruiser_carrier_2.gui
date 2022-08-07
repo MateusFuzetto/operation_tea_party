@@ -132,6 +132,53 @@ guiTypes = {
 						position = { x=408 y=-1 }
 					}
 				}
+				
+				#Missiles
+				containerWindowType = {
+					name = "light_ship_cruise_missiles"
+					position = { x=0 y=0 }
+					size = { width=100% height=100% }
+					
+					iconType = {
+						name = "image"
+						spriteType = "GFX_SM_front_light_ssm"
+						position = { x=390 y=0 }
+					}
+				}
+				containerWindowType = {
+					name = "light_ship_cruise_missiles@highlight"
+					position = { x=0 y=0 }
+					size = { width=100% height=100% }
+					
+					iconType = {
+						name = "highlight"
+						spriteType = "GFX_SM_front_light_ssm@highlight"
+						position = { x=390 y=0 }
+					}
+				}
+				
+				containerWindowType = {
+					name = "medium_ship_cruise_missiles"
+					position = { x=0 y=0 }
+					size = { width=100% height=100% }
+					
+					iconType = {
+						name = "image"
+						spriteType = "GFX_SM_front_medium_ssm"
+						position = { x=390 y=0 }
+					}
+				}
+				containerWindowType = {
+					name = "medium_ship_cruise_missiles@highlight"
+					position = { x=0 y=0 }
+					size = { width=100% height=100% }
+					
+					iconType = {
+						name = "highlight"
+						spriteType = "GFX_SM_front_medium_ssm@highlight"
+						position = { x=390 y=0 }
+					}
+				}
 			}	
 
 ################# MODULE SLOT: Battery #################
@@ -184,6 +231,54 @@ guiTypes = {
 						name = "highlight"
 						spriteType = "GFX_SM_cruiser_hull_front_light_battery@highlight"
 						position = { x=365 y=0 }
+					}
+				}
+				
+				#Missiles
+				containerWindowType = {
+					name = "light_ship_cruise_missiles"
+					position = { x=0 y=0 }
+					size = { width=100% height=100% }
+					
+					iconType = {
+						name = "image"
+						spriteType = "GFX_SM_front_light_ssm"
+						position = { x=365 y=2 }
+					}
+				}
+
+				containerWindowType = {
+					name = "light_ship_cruise_missiles@highlight"
+					position = { x=0 y=0 }
+					size = { width=100% height=100% }
+					
+					iconType = {
+						name = "highlight"
+						spriteType = "GFX_SM_front_light_ssm@highlight"
+						position = { x=365 y=2 }
+					}
+				}
+				
+				containerWindowType = {
+					name = "medium_ship_cruise_missiles"
+					position = { x=0 y=0 }
+					size = { width=100% height=100% }
+					
+					iconType = {
+						name = "image"
+						spriteType = "GFX_SM_front_medium_ssm"
+						position = { x=365 y=2 }
+					}
+				}
+				containerWindowType = {
+					name = "medium_ship_cruise_missiles@highlight"
+					position = { x=0 y=0 }
+					size = { width=100% height=100% }
+					
+					iconType = {
+						name = "highlight"
+						spriteType = "GFX_SM_front_medium_ssm@highlight"
+						position = { x=365 y=2 }
 					}
 				}
 			}
@@ -577,6 +672,53 @@ guiTypes = {
 						position = { x=250 y=1 }
 					}
 				}
+				
+				#Missiles
+				containerWindowType = {
+					name = "light_ship_cruise_missiles"
+					position = { x=0 y=0 }
+					size = { width=100% height=100% }
+					
+					iconType = {
+						name = "image"
+						spriteType = "GFX_SM_front_light_ssm"
+						position = { x=340 y=0 }
+					}
+				}
+				containerWindowType = {
+					name = "light_ship_cruise_missiles@highlight"
+					position = { x=0 y=0 }
+					size = { width=100% height=100% }
+					
+					iconType = {
+						name = "highlight"
+						spriteType = "GFX_SM_front_light_ssm@highlight"
+						position = { x=340 y=0 }
+					}
+				}
+				
+				containerWindowType = {
+					name = "medium_ship_cruise_missiles"
+					position = { x=0 y=0 }
+					size = { width=100% height=100% }
+					
+					iconType = {
+						name = "image"
+						spriteType = "GFX_SM_front_medium_ssm"
+						position = { x=340 y=0 }
+					}
+				}
+				containerWindowType = {
+					name = "medium_ship_cruise_missiles@highlight"
+					position = { x=0 y=0 }
+					size = { width=100% height=100% }
+					
+					iconType = {
+						name = "highlight"
+						spriteType = "GFX_SM_front_medium_ssm@highlight"
+						position = { x=340 y=0 }
+					}
+				}
 			}
 
 ################# MODULE SLOT: Custom, Middle #2 #################
@@ -654,7 +796,54 @@ guiTypes = {
 						spriteType = "GFX_SM_ship_cfii_mid_deck_space@highlight"
 						position = { x=210 y=0 }
 					}
-				}				
+				}
+
+				#Missiles
+				containerWindowType = {
+					name = "light_ship_cruise_missiles"
+					position = { x=0 y=0 }
+					size = { width=100% height=100% }
+					
+					iconType = {
+						name = "image"
+						spriteType = "GFX_SM_rear_light_ssm"
+						position = { x=157 y=0 }
+					}
+				}
+				containerWindowType = {
+					name = "light_ship_cruise_missiles@highlight"
+					position = { x=0 y=0 }
+					size = { width=100% height=100% }
+					
+					iconType = {
+						name = "highlight"
+						spriteType = "GFX_SM_rear_light_ssm@highlight"
+						position = { x=157 y=0 }
+					}
+				}
+				
+				containerWindowType = {
+					name = "medium_ship_cruise_missiles"
+					position = { x=0 y=0 }
+					size = { width=100% height=100% }
+					
+					iconType = {
+						name = "image"
+						spriteType = "GFX_SM_rear_medium_ssm"
+						position = { x=157 y=0 }
+					}
+				}
+				containerWindowType = {
+					name = "medium_ship_cruise_missiles@highlight"
+					position = { x=0 y=0 }
+					size = { width=100% height=100% }
+					
+					iconType = {
+						name = "highlight"
+						spriteType = "GFX_SM_rear_medium_ssm@highlight"
+						position = { x=157 y=0 }
+					}
+				}
 			}	
 
 ################# MODULE SLOT: Custom, Rear #1 #################
@@ -735,7 +924,54 @@ guiTypes = {
 						spriteType = "GFX_SM_cruiser_carrier_hull_iii_mid_4_seaplane_tender@highlight"
 						position = { x=150 y=-3 }
 					}
-				}				
+				}
+
+				#Missiles
+				containerWindowType = {
+					name = "light_ship_cruise_missiles"
+					position = { x=0 y=0 }
+					size = { width=100% height=100% }
+					
+					iconType = {
+						name = "image"
+						spriteType = "GFX_SM_rear_light_ssm"
+						position = { x=127 y=0 }
+					}
+				}
+				containerWindowType = {
+					name = "light_ship_cruise_missiles@highlight"
+					position = { x=0 y=0 }
+					size = { width=100% height=100% }
+					
+					iconType = {
+						name = "highlight"
+						spriteType = "GFX_SM_rear_light_ssm@highlight"
+						position = { x=127 y=0 }
+					}
+				}
+				
+				containerWindowType = {
+					name = "medium_ship_cruise_missiles"
+					position = { x=0 y=0 }
+					size = { width=100% height=100% }
+					
+					iconType = {
+						name = "image"
+						spriteType = "GFX_SM_rear_medium_ssm"
+						position = { x=127 y=0 }
+					}
+				}
+				containerWindowType = {
+					name = "medium_ship_cruise_missiles@highlight"
+					position = { x=0 y=0 }
+					size = { width=100% height=100% }
+					
+					iconType = {
+						name = "highlight"
+						spriteType = "GFX_SM_rear_medium_ssm@highlight"
+						position = { x=127 y=0 }
+					}
+				}
 			}	
 		}
 	}

@@ -1,0 +1,409 @@
+
+mtge_naval_light_cruiser = {
+	category = naval
+	
+	blocked_for = {	}
+	
+	available_for = { }
+
+	roles = {
+		naval_cruiser_light
+	}
+	
+	priority = {
+		factor = 500
+		modifier = {
+			factor = 10
+			is_major = no
+		}
+	}
+	
+	mtge_torpedo_cruiser = {
+	
+		priority = {
+			factor = 100
+			modifier = {
+				factor = 10
+				is_major = no
+			}
+		}
+		
+		role_icon_index = 2
+
+		target_variant = {
+			match_value = 1000.0
+			
+			type = ship_hull_torpedo_cruiser
+			modules = {
+				fixed_ship_battery_slot = ship_light_battery
+				fixed_ship_fire_control_system_slot = ship_fire_control_system
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = cruiser_ship_engine
+				fixed_ship_armor_slot = ship_cruiser_armor
+				fixed_ship_secondaries_slot = empty
+				front_1_custom_slot = empty
+				mid_1_custom_slot = {
+					any_of = { ship_torpedo ship_anti_air }
+				}
+				mid_2_custom_slot = {
+					any_of = { ship_torpedo ship_anti_air }
+				}
+				rear_1_custom_slot = ship_torpedo
+				rear_2_custom_slot = empty
+			}
+		}
+		
+		allowed_modules = {
+			ship_light_battery
+			ship_secondaries
+			ship_torpedo
+			ship_anti_air
+			ship_depth_charge
+			ship_fire_control_system
+			cruiser_ship_engine
+			ship_radar
+			ship_sonar
+			ship_airplane_launcher
+			light_ship_cruise_missiles
+			medium_ship_cruise_missiles
+		}
+	}
+}
+
+mtge_naval_cruiser_panzerschiff = {
+	category = naval
+	
+	blocked_for = {
+		GER
+	}
+	
+	available_for = {
+		
+	}
+	
+	roles = {
+		naval_cruiser_heavy
+	}
+	
+	priority = {
+		factor = 5
+	}
+	mtge_panzerschiff_basic = {
+	
+		priority = {
+			factor = 1
+			modifier = {
+				factor = 1
+			}
+		}
+		role_icon_index = 1
+		
+		target_variant = {
+			match_value = 2000.0
+			
+			type = ship_hull_cruiser_panzerschiff
+			modules = {
+				fixed_ship_battery_slot = ship_heavy_battery
+				fixed_ship_secondaries_slot = ship_secondaries
+				fixed_ship_anti_air_slot = ship_anti_air
+				fixed_ship_armor_slot = ship_armor_cruiser
+				fixed_ship_fire_control_system_slot = ship_fire_control_system
+				fixed_ship_engine_slot = cruiser_ship_engine
+				front_1_custom_slot = empty
+				mid_1_custom_slot = ship_airplane_launcher
+				rear_1_custom_slot = ship_torpedo
+			}
+		}
+		
+		allowed_modules = {
+			ship_heavy_battery
+			ship_anti_air
+			ship_medium_battery
+			ship_radar
+			ship_torpedo
+			ship_airplane_launcher
+			light_ship_cruise_missiles
+			medium_ship_cruise_missiles
+		}
+	}
+	mtge_panzerschiff_basic_upgrade = {
+	
+		priority = {
+			factor = 5
+			modifier = {
+				factor = 5
+				has_war = yes
+			}
+		}
+		role_icon_index = 1
+		
+		target_variant = {
+			match_value = 2200.0
+			
+			type = ship_hull_cruiser_panzerschiff
+			modules = {
+				fixed_ship_battery_slot = ship_heavy_battery
+				fixed_ship_secondaries_slot = ship_secondaries
+				fixed_ship_anti_air_slot = {
+					any_of = { ship_anti_air }
+					upgrade > current
+				}
+				fixed_ship_armor_slot = ship_armor_cruiser
+				fixed_ship_fire_control_system_slot = ship_fire_control_system
+				fixed_ship_engine_slot = cruiser_ship_engine
+				front_1_custom_slot = {
+					any_of = { ship_anti_air }
+					upgrade > current
+				}
+				#mid_1_custom_slot = ship_airplane_launcher
+				mid_2_custom_slot = {
+					any_of = { ship_anti_air }
+					upgrade > current
+				}
+				rear_1_custom_slot = ship_torpedo
+			}
+		}
+		
+		allowed_modules = {
+			ship_heavy_battery
+			ship_anti_air
+			ship_medium_battery
+			ship_radar
+			ship_torpedo
+			ship_airplane_launcher
+			light_ship_cruise_missiles
+			medium_ship_cruise_missiles
+		}
+	}
+}
+
+mtge_naval_cruiser_coastal_defense_ship = {
+	category = naval
+	
+	blocked_for = {
+		
+	}
+	
+	available_for = {
+		
+	}
+	
+	roles = {
+		naval_cruiser_heavy
+	}
+	
+	priority = {
+		factor = 5
+	}
+	mteg_coastal_defense_ship = {
+	
+		priority = {
+			factor = 5
+			modifier = {
+				has_tech = latewar_ship_hull_cruiser
+				factor = 0
+			}
+		}
+		role_icon_index = 1
+		
+		target_variant = {
+			match_value = 2000.0
+			
+			type = ship_hull_cruiser_coastal_defense_ship
+			modules = {
+				fixed_ship_battery_slot = ship_heavy_battery
+				fixed_ship_secondaries_slot = ship_secondaries
+				fixed_ship_anti_air_slot = ship_anti_air
+				fixed_ship_armor_slot = ship_armor_cruiser
+				fixed_ship_fire_control_system_slot = ship_fire_control_system
+				fixed_ship_engine_slot = cruiser_ship_engine
+				#front_1_custom_slot = empty
+				mid_1_custom_slot = empty
+				#mid_2_custom_slot = empty
+				rear_1_custom_slot = empty
+			}
+		}
+		
+		allowed_modules = {
+			ship_heavy_battery
+			ship_anti_air
+			ship_medium_battery
+			ship_radar
+			#ship_torpedo
+			#ship_airplane_launcher
+			light_ship_cruise_missiles
+			medium_ship_cruise_missiles
+		}
+	}
+	mteg_coastal_defense_ship_upgrade = {
+	
+		priority = {
+			factor = 5
+			modifier = {
+				factor = 5
+				has_war = yes
+			}
+		}
+		role_icon_index = 1
+		
+		target_variant = {
+			match_value = 2200.0
+			
+			type = ship_hull_cruiser_coastal_defense_ship
+			modules = {
+				fixed_ship_battery_slot = ship_heavy_battery
+				fixed_ship_secondaries_slot = ship_secondaries
+				fixed_ship_anti_air_slot = {
+					any_of = { ship_anti_air }
+					upgrade > current
+				}
+				fixed_ship_armor_slot = ship_armor_cruiser
+				fixed_ship_fire_control_system_slot = ship_fire_control_system
+				fixed_ship_engine_slot = cruiser_ship_engine
+				front_1_custom_slot = {
+					any_of = { ship_anti_air }
+					upgrade > current
+				}
+				mid_1_custom_slot = empty
+				mid_2_custom_slot = {
+					any_of = { ship_anti_air }
+					upgrade > current
+				}
+				rear_1_custom_slot = empty
+			}
+		}
+		
+		allowed_modules = {
+			ship_heavy_battery
+			ship_anti_air
+			ship_medium_battery
+			ship_radar
+			#ship_torpedo
+			#ship_airplane_launcher
+			light_ship_cruise_missiles
+			medium_ship_cruise_missiles
+		}
+	}
+}
+
+mtge_naval_large_cruiser = {
+	category = naval
+	
+	blocked_for = {
+		
+	}
+	
+	available_for = {
+		
+	}
+	
+	roles = {
+		naval_cruiser_heavy
+	}
+	
+	priority = {
+		factor = 5
+	}
+	mtge_naval_large_cruiser = {
+	
+		priority = {
+			factor = 20
+			modifier = {
+				factor = 1
+			}
+		}
+		role_icon_index = 1
+		
+		target_variant = {
+			match_value = 2000.0
+			
+			type = ship_hull_cruiser_5
+			modules = {
+				fixed_ship_battery_slot = {
+					any_of = { ship_heavy_battery ship_medium_battery medium_ship_cruise_missiles }
+				}
+				fixed_ship_secondaries_slot = ship_secondaries
+				fixed_ship_anti_air_slot = ship_anti_air
+				fixed_ship_armor_slot = ship_armor_cruiser
+				fixed_ship_fire_control_system_slot = ship_fire_control_system
+				fixed_ship_engine_slot = cruiser_ship_engine
+				fixed_ship_radar_slot = ship_radar
+				front_1_custom_slot = empty
+				#mid_1_custom_slot = ship_airplane_launcher
+				mid_2_custom_slot = empty
+				rear_1_custom_slot = {
+					any_of = { ship_heavy_battery ship_medium_battery  }
+				}
+			}
+		}
+		
+		allowed_modules = {
+			ship_light_battery
+			ship_heavy_battery
+			ship_medium_battery
+			ship_radar
+			ship_torpedo
+			ship_airplane_launcher
+			ship_depth_charge
+			ship_anti_air
+			light_ship_cruise_missiles
+			medium_ship_cruise_missiles
+		}
+	}
+	mtge_naval_large_cruiser_upgrade = {
+	
+		priority = {
+			factor = 5
+			modifier = {
+				factor = 5
+				has_war = yes
+			}
+		}
+		role_icon_index = 1
+		
+		target_variant = {
+			match_value = 2200.0
+			
+			type = ship_hull_cruiser_5
+			modules = {
+				fixed_ship_battery_slot = {
+					any_of = { ship_medium_battery ship_heavy_battery medium_ship_cruise_missiles }
+				}
+				fixed_ship_secondaries_slot = ship_secondaries
+				fixed_ship_anti_air_slot = {
+					any_of = { ship_anti_air }
+					upgrade > current
+				}
+				fixed_ship_armor_slot = ship_armor_cruiser
+				fixed_ship_fire_control_system_slot = ship_fire_control_system
+				fixed_ship_engine_slot = cruiser_ship_engine
+				fixed_ship_radar_slot = {
+					any_of = { ship_radar }
+					upgrade > current
+				} 
+				front_1_custom_slot = {
+					any_of = { ship_anti_air ship_secondaries }
+					upgrade > current
+				}
+				#mid_1_custom_slot = ship_airplane_launcher
+				#mid_2_custom_slot = empty
+				rear_1_custom_slot = {
+					any_of = { ship_medium_battery ship_heavy_battery }
+				}
+			}
+		}
+		
+		allowed_modules = {
+			ship_light_battery
+			ship_heavy_battery
+			ship_medium_battery
+			ship_radar
+			ship_torpedo
+			ship_airplane_launcher
+			ship_depth_charge
+			ship_anti_air
+			light_ship_cruise_missiles
+			medium_ship_cruise_missiles
+		}
+	}
+}

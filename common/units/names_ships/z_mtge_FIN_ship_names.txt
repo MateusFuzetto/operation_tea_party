@@ -1,44 +1,36 @@
-
-### LIGHT CRUISER NAMES###
 FIN_CL_HISTORICAL = {
 	name = NAME_THEME_HISTORICAL_CL
-
-
 	type = ship
-	ship_types = { ship_hull_cruiser light_cruiser ship_hull_cruiser_carrier cruiser_carrier }
-	
-
+	ship_types = { ship_hull_cruiser ship_hull_cruiser_carrier light_cruiser ship_hull_submarine_cruiser }
+	prefix = ""
 }
-
-### HEAVY CRUISER NAMES###
 FIN_CA_HISTORICAL = {
 	name = NAME_THEME_HISTORICAL_CA
-
-
 	type = ship
-	ship_types = { ship_hull_cruiser heavy_cruiser ship_hull_cruiser_carrier cruiser_carrier }
-	
-
+	ship_types = { ship_hull_cruiser heavy_cruiser ship_hull_cruiser_carrier ship_hull_submarine_cruiser }
+	prefix = ""
 }
-
-### AIRCRAFT CARRIER NAMES ###
+FIN_BB_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BB
+	type = ship
+	ship_types = { ship_hull_battle_carrier ship_hull_heavy submarine_heavy battleship }
+	prefix = ""
+}
+FIN_BC_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BC
+	type = ship
+	ship_types = { ship_hull_battle_carrier ship_hull_heavy battle_cruiser submarine_heavy }
+	prefix = ""
+}
 FIN_CV_HISTORICAL = {
 	name = NAME_THEME_HISTORICAL_CARRIERS
-
-
 	type = ship
-	ship_types = { ship_hull_carrier carrier ship_hull_submarine_carrier submarine_carrier ship_hull_cruiser_carrier cruiser_carrier }
-	
-
+	ship_types = { ship_hull_battle_carrier ship_hull_submarine_carrier carrier ship_hull_cruiser_carrier ship_hull_carrier }
+	prefix = ""
 }
-
-### SUBMARINES ###
 FIN_SS_HISTORICAL = {
 	name = NAME_THEME_HISTORICAL_SUBMARINES
-
-
 	type = ship
-	ship_types = { ship_hull_submarine submarine ship_hull_submarine_carrier submarine_carrier ship_hull_submarine_cruiser submarine_cruiser submarine_heavy }
-	
-	
+	ship_types = { ship_hull_submarine_carrier ship_hullsubmarine_cruiser ship_hull_submarine submarine }
+	prefix = ""
 }
