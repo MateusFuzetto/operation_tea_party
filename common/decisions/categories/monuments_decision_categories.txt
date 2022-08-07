@@ -1,7 +1,0 @@
-monuments_decisions = {
-	icon = generic_industry
-	visible = {
-		always = yes
-	}
-	priority = 1000
-}
