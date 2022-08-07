@@ -1,0 +1,24 @@
+characters={
+	RKO_friedrich_karl_vialon={
+		name=RKO_friedrich_karl_vialon
+		portraits={
+			army={
+				small="GFX_idea_friedrich_karl_vialon"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = rko_friedrich_karl_vialon
+			available = {
+				is_subject_of = GER
+			}
+			allowed = {
+				original_tag = RKO
+			}
+			traits = {
+				economist 
+				financial_expert
+			}
+		}		
+	}
+}

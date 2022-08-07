@@ -1,0 +1,521 @@
+﻿focus_tree = {
+	id = rpi_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = RPI
+		}
+	}
+	
+	default = no
+	
+	continuous_focus_position = { x = 50 y = 1500 }
+
+	focus = {
+		id = rpi_liberate_indochina
+		icon = GFX_goal_ger_indochina
+		
+		x = 10
+		y = -10
+		
+		available = {
+		}
+		
+				bypass = {
+
+		}
+		
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		
+			add_political_power = 100
+			add_stability = -0.05	
+			
+		}
+		
+	}
+	
+	focus = {
+		id = rpi_pre_emptive_strikes_on_vietnamese_nationalists
+		icon = GFX_goal_stomp_indochina
+		
+		relative_position_id = rpi_liberate_indochina
+		x = 3
+		y = 1
+		
+		available = {
+			controls_state = 286
+			controls_state = 671
+		}
+		
+				bypass = {
+
+		}
+		
+		cost = 10
+		prerequisite = { focus = rpi_liberate_indochina }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		
+			286 = { add_manpower = -37520 }
+			671 = { add_manpower = -18750 }
+			add_stability = 0.05	
+			
+		}		
+	}
+	
+	focus = {
+		id = rpi_exploit_unused_land
+		icon = GFX_goal_forced_labor
+		
+		relative_position_id = rpi_pre_emptive_strikes_on_vietnamese_nationalists
+		x = 0
+		y = 1
+		
+		available = {
+			num_of_civilian_factories > 10
+		}
+		
+				bypass = {
+
+		}
+		
+		cost = 10
+		prerequisite = { focus = rpi_pre_emptive_strikes_on_vietnamese_nationalists }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+			671 = {
+				add_resource = {
+				type = tungsten
+				amount = 36
+				}								
+			}
+			
+			671 = {
+				add_resource = {
+				type = chromium
+				amount = 36
+				}								
+			}
+		
+		}
+		
+	}
+	
+	focus = {
+		id = rpi_expansion_of_synthetic_resources
+		icon = GFX_goal_rubber
+		
+		relative_position_id = rpi_exploit_unused_land
+		x = 0
+		y = 1
+		
+		available = {
+			num_of_civilian_factories > 10
+		}
+		
+				bypass = {
+
+		}
+		
+		cost = 10
+		prerequisite = { focus = rpi_exploit_unused_land }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		
+			286 = {
+				add_resource = {
+				type = rubber
+				amount = 64
+				}
+			}
+		
+		}
+		
+	}
+
+	focus = {
+		id = rpi_from_hanoi_to_saigon
+		icon = GFX_goal_eastern_rail
+		
+		relative_position_id = rpi_liberate_indochina
+		x = -3
+		y = 1
+		
+		available = {
+		}
+		
+				bypass = {
+
+		}
+		
+		cost = 10
+		prerequisite = { focus = rpi_liberate_indochina }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		
+				build_railway = {
+					level = 2
+					path = { 4075 1185 4401 }
+				}
+				
+				286 = {
+					add_building_construction = {
+					type = naval_base
+					province = 4401
+					level = 3
+					instant_build = yes
+					}
+				}
+				
+				671 = {
+					add_building_construction = {
+					type = naval_base
+					province = 1185
+					level = 3
+					instant_build = yes
+					}
+				}
+			
+		}
+		
+	}
+	
+	focus = {
+		id = rpi_urbanization_of_underdeveloped_villages
+		icon = GFX_goal_eastern_infrastructure
+		
+		relative_position_id = rpi_from_hanoi_to_saigon
+		x = 0
+		y = 1
+		
+		available = {
+		}
+		
+				bypass = {
+
+		}
+		
+		cost = 10
+		prerequisite = { focus = rpi_from_hanoi_to_saigon }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		
+			286 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+				}
+			}
+			
+			671 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+				}
+			}
+			
+			741 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+				}
+			}
+			
+			670 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+				}
+			}
+			
+		}
+		
+	}
+	
+	focus = {
+		id = rpi_show_the_farmers_a_new_world
+		icon = GFX_goal_eastern_arms
+		
+		relative_position_id = rpi_urbanization_of_underdeveloped_villages
+		x = 0
+		y = 1
+		
+		available = {
+		}
+		
+				bypass = {
+
+		}
+		
+		cost = 10
+		prerequisite = { focus = rpi_urbanization_of_underdeveloped_villages }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		
+			286 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+				}
+			}
+			
+			671 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+				}
+			}
+			
+			741 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+				}
+			}
+			
+			670 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+				}
+			}
+			
+		}
+		
+	}
+	
+	focus = {
+		id = rpi_invite_german_investors
+		icon = GFX_goal_economy
+		
+		relative_position_id = rpi_liberate_indochina
+		x = 0
+		y = 2
+		
+		available = {
+		}
+		
+				bypass = {
+
+		}
+		
+		cost = 10
+		prerequisite = { focus = rpi_pre_emptive_strikes_on_vietnamese_nationalists }
+		prerequisite = { focus = rpi_from_hanoi_to_saigon }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		
+			286 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+				}
+			}
+			
+			671 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+				}
+			}
+			
+			741 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+				}
+			}
+			
+			670 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+				}
+			}
+		
+		}
+		
+	}
+	
+	focus = {
+		id = rpi_a_loyal_subject
+		icon = GFX_goal_volkshalle
+		
+		relative_position_id = rpi_invite_german_investors
+		x = 0
+		y = 2
+		
+		available = {
+		}
+		
+				bypass = {
+
+		}
+		
+		cost = 10
+		prerequisite = { focus = rpi_invite_german_investors }
+		prerequisite = { focus = rpi_expansion_of_synthetic_resources }
+		prerequisite = { focus = rpi_show_the_farmers_a_new_world }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+			add_stability = 0.15
+			
+			division_template = {
+				name = "Wehrmacht Auxiliaries"
+				priority = 2
+				division_names_group = GER_INF_01
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+		
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+		
+					infantry = { x = 2 y = 0 }
+					artillery_brigade = { x = 2 y = 1 }
+					artillery_brigade = { x = 2 y = 2 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					artillery = { x = 0 y = 1 }
+				}
+			}
+			
+			286 = {
+				create_unit = {
+					division = "name = \"1. Indochinesische Infanteriedivision\" division_template = \"Wehrmacht Auxiliaries\" start_experience_factor = 0.5" 
+					owner = RPI
+				}
+			}
+			
+			671 = {
+				create_unit = {
+					division = "name = \"2. Indochinesische Infanteriedivision\" division_template = \"Wehrmacht Auxiliaries\" start_experience_factor = 0.5" 
+					owner = RPI
+				}
+			}
+			
+			741 = {
+				create_unit = {
+					division = "name = \"3. Indochinesische Infanteriedivision\" division_template = \"Wehrmacht Auxiliaries\" start_experience_factor = 0.5" 
+					owner = RPI
+				}
+			}
+			
+			670 = {
+				create_unit = {
+					division = "name = \"4. Indochinesische Infanteriedivision\" division_template = \"Wehrmacht Auxiliaries\" start_experience_factor = 0.5" 
+					owner = RPI
+				}
+			}
+			
+		}	
+		
+	}
+	
+}
