@@ -1,0 +1,6 @@
+IB_switching_UI_decisions = {
+	icon = ger_mefo_bills
+	allowed = {
+		NOT = { has_country_flag = IB_delete_UI_change_flag }
+	}
+}

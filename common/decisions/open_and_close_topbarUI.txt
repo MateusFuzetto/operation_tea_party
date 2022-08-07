@@ -1,0 +1,80 @@
+IB_switching_UI_decisions = {
+
+	IB_switching_IC = {
+
+		icon = generic_wreckers
+
+		available = {
+			always = yes
+		}
+
+		visible = {
+			NOT = { has_country_flag = IB_delete_UI_change_flag }
+		}
+
+		cost = 0
+		fire_only_once = no
+		days_re_enable = -1
+
+		complete_effect = {
+			if = {
+				limit = {
+					has_country_flag = IB_IC_UI_switching_flag
+				}
+				clr_country_flag = IB_IC_UI_switching_flag
+			}
+			else = {
+				set_country_flag = IB_IC_UI_switching_flag
+			}
+		}
+	}
+	
+	IB_switching_other = {
+
+		icon = generic_wreckers
+
+		available = {
+			always = yes
+		}
+
+		visible = {
+			NOT = { has_country_flag = IB_delete_UI_change_flag }
+		}
+
+		cost = 0
+		fire_only_once = no
+		days_re_enable = -1
+
+		complete_effect = {
+			if = {
+				limit = {
+					has_country_flag = IB_other_UI_switching_flag
+				}
+				clr_country_flag = IB_other_UI_switching_flag
+			}
+			else = {
+				set_country_flag = IB_other_UI_switching_flag
+			}
+		}
+	}
+
+	IB_delete_this_decisions = {
+
+		icon = oppression
+
+		available = {
+			always = yes
+		}
+
+		visible = {
+			NOT = { has_country_flag = IB_delete_UI_change_flag }
+		}
+
+		cost = 0
+		fire_only_once = yes
+
+		complete_effect = {
+			set_country_flag = IB_delete_UI_change_flag
+		}
+	}
+}

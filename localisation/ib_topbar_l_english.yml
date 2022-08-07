@@ -1,0 +1,23 @@
+﻿l_english:
+ IB_switching_UI_decisions:0 "About topbar UI"
+ IB_switching_UI_decisions_desc:0 "If the newly added UI displaying the number of factories and the size of the army next to the experience value display on the screen is in the way, or if it clashes with the other UI due to screen resolution issues, you can switch the display by manipulating this decision."
+ IB_switching_IC:0 "Factory UI ON/OFF"
+ IB_switching_other:0 "Military UI ON/OFF"
+ IB_delete_this_decisions:0 "Delete this decisions"
+
+ IB_CIV_FAC_VAL:0 "[?ROOT.num_of_civilian_factories|0]"
+ IB_MIL_FAC_VAL:0 "[?ROOT.num_of_military_factories|0]"
+ IB_NAV_FAC_VAL:0 "[?ROOT.num_of_naval_factories|0]"
+ IB_NUM_OF_DIV:0 "[?ROOT.num_divisions|0]"
+ IB_DIV_TOOLTIP:0 "Own§H陸軍§の状態§!\n\n\n渡河中の師団:[?ROOT.num_units_crossing_river|0+]\n全大隊合計数:[?ROOT.num_battalions|0+]\n戦闘中大隊数:[?ROOT.num_units_in_combat|0+]\n攻撃戦闘中大隊数:[?ROOT.num_units_offensive_combats|0+]\n防御戦闘中大隊数:[?ROOT.num_units_defensive_combats|0+]"
+ IB_NUM_OF_DEP_PLA:0 "[?ROOT.num_deployed_planes|0]"
+ IB_PLA_TOOLTIP:0 "§HNumber of aircraft§! by type in own country during deployment\n\n\nLight Fighter:[?ROOT.num_deployed_planes_with_type@fighter_equipment|0+]\nCAS:[?ROOT.num_deployed_planes_with_type@CAS_equipment|0+]\n\nCV Fighter:[?ROOT.num_deployed_planes_with_type@cv_fighter_equipment|0+]\nCV Bomber:[?ROOT.num_deployed_planes_with_type@cv_CAS_equipment|0+]\nCV NAV Bomber:[?ROOT.num_deployed_planes_with_type@cv_nav_bomber_equipment|0+]\nNAV Bomber:[?ROOT.num_deployed_planes_with_type@nav_bomber_equipment|0+]\nHeavy Fighter:[?ROOT.num_deployed_planes_with_type@heavy_fighter_equipment|0+]\nTac Bomber:[?ROOT.num_deployed_planes_with_type@tac_bomber_equipment|0+]\n\nJet Fighter:[?ROOT.num_deployed_planes_with_type@jet_fighter_equipment|0+]\nJet Tac Bomber:[?ROOT.num_deployed_planes_with_type@jet_tac_bomber_equipment|0+]\nJet Stra Bomber:[?ROOT.num_deployed_planes_with_type@jet_strat_bomber_equipment|0+]\n\nRocket Interceptor:[?ROOT.num_deployed_planes_with_type@rocket_interceptor_equipment|0+]\nStrategic Bomber:[?ROOT.num_deployed_planes_with_type@strat_bomber_equipment|0+]\n\nTransporter Plane:[?ROOT.num_deployed_planes_with_type@transport_plane_equipment|0+]\nScout Plane:[?ROOT.num_deployed_planes_with_type@scout_plane_equipment|0+]"
+ IB_NUM_OF_SHIP:0 "[?ROOT.num_ships|0]"
+ IB_SHIP_TOOLTIP:0 "§HNumber of ships§! by type in own country\n\nCV:[?ROOT.num_ships_with_type@carrier|0+]\nBB:[?ROOT.num_ships_with_type@battleship|0+]\nBC:[?ROOT.num_ships_with_type@battle_cruiser|0+]\nCA:[?ROOT.num_ships_with_type@heavy_cruiser|0+]\nCL:[?ROOT.num_ships_with_type@light_cruiser|0+]\nDD:[?ROOT.num_ships_with_type@destroyer|0+]\nSS:[?ROOT.num_ships_with_type@submarine|0+]"
+
+ IB_RESOURCE_TRADE_OIL:0 "Current state of §Hoil§! resources\n\nAmount consumed:[?resource_consumed@oil|0-]\nAmount importing:[?resource_imported@oil|0-]"
+ IB_RESOURCE_TRADE_ALM:0 "Current state of §HAlminium§! resources\n\nAmount consumed:[?resource_consumed@aluminium|0-]\nAmount importing:[?resource_imported@aluminium|0-]"
+ IB_RESOURCE_TRADE_RUB:0 "Current state of §HRubber§! resources\n\nAmount consumed:[?resource_consumed@rubber|0-]\nAmount importing:[?resource_imported@rubber|0-]"
+ IB_RESOURCE_TRADE_TUN:0 "Current state of §HTungusten§! resources\n\nAmount consumed:[?resource_consumed@tungsten|0-]\nAmount importing:[?resource_imported@tungsten|0-]"
+ IB_RESOURCE_TRADE_STE:0 "Current state of §HSteel§! resources\n\nAmount consumed:[?resource_consumed@steel|0-]\nAmount importing:[?resource_imported@steel|0-]"
+ IB_RESOURCE_TRADE_CHR:0 "Current state of §HChromium§! resources\n\nAmount consumed:[?resource_consumed@chromium|0-]\nAmount importing:[?resource_imported@chromium|0-]"

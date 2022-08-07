@@ -1,0 +1,84 @@
+scripted_gui = {
+
+	IB_civ_ui = {
+		window_name = "IB_civ_ui_window"
+
+		visible = {
+			NOT = { has_country_flag = IB_IC_UI_switching_flag }
+		}
+	}
+	
+	IB_mil_ui = {
+		window_name = "IB_mil_ui_window"
+
+		visible = {
+			NOT = { has_country_flag = IB_IC_UI_switching_flag }
+		}
+	}
+
+	IB_dockyard = {
+		window_name = "IB_dockyard_ui_window"
+
+		visible = {
+			NOT = { has_country_flag = IB_IC_UI_switching_flag }
+		}
+	}
+
+	IB_divison = {
+		window_name = "IB_divison_ui_window"
+
+		visible = {
+			NOT = { has_country_flag = IB_other_UI_switching_flag }
+		}
+	}
+
+	IB_planes = {
+		window_name = "IB_planes_ui_window"
+
+		visible = {
+			NOT = { has_country_flag = IB_other_UI_switching_flag }
+		}
+	}
+
+	IB_ships = {
+		window_name = "IB_ships_ui_window"
+
+		visible = {
+			NOT = { has_country_flag = IB_other_UI_switching_flag }
+		}
+	}
+
+	IB_topbar_open = {
+		window_name = "ib_open_ui"
+		context_type = player_context
+
+		visible = {
+			always = yes
+		}
+
+		effects = {
+			ib_open_resouse_window_click = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = resources_topbar_enabled }  
+				    }
+					set_country_flag = resources_topbar_enabled
+				}
+				else = {
+					clr_country_flag = resources_topbar_enabled
+				}
+			}
+			
+		}
+	}
+
+	IB_topbar_resources = {
+		window_name = "ib_topbar_half_ui_window"
+		context_type = player_context
+
+		visible = {
+			ROOT = { has_country_flag = resources_topbar_enabled }
+		}
+	}
+}
+

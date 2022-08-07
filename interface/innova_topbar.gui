@@ -1,0 +1,421 @@
+guiTypes = {
+
+	#IB_topbar_factory_1
+	containerWindowType = {
+		name = "IB_civ_ui_window"
+		position = { x= 1025 y = 6}
+		clipping = no
+		Orientation = UPPER_LEFT
+		
+		background = {
+			name = "bg"
+			spriteType = "GFX_generic_box_smallest"
+		}
+	
+		iconType = {
+			name = "IB_name_civ_fac_icon"
+			spriteType = "GFX_IB_civ_fac"
+			position = { x= 2 y = 4 }
+			Orientation = "UPPER_LEFT"
+			#alwaystransparent=yes
+		}		
+		
+		instantTextBoxType = {
+			name ="IB_mil_fac_value"
+			position = { x= 19 y = 3 }
+			font = "hoi_18mbs"
+			text = "IB_CIV_FAC_VAL"
+			format = center
+			maxWidth = 46
+			maxHeight = 24
+			fixedsize = yes
+			#alwaystransparent=yes
+		}
+	}
+
+	#IB_topbar_factory_2
+	containerWindowType = {
+		name = "IB_mil_ui_window"
+		position = { x= 1098 y = 6}
+		clipping = no
+		# size = { width=50 height=24 }
+		Orientation = UPPER_LEFT
+		
+		background = {
+			name = "bg"
+			spriteType = "GFX_generic_box_smallest"
+		}
+	
+		iconType = {
+			name ="IB_name_mil_fac_icon"
+			spriteType = "GFX_IB_mil_fac"
+			position = { x= 2 y = 4 }
+			Orientation = "UPPER_LEFT"
+			#alwaystransparent=yes
+		}		
+		
+		instantTextBoxType = {
+			name ="IB_mil_fac_value"
+			position = { x= 19 y = 3 }
+			font = "hoi_18mbs"
+			text = "IB_MIL_FAC_VAL"
+			format = center
+			maxWidth = 46
+			maxHeight = 24
+			fixedsize = yes
+			#alwaystransparent=yes
+		}
+	}
+
+	#IB_topbar_factory_3
+	containerWindowType = {
+		name = "IB_dockyard_ui_window"
+		position = { x= 1171 y = 6}
+		clipping = no
+		# size = { width=50 height=24 }
+		Orientation = UPPER_LEFT
+		
+		background = {
+			name = "bg"
+			spriteType = "GFX_generic_box_smallest"
+		}
+	
+		iconType = {
+			name ="IB_name_dockyard_icon"
+			spriteType = "GFX_IB_dockyard"
+			position = { x= 2 y = 4 }
+			Orientation = "UPPER_LEFT"
+			#alwaystransparent=yes
+		}		
+		
+		instantTextBoxType = {
+			name ="IB_dockyard_value"
+			position = { x= 19 y = 3 }
+			font = "hoi_18mbs"
+			text = "IB_NAV_FAC_VAL"
+			format = center
+			maxWidth = 46
+			maxHeight = 24
+			fixedsize = yes
+			#alwaystransparent=yes
+		}
+	}
+	
+	#IB_number_of_divison
+	containerWindowType = {
+		name = "IB_divison_ui_window"
+		position = { x= 1254 y = 6}
+		clipping = no
+		# size = { width=50 height=24 }
+		Orientation = UPPER_LEFT
+		
+		background = {
+			name = "bg"
+			spriteType = "GFX_generic_box_smallest"
+		}
+	
+		iconType = {
+			name ="IB_name_divison_icon"
+			spriteType = "GFX_IB_divison"
+			position = { x= 2 y = 4 }
+			Orientation = "UPPER_LEFT"
+			#pdx_tooltip = "IB_DIV_TOOLTIP"
+		}		
+		
+		instantTextBoxType = {
+			name ="IB_divison_value"
+			position = { x= 19 y = 3 }
+			font = "hoi_18mbs"
+			text = "IB_NUM_OF_DIV"
+			format = center
+			maxWidth = 46
+			maxHeight = 24
+			fixedsize = yes
+			#pdx_tooltip = "IB_DIV_TOOLTIP"
+		}
+	}
+
+	#IB_number_of_deployment_planes
+	containerWindowType = {
+		name = "IB_planes_ui_window"
+		position = { x= 1327 y = 6}
+		clipping = no
+		# size = { width=50 height=24 }
+		Orientation = UPPER_LEFT
+		
+		background = {
+			name = "bg"
+			spriteType = "GFX_generic_box_smallest"
+		}
+	
+		iconType = {
+			name ="IB_name_planes_icon"
+			spriteType = "GFX_IB_planes"
+			position = { x= 2 y = 4 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = "IB_PLA_TOOLTIP"
+		}
+		
+		instantTextBoxType = {
+			name ="IB_planes_value"
+			position = { x= 19 y = 3 }
+			font = "hoi_18mbs"
+			text = "IB_NUM_OF_DEP_PLA"
+			format = center
+			maxWidth = 46
+			maxHeight = 24
+			fixedsize = yes
+			pdx_tooltip = "IB_PLA_TOOLTIP"
+		}
+	}
+
+	#IB_number_of_ships
+	containerWindowType = {
+		name = "IB_ships_ui_window"
+		position = { x= 1400 y = 6}
+		clipping = no
+		Orientation = UPPER_LEFT
+		
+		background = {
+			name = "bg"
+			spriteType = "GFX_generic_box_smallest"
+		}
+	
+		iconType = {
+			name ="IB_name_planes_icon"
+			spriteType = "GFX_IB_ships"
+			position = { x= 2 y = 4 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = "IB_SHIP_TOOLTIP"
+		}		
+		
+		instantTextBoxType = {
+			name ="IB_ships_value"
+			position = { x= 19 y = 3 }
+			font = "hoi_18mbs"
+			text = "IB_NUM_OF_SHIP"
+			format = center
+			maxWidth = 46
+			maxHeight = 24
+			fixedsize = yes
+			pdx_tooltip = "IB_SHIP_TOOLTIP"
+		}
+	}
+
+	#IB_resouces_open
+	containerWindowType = {
+		name = "ib_open_ui"
+		click_to_front = yes
+		moveable = no
+		show_sound = menu_open_window
+		clipping = no
+		
+		buttonType = {
+			name = "ib_open_resouse_window"
+			position = { x= 990 y = 4 }
+			quadTextureSprite = "GFX_ib_res_icon"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_default
+			oversound = ui_menu_over
+		}
+	}
+
+	#IB_resouces_background
+	containerWindowType = {
+		name = "ib_topbar_half_ui_window"
+		position = { x=905 y=42 }
+		moveable = yes
+		Orientation = UPPER_LEFT
+
+		#background
+		iconType = {
+			name ="ib_topbar_half_bg"
+			spriteType = "GFX_ib_bg_half"
+			position = { x = 0 y = 0 }
+			Orientation = "UPPER_LEFT"
+			scale = 0.92
+		}
+		
+		#oil
+		iconType = { 
+			name ="ib_val_bg_1"
+			spriteType = "GFX_generic_w_box"
+			position = { x = 19 y = 2 }
+			Orientation = "UPPER_LEFT"
+		}
+
+		iconType = {
+			name = "ib_val_icon_1"
+			position = { x = 24 y = 3 }
+			spriteType = "GFX_resources_strip"
+			frame = 1
+			scale=0.9
+		}
+
+		instantTextboxType = {
+			name = "ib_val_text_1"
+			position = { x = 59 y = 6 }
+			textureFile = ""
+			font = "hoi_18mbs"
+			borderSize = {x = 0 y = 0 }
+			text= [IB_OIL_TEXT]
+			maxWidth = 57
+			maxHeight = 24
+			fixedsize = yes
+			format = center
+			pdx_tooltip = "IB_RESOURCE_TRADE_OIL"
+		}
+
+		#alminium
+		iconType = { 
+			name ="ib_val_bg_2"
+			spriteType = "GFX_generic_w_box"
+			position = { x = 129 y = 2 }
+			Orientation = "UPPER_LEFT"
+		}
+
+		iconType = {
+			name = "ib_val_icon_2"
+			position = { x = 134 y = 3 }
+			spriteType = "GFX_resources_strip"
+			frame = 2
+			scale=0.9
+		}
+
+		instantTextboxType = {
+			name = "ib_val_text_2"
+			position = { x = 169 y = 6 }
+			textureFile = ""
+			font = "hoi_18mbs"
+			borderSize = {x = 0 y = 0 }
+			text= [IB_ALM_TEXT]
+			maxWidth = 57
+			maxHeight = 24
+			fixedsize = yes
+			format = center
+			pdx_tooltip = "IB_RESOURCE_TRADE_ALM"
+		}
+
+		#rubber
+		iconType = { 
+			name ="ib_val_bg_3"
+			spriteType = "GFX_generic_w_box"
+			position = { x = 239 y = 2 }
+			Orientation = "UPPER_LEFT"
+		}
+
+		iconType = {
+			name = "ib_val_icon_3"
+			position = { x = 242 y = 3 }
+			spriteType = "GFX_resources_strip"
+			frame = 3
+			scale=0.9
+		}
+
+		instantTextboxType = {
+			name = "ib_val_text_3"
+			position = { x = 279 y = 6 }
+			textureFile = ""
+			font = "hoi_18mbs"
+			borderSize = {x = 0 y = 0 }
+			text= [IB_RUB_TEXT]
+			maxWidth = 57
+			maxHeight = 24
+			fixedsize = yes
+			format = center
+			pdx_tooltip = "IB_RESOURCE_TRADE_RUB"
+		}
+
+		#tungusten
+		iconType = { 
+			name ="ib_val_bg_4"
+			spriteType = "GFX_generic_w_box"
+			position = { x = 349 y = 2 }
+			Orientation = "UPPER_LEFT"
+		}
+
+		iconType = {
+			name = "ib_val_icon_4"
+			position = { x = 354 y = 3 }
+			spriteType = "GFX_resources_strip"
+			frame = 4
+			scale=0.9
+		}
+
+		instantTextboxType = {
+			name = "ib_val_text_4"
+			position = { x = 389 y = 6 }
+			textureFile = ""
+			font = "hoi_18mbs"
+			borderSize = {x = 0 y = 0 }
+			text= [IB_TUN_TEXT]
+			maxWidth = 57
+			maxHeight = 24
+			fixedsize = yes
+			format = center
+			pdx_tooltip = "IB_RESOURCE_TRADE_TUN"
+		}
+
+		#steel
+		iconType = { 
+			name ="ib_val_bg_5"
+			spriteType = "GFX_generic_w_box"
+			position = { x = 459 y = 2 }
+			Orientation = "UPPER_LEFT"
+		}
+
+		iconType = {
+			name = "ib_val_icon_5"
+			position = { x = 464 y = 3 }
+			spriteType = "GFX_resources_strip"
+			frame = 5
+			scale=0.9
+		}
+
+		instantTextboxType = {
+			name = "ib_val_text_5"
+			position = { x = 499 y = 6 }
+			textureFile = ""
+			font = "hoi_18mbs"
+			borderSize = {x = 0 y = 0 }
+			text= [IB_STE_TEXT]
+			maxWidth = 57
+			maxHeight = 24
+			fixedsize = yes
+			format = center
+			pdx_tooltip = "IB_RESOURCE_TRADE_STE"
+		}
+
+		#chromium
+		iconType = { 
+			name ="ib_val_bg_6"
+			spriteType = "GFX_generic_w_box"
+			position = { x = 569 y = 2 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = "IB_RESOURCE_TRADE_CHR"
+		}
+
+		iconType = {
+			name = "ib_val_icon_6"
+			position = { x = 574 y = 3 }
+			spriteType = "GFX_resources_strip"
+			frame = 6
+			scale=0.9
+			pdx_tooltip = "IB_RESOURCE_TRADE_CHR"
+		}
+
+		instantTextboxType = {
+			name = "ib_val_text_6"
+			position = { x = 609 y = 6 }
+			textureFile = ""
+			font = "hoi_18mbs"
+			borderSize = {x = 0 y = 0 }
+			text= [IB_CHR_TEXT]
+			maxWidth = 57
+			maxHeight = 24
+			fixedsize = yes
+			format = center
+			pdx_tooltip = "IB_RESOURCE_TRADE_CHR"
+		}
+	}
+}
