@@ -1,0 +1,40 @@
+
+generate_generals_list = {
+	clear_array = dl_generals
+	
+	every_character = {
+		limit = {
+			is_army_leader = yes
+			is_field_marshal = yes
+		}
+		
+		add_to_array = {
+			ROOT.dl_generals = THIS
+		}
+	}
+	
+	every_character = {
+		limit = {
+			is_army_leader = yes
+			is_field_marshal = no
+		}
+		
+		add_to_array = {
+			ROOT.dl_generals = THIS
+		}
+	}
+}
+
+generate_admirals_list = {
+	clear_array = dl_admirals
+	
+	every_character = {
+		limit = {
+			is_navy_leader = yes
+		}
+		
+		add_to_array = {
+			ROOT.dl_admirals = THIS
+		}
+	}
+}

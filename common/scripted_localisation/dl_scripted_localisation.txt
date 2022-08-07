@@ -1,0 +1,35 @@
+
+defined_text = {
+	name = leader_menu_header
+	
+	text = {
+		trigger = {
+			has_country_flag = dl_generals_menu
+		}
+		localization_key = "Dismiss General"
+	}
+	text = {
+		trigger = {
+			has_country_flag = dl_admirals_menu
+		}
+		localization_key = "Dismiss Admiral"
+	}
+}
+
+defined_text = {
+	name = leader_background
+	
+	text = {
+		trigger = {
+			is_assigned = yes
+		}
+		localization_key = "GFX_dl_leader_entry_assigned"
+	}
+	
+	text = {
+		trigger = {
+			is_assigned = no
+		}
+		localization_key = "GFX_dl_leader_entry"
+	}
+}

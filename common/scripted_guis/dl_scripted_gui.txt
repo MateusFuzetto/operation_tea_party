@@ -1,0 +1,170 @@
+scripted_gui = {
+	
+	dl_open_buttons = {
+		window_name = "dl_open_buttons"
+		
+		context_type = player_context
+		
+		effects = {
+			dl_open_generals_click = {
+				if = {
+					limit = {
+						has_country_flag = dl_generals_menu
+					}
+					clr_country_flag = dl_generals_menu
+				}
+				else_if = {
+					limit = { 
+						has_country_flag = dl_admirals_menu
+					}
+					clr_country_flag = dl_admirals_menu
+					set_country_flag = dl_generals_menu
+					generate_generals_list = yes
+				}
+				else = {
+					set_country_flag = dl_generals_menu
+					generate_generals_list = yes
+				}
+			}
+			dl_open_admirals_click = {
+				if = {
+					limit = {
+						has_country_flag = dl_admirals_menu
+					}
+					clr_country_flag = dl_admirals_menu
+				}
+				else_if = {
+					limit = { 
+						has_country_flag = dl_generals_menu
+					}
+					clr_country_flag = dl_generals_menu
+					set_country_flag = dl_admirals_menu
+					generate_admirals_list = yes
+				}
+				else = {
+					set_country_flag = dl_admirals_menu
+					generate_admirals_list = yes
+				}
+			}
+		}
+	}
+	
+	dl_main_generals = {
+		window_name = "dl_main_container"
+		
+		context_type = player_context
+		
+		visible = {
+			ROOT = {
+				is_ai = no
+			}
+			has_country_flag = dl_generals_menu
+		}
+		
+		effects = {
+			close_button_click = {
+				clr_country_flag = dl_generals_menu
+			}
+			
+			refresh_click = {
+				generate_generals_list = yes
+			}
+			
+			remove_leader_click = {
+				remove_from_array = { ROOT.dl_generals = THIS }
+				retire = yes
+			}
+		}
+		
+		triggers = {
+			leader_stat_maneuvering_bg_visible = {
+				always = no
+			}
+			leader_stat_maneuvering_visible = {
+				always = no
+			}
+			
+			leader_stat_coordination_bg_visible = {
+				always = no
+			}
+			leader_stat_coordination_visible = {
+				always = no
+			}
+		}
+		
+		properties = {
+			leader_entry_background = {
+				image = "[leader_background]"
+			}
+		}
+		
+		dynamic_lists = {
+			leaders_grid = {
+				array = dl_generals
+				change_scope = yes
+				
+				entry_container = dl_leader_entry
+			}
+		}
+	}
+	
+	dl_main_admirals = {
+		window_name = "dl_main_container"
+		
+		context_type = player_context
+		
+		visible = {
+			ROOT = {
+				is_ai = no
+			}
+			has_country_flag = dl_admirals_menu
+		}
+		
+		effects = {
+			close_button_click = {
+				clr_country_flag = dl_admirals_menu
+			}
+			
+			refresh_click = {
+				generate_admirals_list = yes
+			}
+			
+			remove_leader_click = {
+				remove_from_array = { ROOT.dl_admirals = THIS }
+				retire = yes
+			}
+		}
+		
+		triggers = {
+			leader_stat_planning_bg_visible = {
+				always = no
+			}
+			leader_stat_planning_visible = {
+				always = no
+			}
+			
+			leader_stat_logistics_bg_visible = {
+				always = no
+			}
+			leader_stat_logistics_visible = {
+				always = no
+			}
+		}
+		
+		properties = {
+			leader_entry_background = {
+				image = "[leader_background]"
+			}
+		}
+		
+		dynamic_lists = {
+			leaders_grid = {
+				array = dl_admirals
+				change_scope = yes
+				
+				entry_container = dl_leader_entry
+			}
+		}
+	}
+	
+}

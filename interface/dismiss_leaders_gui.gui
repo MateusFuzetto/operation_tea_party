@@ -1,0 +1,287 @@
+
+## Top right
+# @stat_icon_y = 3
+# @stat_text_y = 22
+
+# @stat1_icon_x = 147
+# @stat1_text_x = 146
+
+# @stat2_icon_x = 167
+# @stat2_text_x = 166
+
+# @stat3_icon_x = 187
+# @stat3_text_x = 186
+
+# @stat4_icon_x = 207
+# @stat4_text_x = 206
+
+
+## Bottom Left
+@stat_icon_y = 41
+@stat_text_y = 60
+
+@stat1_icon_x = 0
+@stat1_text_x = -1
+
+@stat2_icon_x = 20
+@stat2_text_x = 19
+
+@stat3_icon_x = 40
+@stat3_text_x = 39
+
+@stat4_icon_x = 60
+@stat4_text_x = 59
+
+guiTypes = {
+	## Main window
+	containerWindowType = {
+		name = "dl_main_container"
+		position = { x = -225 y = -286 }
+		size = { width = 527 height = 572 }
+		orientation = center
+		moveable = no
+		fade_time = 500
+		fade_type = linear
+		click_to_front = yes
+		
+		background = {
+			name = "Background"
+			spriteType = "GFX_dl_main_bg" 
+		}
+		
+		## Header
+		instantTextboxType = {
+			name = "header_text"
+			position = { x = 0 y = 22 }
+			textureFile = ""
+			font = "hoi_36header"
+			borderSize = { x = 0 y = 0 }
+			text = "[leader_menu_header]"
+			maxWidth = 527
+			maxHeight = 20
+			format = center
+		}
+		
+		## List of leaders
+		containerWindowType = {
+			name = "leaders"
+			position = { x = 16 y = 84 }
+			size = { width = 500 height = 421 }
+			verticalScrollbar = "right_vertical_slider"
+			scroll_wheel_factor = 85
+			
+			background = {
+				name = "Background"
+				spriteType ="GFX_tiled_window_transparent"
+			}
+			
+			gridBoxType = {
+				name = "leaders_grid"
+				position = { x = 0 y = 0 }
+				size = { width = 100%% height = 100%% }
+				slotsize = { width = 241 height = 85 }
+				max_slots_horizontal = 2
+				format = "UPPER_LEFT"
+			}
+		}
+		
+		## Button to close window
+		buttonType = {
+			name ="close_button"
+			quadTextureSprite ="GFX_button_261x34"
+			position = { x = 133 y = 515 }
+			buttonText = "CLOSE"
+			buttonFont = "hoi_16mbs"
+			shortcut = "ESCAPE"
+		}
+		
+		buttonType = {
+			name = "refresh"
+			position = { x = 456 y = 510 }
+			quadTextureSprite ="GFX_browser_refresh"
+		}
+	}
+	
+	# General entry
+	containerWindowType = {
+		name = "dl_leader_entry"
+		size = { width = 235 height = 81 }
+		clipping = no
+		fade_time = 500
+		fade_type = linear
+		
+		iconType = {
+			name = "leader_entry_background"
+		}
+		
+		## Name
+		instantTextboxType = {
+			name = "name"
+			position = { x = 10 y = 4 }
+			font = "hoi_16mbs"
+			text = "[THIS.GetName]"
+			maxWidth = 225
+			maxHeight = 18
+		}
+		
+		## Title
+		instantTextboxType = {
+			name = "title"
+			position = { x = 10 y = 22 }
+			font = "hoi_16mbs"
+			text = "[This.GetRank]"
+			maxWidth = 150
+			maxHeight = 18
+		}
+		
+		## Skill level
+		instantTextboxType = {
+			name = "skill"
+			position = { x = 190 y = 6 }
+			font = "hoi_30header"
+			text = "[?skill]"
+			maxWidth = 50
+			maxHeight = 18
+			format = center
+			alwaystransparent = yes
+		}
+		
+		# iconType = {
+		# 	name = "leader_icon"
+		# 	position = {x=120 y=5}	
+		# 	quadTextureSprite ="GFX_leader_unknown"
+		# 	scale = 0.2
+		# }
+		
+		## Stat icons
+		# Attack
+		iconType = {
+			name = "leader_stat_attack_bg"
+			spriteType = "GFX_trait_attack"
+			position = { x = @stat1_icon_x y = @stat_icon_y }
+		}
+		instantTextboxType = {
+			name = "leader_stat_attack"
+			position = { x = @stat1_text_x y = @stat_text_y }
+			font = "hoi_16mbs"
+			maxWidth = 30
+			maxHeight = 23
+			format = center
+			text = "[?attack_level]"
+		}
+		
+		# Defence
+		iconType = {
+			name = "leader_stat_defense_bg"
+			spriteType = "GFX_trait_defense"
+			position = { x = @stat2_icon_x y = @stat_icon_y }
+		}
+		instantTextboxType = {
+			name = "leader_stat_defense"
+			position = { x = @stat2_text_x y = @stat_text_y }
+			font = "hoi_16mbs"
+			maxWidth = 30
+			maxHeight = 23
+			format = center
+			text = "[?defense_level]"
+		}
+		
+		## Army leader
+			# Planning
+			iconType = {
+				name = "leader_stat_planning_bg"
+				spriteType = "GFX_trait_planning"
+				position = { x = @stat3_icon_x y = @stat_icon_y }
+			}
+			instantTextboxType = {
+				name = "leader_stat_planning"
+				position = { x = @stat3_text_x y = @stat_text_y }
+				font = "hoi_16mbs"
+				maxWidth = 30
+				maxHeight = 23
+				format = center
+				text = "[?planning_level]"
+			}
+			
+			# Logistics
+			iconType = {
+				name = "leader_stat_logistics_bg"
+				spriteType = "GFX_trait_logistics"
+				position = { x = @stat4_icon_x y = @stat_icon_y }
+			}
+			instantTextboxType = {
+				name = "leader_stat_logistics"
+				position = { x = @stat4_text_x y = @stat_text_y }
+				font = "hoi_16mbs"
+				maxWidth = 30
+				maxHeight = 23
+				format = center
+				text = "[?logistics_level]"
+			}
+		
+		## Navy Leader
+			# Maneuvering
+			iconType = {
+				name = "leader_stat_maneuvering_bg"
+				spriteType = "GFX_trait_maneuvering"
+				position = { x = @stat3_icon_x y = @stat_icon_y }
+			}
+			instantTextboxType = {
+				name = "leader_stat_maneuvering"
+				position = { x = @stat3_text_x y = @stat_text_y }
+				font = "hoi_16mbs"
+				maxWidth = 30
+				maxHeight = 23
+				format = center
+				text = "[?maneuvering_level]"
+			}
+			
+			# Coordination
+			iconType = {
+				name = "leader_stat_coordination_bg"
+				spriteType = "GFX_trait_coordination"
+				position = { x = @stat4_icon_x y = @stat_icon_y }
+			}
+			instantTextboxType = {
+				name = "leader_stat_coordination"
+				position = { x = @stat4_text_x y = @stat_text_y }
+				font = "hoi_16mbs"
+				maxWidth = 30
+				maxHeight = 23
+				format = center
+				text = "[?coordination_level]"
+			}
+		
+		
+		## Delete button
+		buttonType = {
+			name = "remove_leader"
+			position = { x = 200 y = 46 }
+			spriteType = "GFX_NV_btn_remove_regions"
+			clicksound = click_default
+		}
+	}
+	
+	containerWindowType = {
+		name = "dl_open_buttons"
+		orientation = UPPER_RIGHT
+		position = {
+			x = -465
+			y = 2
+		}
+		
+		buttonType = {
+			name = "dl_open_generals"
+			position = { x = 0 y = 0 }
+			spriteType ="GFX_dl_general_button"
+			clicksound = click_default
+		}
+		
+		buttonType = {
+			name = "dl_open_admirals"
+			position = { x = 30 y = 0 }
+			spriteType ="GFX_dl_admiral_button"
+			clicksound = click_default
+		}
+	}
+}

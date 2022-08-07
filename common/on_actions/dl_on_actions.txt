@@ -1,0 +1,54 @@
+on_actions = {
+	on_unit_leader_created = {
+		effect = {
+			if = {
+				limit = {
+					or = {
+						check_variable = {
+							var = coordination_level
+							value = 0
+							compare = greater_than
+						}
+						check_variable = {
+							var = maneuvering_level
+							value = 0
+							compare = greater_than
+						}
+					}
+				}
+				add_to_array = {
+					FROM.dl_admirals = ROOT
+				}
+			}
+			else_if = {
+				limit = {
+					is_field_marshal = yes
+				}
+				add_to_array = {
+					array = FROM.dl_generals
+					value = ROOT
+					index = 0
+				}
+			}
+			else = {
+				add_to_array = {
+					array = FROM.dl_generals
+					value = ROOT
+				}
+			}
+		}
+	}
+	on_army_leader_promoted = {
+		effect = {
+			remove_from_array = {
+				array = FROM.dl_generals
+				value = ROOT
+			}
+			add_to_array = {
+				array = FROM.dl_generals
+				value = ROOT
+				index = 0
+			}
+		}
+	}
+}

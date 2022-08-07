@@ -1,0 +1,29 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_dl_main_bg"
+		textureFile = "gfx/interface/dismiss_leaders/dl_main_bg.dds"
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"		
+	}
+	
+	spriteType = {
+		name = "GFX_dl_leader_entry"
+		textureFile = "gfx/interface/dismiss_leaders/dl_leader_entry.dds"
+		# effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_dl_leader_entry_assigned"
+		textureFile = "gfx/interface/dismiss_leaders/dl_leader_entry_assigned.dds"
+		# effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_dl_general_button"
+		textureFile = "gfx/interface/dismiss_leaders/dl_general_button.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dl_admiral_button"
+		textureFile = "gfx/interface/dismiss_leaders/dl_admiral_button.dds"
+	}
+}
