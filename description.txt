@@ -8,9 +8,7 @@ Better Licensing - https://steamcommunity.com/sharedfiles/filedetails/?id=126222
 State Transfer Tool MP - https://steamcommunity.com/sharedfiles/filedetails/?id=1368778634
 EU4 Style Ideas - https://steamcommunity.com/sharedfiles/filedetails/?id=1760964609
 EU4 Style Ages - https://steamcommunity.com/sharedfiles/filedetails/?id=1942591589
-<<<<<<< HEAD
 Recall Volunteers - https://steamcommunity.com/sharedfiles/filedetails/?id=2048998725
-MTG Expanded - https://steamcommunity.com/sharedfiles/filedetails/?id=2124082035
 Embargo Mod - https://steamcommunity.com/sharedfiles/filedetails/?id=2328852896
 EU4 Style Monuments - https://steamcommunity.com/sharedfiles/filedetails/?id=2496490517
 Historical Naval Production - https://steamcommunity.com/sharedfiles/filedetails/?id=2618895984
@@ -22,6 +20,4 @@ International Arms Market (UPDATED, NEW AND IMPROVED!) - https://steamcommunity.
 Snow's Reichskommissariats - https://steamcommunity.com/sharedfiles/filedetails/?id=2784902401&searchtext=snow
 Additional Topbar Data - https://steamcommunity.com/sharedfiles/filedetails/?id=2693205051
 Write Letter V3 - https://steamcommunity.com/sharedfiles/filedetails/?id=2631609646
-=======
 Recall Volunteers - https://steamcommunity.com/sharedfiles/filedetails/?id=2048998725
->>>>>>> parent of 9ce26eb (MTG Expanded)
