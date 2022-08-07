@@ -1,4 +1,4 @@
-version="0.1"
+version="1"
 picture="thumbnail.png"
 tags={
 	"Alternative History"
@@ -10,5 +10,4 @@ dependencies={
 	"The Road to 56"
 }
 name="Operation Tea Party"
-supported_version="1.10.8"
-remote_file_id="2579693741"
+supported_version="1.11.12"
