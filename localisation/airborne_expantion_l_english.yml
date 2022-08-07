@@ -1,0 +1,77 @@
+﻿l_english:
+ ##### Airborne tank battalion ###
+ light_para_armor:0 "Airborne Tank"
+ light_para_armor_desc:0 "Lightly armored tank for use in airborne operations."
+ light_para_sp_artillery:0 "Airborne SP Artillery"
+ light_para_sp_artillery_desc:0 ""
+ light_para_tank_destroyer:0 "Airborne Tank Destroyer"
+ light_para_tank_destroyer_desc:0 ""
+ light_para_sp_anti_air:0 "Airborne AA Artillery"
+ light_para_sp_anti_air_desc:0 ""
+ 
+ 
+ #### Airborne tank chassis ####
+ paradrop_tank_chassis:0 "Airborne Tank"
+ paradrop_tank_chassis_desc:0 "Airborne Tank or Airborne Assault Vehicle(AAVs) is a small light tank that designed to be transported by glider and support paratroopers."
+ paradrop_tank_artillery_chassis:0 "Airborne SP Artillery"
+ paradrop_tank_artillery_chassis_desc:0 "A small and compact vehicle, primarily for fire support of advancing Paratroopers."
+ paradrop_tank_destroyer_chassis:0 "Airborne Tank Destroyer"
+ paradrop_tank_destroyer_chassis_desc:0 "A small and compact vehicle, carrying a powerful gun to destroy enemy armor."
+ paradrop_tank_aa_chassis:0 "Airborne AA Artillery"
+ paradrop_tank_aa_chassis_desc:0 "A small and compact vehicle, carrying an anti-air gun to defend against enemy planes."
+ 
+ 
+ paradrop_tank_chassis_0:0 "Airborne Tank Chassis"
+ paradrop_tank_artillery_chassis_0:0 "Airborne Tank SP Artillery"
+ paradrop_tank_destroyer_chassis_0:0 "Airborne Tank Destroyer"
+ paradrop_tank_aa_chassis_0:0 "Airborne Tank AA Artillery"
+ 
+ 
+ ### Defaults Airborne tank Equipment names (if you translated my mode, you don't have to translate it. ^^ ) ###
+ paradrop_tank_equipment_0:0 "Airborne Tank"
+ USA_paradrop_tank_equipment_0:0 "M22 Locust"
+ ENG_paradrop_tank_equipment_0:0 "Tetrarch"
+ GER_paradrop_tank_equipment_0:0 "Panzer I Ausf. C"
+ FRA_paradrop_tank_equipment_0:0 "H35 ELC"
+ SOV_paradrop_tank_equipment_0:0 "Antonov A-41"
+ JAP_paradrop_tank_equipment_0:0 "Type 95 Ha-Go Kūteishiyō"
+ ITA_paradrop_tank_equipment_0:0 "L6 Aerotrasportato"
+ CZE_paradrop_tank_equipment_0:0 "LT vz. 34p"
+ POL_paradrop_tank_equipment_0:0 "7TP Samolotowy"
+ 
+ paradrop_tank_artillery_equipment_0:0 "Airborne Tank SP Artillery"
+ 
+ paradrop_tank_destroyer_equipment_0:0 "Airborne Tank Destroyer"
+ 
+ paradrop_tank_aa_equipment_0:0 "Airborne Tank AA Artillery"
+ 
+ 
+ ### Airborne tank module categories #####
+ EQ_MOD_CAT_tank_para_turret_type_TITLE:0 "Airborne Tank Turret Type"
+ 
+ 
+ #### Airborne tank module ####
+ tank_light_one_man_tank_turret_p:0 "Airborne Tank Turret"
+ tank_light_one_man_tank_turret_p_desc:0 "A small turret barely large enough to hold a single crew member, who is tasked with aiming and loading the main armament as well as keeping watch for targets and threats."
+ tank_light_fixed_superstructure_turret_p:0 "Airborne tank Fixed Superstructure"
+ tank_light_fixed_superstructure_turret_p_desc:0 "A fixed superstructure only allows the main armament to traverse in a small arc without turning the entire vehicle. However, it allows the vehicle to mount a bigger armament while being overall of smaller size, making the vehicle perfect for ambushes."
+ 
+ 
+ ## Tank Designer UI ##
+ tank_designer_paradrop_tank_chassis:0 "Airborne Tank"
+ tank_designer_paradrop_tank_chassis_role_disallowed:0 "Remove the module that forbids the Airborne Tank role to be able to switch to it."
+ 
+ 
+ ## Motorized Paratrooper battalion ##
+ motorized_paratrooper:0 "Motorized Paratrooper"
+ motorized_paratrooper_desc:0 "Motorized Paratrooper transportation, such as jeep or motorcycle that can be transported by glider."
+ 
+ 
+ ## Paradrop Artillery battalion ##
+ paradrop_artillery:0 "Airborne Artillery"
+ paradrop_artillery_desc:0 "The airborne artillery battalion uses a lightweight pack artillery that can be transported by gliders, and although it lacks firepower compared to the general artillery battalion, it is optimized to support the airborne force."
+ paradrop_anti_air:0 "Airborne Anti-Air"
+ paradrop_anti_air_desc:0 ""
+ paradrop_anti_tank:0 "Airborne Anti-Tank"
+ paradrop_anti_tank_desc:0 ""
+ 

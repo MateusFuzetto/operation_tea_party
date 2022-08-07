@@ -1,0 +1,18 @@
+spriteTypes = {	
+	#######subuniticons for paraart battalion#######
+	spriteType = { name = "GFX_unit_paradrop_artillery_icon_medium"						textureFile = "gfx/interface/counters/divisions_large/unit_paraart_icon.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_paradrop_artillery_icon_medium_white"				textureFile = "gfx/interface/counters/divisions_small/onmap_unit_parart_icon.dds" noOfFrames = 2}
+	
+	#######texticons for paraart battalion######
+	spriteType = {
+		name = "GFX_nato_unit_paradrop_artillery_icon_small"
+		texturefile = "gfx/texticons/nato_unit_paraart_icon_small.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_unit_paradrop_artillery_icon_small"
+		texturefile = "gfx/texticons/unit_paraart_icon_small.dds"
+		legacy_lazy_load = no
+		noOfFrames = 2
+	}
+}

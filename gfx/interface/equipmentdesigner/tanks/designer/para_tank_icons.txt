@@ -1,0 +1,119 @@
+default = {
+	paradrop_tank_chassis_0 = {
+		pool = {
+			icons = {
+				"gfx/interface/technologies/generic_paratank.dds"
+			}
+		}
+	}
+}
+
+GER = {
+	paradrop_tank_chassis_0 = {
+		pool = {
+			icons = {
+				"gfx/interface/equipmentdesigner/tanks/designer/paratank/GER_paratank_AA.dds"
+				"gfx/interface/equipmentdesigner/tanks/designer/paratank/GER_paratank_C.dds"
+				"gfx/interface/technologies/GER_paratank.dds" 
+			}
+			models = {
+				"GER_light_armor_entity"
+			}
+		}
+	}
+}
+
+SOV = {
+	paradrop_tank_chassis_0 = {
+		pool = {
+			icons = {
+				"gfx/interface/equipmentdesigner/tanks/designer/paratank/SOV_paratank_AA.dds"
+				"gfx/interface/equipmentdesigner/tanks/designer/paratank/SOV_paratank_C.dds"
+				"gfx/interface/technologies/SOV_paratank.dds" 
+			}
+			models = {
+				"SOV_light_armor_entity"
+			}
+		}
+	}
+}
+
+
+USA = {
+
+	paradrop_tank_chassis_0 = {
+		pool = {
+			icons = {
+				"gfx/interface/equipmentdesigner/tanks/designer/paratank/USA_paratank_AA.dds"
+				"gfx/interface/equipmentdesigner/tanks/designer/paratank/USA_paratank_C.dds"
+				"gfx/interface/technologies/USA_paratank.dds" 
+			}
+			models = {
+				
+				"USA_light_armor_entity"
+				
+			}
+		}
+	}
+}
+
+ENG = {
+	paradrop_tank_chassis_0 = {
+		pool = {
+			icons = {
+				"gfx/interface/equipmentdesigner/tanks/designer/paratank/ENG_paratank_AA.dds"
+				"gfx/interface/equipmentdesigner/tanks/designer/paratank/ENG_paratank_C.dds"
+				"gfx/interface/technologies/ENG_paratank.dds" 
+			}
+			models = {
+				
+				
+				"commonwealth_gfx_light_armor_entity"
+			}
+		}
+	}
+}
+
+FRA = {
+	paradrop_tank_chassis_0 = {
+		pool = {
+			icons = {
+				"gfx/interface/equipmentdesigner/tanks/designer/paratank/FRA_paratank_AA.dds"
+				"gfx/interface/equipmentdesigner/tanks/designer/paratank/FRA_paratank_C.dds"
+				"gfx/interface/technologies/FRA_paratank.dds"
+			}
+			models = {
+				"FRA_light_armor_entity"
+			}
+		}
+	}
+}
+
+JAP = {
+	paradrop_tank_chassis_0 = {
+		pool = {
+			icons = {
+				"gfx/interface/equipmentdesigner/tanks/designer/paratank/JAP_paratank_AA.dds"
+				"gfx/interface/equipmentdesigner/tanks/designer/paratank/JAP_paratank_C.dds"
+				"gfx/interface/technologies/JAP_paratank.dds" 
+			}
+			models = {
+				"JAP_light_armor_entity"
+			}
+		}
+	}
+}
+
+ITA = {
+	paradrop_tank_chassis_0 = {
+		pool = {
+			icons = {
+				"gfx/interface/equipmentdesigner/tanks/designer/paratank/ITA_paratank_C.dds"
+				"gfx/interface/technologies/ITA_paratank.dds" 
+			}
+			models = {
+				"ITA_light_armor_entity"
+			}
+		}
+	}
+}

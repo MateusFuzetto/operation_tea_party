@@ -1,0 +1,35 @@
+spriteTypes = {	
+	#######subuniticons for paraaa battalion#######
+	spriteType = { name = "GFX_unit_paradrop_anti_air_icon_medium"						textureFile = "gfx/interface/counters/divisions_large/unit_paraaa_icon.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_paradrop_anti_air_icon_medium_white"				textureFile = "gfx/interface/counters/divisions_small/onmap_unit_paraaa_icon.dds" noOfFrames = 2}
+	
+	#######texticons for paraaa battalion######
+	spriteType = {
+		name = "GFX_nato_unit_paradrop_anti_air_icon_small"
+		texturefile = "gfx/texticons/nato_unit_paraaa_small.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_unit_paradrop_anti_air_icon_small"
+		texturefile = "gfx/texticons/unit_paraaa_icon_small.dds"
+		legacy_lazy_load = no
+		noOfFrames = 2
+	}
+	
+	#######subuniticons for paraat battalion#######
+	spriteType = { name = "GFX_unit_paradrop_anti_tank_icon_medium"						textureFile = "gfx/interface/counters/divisions_large/unit_paraat_icon.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_paradrop_anti_tank_icon_medium_white"				textureFile = "gfx/interface/counters/divisions_small/onmap_unit_paraat_icon.dds" noOfFrames = 2}
+	
+	#######texticons for paraat battalion######
+	spriteType = {
+		name = "GFX_nato_unit_paradrop_anti_tank_icon_small"
+		texturefile = "gfx/texticons/nato_unit_paraat_icon_small.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_unit_paradrop_anti_tank_icon_small"
+		texturefile = "gfx/texticons/unit_paraat_icon_small.dds"
+		legacy_lazy_load = no
+		noOfFrames = 2
+	}
+}
