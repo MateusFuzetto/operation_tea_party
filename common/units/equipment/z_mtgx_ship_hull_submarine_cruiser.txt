@@ -102,9 +102,7 @@ equipments = {
 					submarine_medium_battery_cap
 					submarine_heavy_battery	
 					submarine_secondaries					
-					submarine_airplane_launcher
-					light_ship_cruise_missiles
-					medium_ship_cruise_missiles
+					submarine_airplane_launcher								
 				}
 			}
 			mid_1_custom_slot = {
@@ -124,9 +122,7 @@ equipments = {
 			mid_3_custom_slot = {
 				required = no
 				allowed_module_categories = {
-					submarine_airplane_launcher	
-					light_ship_cruise_missiles
-					medium_ship_cruise_missiles
+					submarine_airplane_launcher					
 				}
 			}								
 			rear_1_custom_slot = {
@@ -202,8 +198,6 @@ equipments = {
 					submarine_medium_battery_cap									
 					submarine_secondaries					
 					submarine_airplane_launcher
-					light_ship_cruise_missiles
-					medium_ship_cruise_missiles
 				}
 			}
 			mid_1_custom_slot = {
@@ -230,9 +224,7 @@ equipments = {
 					submarine_secondaries				
 					submarine_anti_air								
 					ship_extra_fuel_tank
-					submarine_airplane_launcher
-					light_ship_cruise_missiles
-					medium_ship_cruise_missiles
+					submarine_airplane_launcher					
 				}
 			}								
 			rear_1_custom_slot = {

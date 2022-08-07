@@ -25,7 +25,7 @@ equipments = {
 			}
 			fixed_ship_secondaries_slot = {
 				required = no
-				allowed_module_categories = { ship_secondaries light_ship_cruise_missiles }
+				allowed_module_categories = { ship_secondaries }
 			}
 		}
 		
